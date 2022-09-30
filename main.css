@@ -93,11 +93,11 @@ body{
     width: 50%;
     background-color: lightgray;
     border: 0px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 10px 30px 30px 10px;
+    -webkit-border-radius: 10px 30px 30px 10px;
+    -moz-border-radius: 10px 30px 30px 10px;
+    -ms-border-radius: 10px 30px 30px 10px;
+    -o-border-radius: 10px 30px 30px 10px;
 }
 .cards .left_card{
     background-image: url(background--card-green-tech.jpg);
