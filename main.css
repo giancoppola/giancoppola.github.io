@@ -150,6 +150,26 @@ p{
 
 /* media query for mobile viewports */
 @media all and (max-width: 1080px) {
+    #main_content{
+        position: absolute;
+        left: 0rem;
+        right: 0rem;
+        top: 65px;
+        display: flex;
+        flex-direction: column;
+    }
+    #main_content .dual_module{
+        background-color: aliceblue;
+        padding: 0% 2%;
+        border-top: 5px solid lightblue;
+        border-bottom: 5px solid lightblue;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+        margin: 0rem auto 4rem;
+}
     .dual_module p{
         width: 90%;
         margin: 0% 4%;
