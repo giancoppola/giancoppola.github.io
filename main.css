@@ -173,11 +173,11 @@ p{
     .dual_module p{
         width: 90%;
         margin: 0% 4%;
-        font-size: 1.6rem;
-        line-height: 2rem;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
     }
     .dual_module h1{
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         font-weight: 900;
         width: 70%;
         margin: 0% 4%;
@@ -212,8 +212,8 @@ p{
     .cards h3{
         margin: 5% 5%;
         width: 50%;
-        font-size: 2.2rem;
-        line-height: 2.2rem;
+        font-size: 2.3rem;
+        line-height: 3rem;
     }
     .cards a{
         background-color: white;
@@ -221,7 +221,7 @@ p{
         margin: 5% 5%;
         padding: 15px 30px;
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 800;
         text-decoration: none;
         color: inherit;
