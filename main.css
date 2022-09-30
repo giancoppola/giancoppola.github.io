@@ -77,7 +77,8 @@ body{
     font-weight: 900;
     width: 70%;
     margin: 0% 4%;
-    padding: 2% 0%;
+    padding-top: 4%;
+    padding-bottom: 2%;
 }
 #main_content .dual_module .cards{
     display: flex;
@@ -93,11 +94,11 @@ body{
     width: 50%;
     background-color: lightgray;
     border: 0px;
-    border-radius: 10px 30px 30px 10px;
-    -webkit-border-radius: 10px 30px 30px 10px;
-    -moz-border-radius: 10px 30px 30px 10px;
-    -ms-border-radius: 10px 30px 30px 10px;
-    -o-border-radius: 10px 30px 30px 10px;
+    border-radius: 8px 20px 20px 8px;
+    -webkit-border-radius: 8px 20px 20px 8px;
+    -moz-border-radius: 8px 20px 20px 8px;
+    -ms-border-radius: 8px 20px 20px 8px;
+    -o-border-radius: 8px 20px 20px 8px;
 }
 .cards .left_card{
     background-image: url(background--card-green-tech.jpg);
@@ -150,17 +151,18 @@ p{
 /* media query for mobile viewports */
 @media all and (max-width: 1080px) {
     .dual_module p{
-        width: 80%;
+        width: 90%;
         margin: 0% 4%;
-        font-size: 1.14rem;
-        line-height: 1.6rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
     }
     .dual_module h1{
-        font-size: 1.9rem;
+        font-size: 2.5rem;
         font-weight: 900;
         width: 70%;
         margin: 0% 4%;
-        padding: 2% 0%;
+        padding-top: 4%;
+        padding-bottom: 2%;
     }
     #main_content .dual_module .cards{
         display: flex;
@@ -175,10 +177,39 @@ p{
         width: 100%;
         background-color: lightgray;
         border: 0px;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
+        border-radius: 8px 20px 20px 8px;
+        -webkit-border-radius: 8px 20px 20px 8px;
+        -moz-border-radius: 8px 20px 20px 8px;
+        -ms-border-radius: 8px 20px 20px 8px;
+        -o-border-radius: 8px 20px 20px 8px;
+    }
+    .cards p{
+        width: 55%;
+        margin: 0% 5%;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+    .cards h3{
+        margin: 5% 5%;
+        width: 50%;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+    }
+    .cards a{
+        background-color: white;
+        width: 10rem;
+        margin: 5% 5%;
+        padding: 15px 30px;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 800;
+        text-decoration: none;
+        color: inherit;
+        border: 0px;
+        border-radius: 40px;
+        -webkit-border-radius: 40px;
+        -moz-border-radius: 40px;
+        -ms-border-radius: 40px;
+        -o-border-radius: 40px;
     }
 }
