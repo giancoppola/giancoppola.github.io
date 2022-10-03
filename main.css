@@ -152,7 +152,7 @@ p{
     -ms-transition: background-color 500ms, width 1s;
     -o-transition: background-color 500ms, width 1s;
 }
-.cards a:hover{
+.cards a:hover, a:focus{
     text-decoration: underline;
     background-color: black;
     color: white;
@@ -343,5 +343,16 @@ p{
         -moz-border-radius: 40px;
         -ms-border-radius: 40px;
         -o-border-radius: 40px;
+        transition: background-color 500ms, width 1s;
+        -webkit-transition: background-color 500ms, width 1s;
+        -moz-transition: background-color 500ms, width 1s;
+        -ms-transition: background-color 500ms, width 1s;
+        -o-transition: background-color 500ms, width 1s;
+}
+    .cards a:hover, a:focus{
+        text-decoration: underline;
+        background-color: black;
+        color: white;
+        width: 11rem;
     }
 }
