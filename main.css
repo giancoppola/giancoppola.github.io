@@ -146,11 +146,17 @@ p{
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
     -o-border-radius: 40px;
+    transition: background-color 500ms, width 1s;
+    -webkit-transition: background-color 500ms, width 1s;
+    -moz-transition: background-color 500ms, width 1s;
+    -ms-transition: background-color 500ms, width 1s;
+    -o-transition: background-color 500ms, width 1s;
 }
 .cards a:hover{
     text-decoration: underline;
     background-color: black;
     color: white;
+    width: 7rem;
 }
 #main_content .text_image{
     background-color: aliceblue;
