@@ -363,19 +363,19 @@ p{
         -moz-border-radius: 40px;
         -ms-border-radius: 40px;
         -o-border-radius: 40px;
-        transition: background-color 500ms, text-decoration 500ms, width 1s;
-        -webkit-transition: background-color 500ms, text-decoration 500ms, width 1s;
-        -moz-transition: background-color 500ms, text-decoration 500ms, width 1s;
-        -ms-transition: background-color 500ms, text-decoration 500ms, width 1s;
-        -o-transition: background-color 500ms, text-decoration 500ms, width 1s;
+        text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+        transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -webkit-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -moz-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -ms-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -o-transition: background-color 500ms, text-decoration 1.2s, width 1s;
         color: #006de3;
-}
+    }
     .cards a:hover, a:focus{
-        text-decoration: underline;
+        text-decoration-color: rgba(255, 255, 255, 1);
         background-color: #006de3;
-        text-decoration-color: white;
         color: white;
         width: 11rem;
-        -moz-text-decoration-color: white;
-}
+        -moz-text-decoration-color: rgba(255, 255, 255, 1);
+    }
 }
