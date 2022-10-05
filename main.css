@@ -198,6 +198,8 @@ p{
 }
 .text_image p{
     margin: 4% 4% 2% 4%;
+    font-size: 1.14rem;
+    line-height: 1.6rem;
 }
 .text_left{
     width: 50%;
@@ -207,8 +209,8 @@ p{
 }
 .text_left p{
     margin: 0% 4% 4% 0%;
-    font-size: 1.35rem;
-    line-height: 1.7rem;
+    font-size: 1.14rem;
+    line-height: 1.6rem;
 }
 .text_left a{
     color: #006de3;
@@ -377,5 +379,15 @@ p{
         color: white;
         width: 11rem;
         -moz-text-decoration-color: rgba(255, 255, 255, 1);
+    }
+    .text_image .flex_container{
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 4% 4% 2% 4%;
+        row-gap: 5%;
+        align-items: center;
+    }
+    .text_left{
+        width: 70%;
     }
 }
