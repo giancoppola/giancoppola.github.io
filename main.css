@@ -1,5 +1,6 @@
+/* General */
 *{
-    font-family: 'Roboto';
+    font-family: 'Lato';
 }
 html{
     min-height: 100%;
@@ -15,6 +16,16 @@ body{
 p{
     margin: auto;
 }
+#main_content{
+    position: absolute;
+    left: 4rem;
+    right: 4rem;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Navigation */
 .main_nav{
     display: flex;
     flex-direction: row;
@@ -55,14 +66,8 @@ p{
     width: auto;
     height: 100%;
 }
-#main_content{
-    position: absolute;
-    left: 4rem;
-    right: 4rem;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-}
+
+/* People and Projects Module */
 #main_content .dual_card_module{
     background-color: aliceblue;
     border: 0px;
@@ -146,21 +151,23 @@ p{
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
     -o-border-radius: 40px;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
     transition: background-color 500ms, width 1s;
-    -webkit-transition: background-color 500ms, width 1s;
-    -moz-transition: background-color 500ms, width 1s;
-    -ms-transition: background-color 500ms, width 1s;
-    -o-transition: background-color 500ms, width 1s;
+    -webkit-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    -moz-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    -ms-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    -o-transition: background-color 500ms, text-decoration 1.2s, width 1s;
     color: #006de3;
 }
 .cards a:hover, a:focus{
-    text-decoration: underline;
-    text-decoration-color: white;
+    text-decoration-color: rgba(255, 255, 255, 1);
     background-color: #006de3;
     color: white;
     width: 7rem;
-    -moz-text-decoration-color: white;
+    -moz-text-decoration-color: rgba(255, 255, 255, 1);
 }
+
+/* About Us Module */
 #main_content .text_image{
     background-color: aliceblue;
     border: 0px;
@@ -205,14 +212,22 @@ p{
 }
 .text_left a{
     color: #006de3;
-    text-decoration: none;
+    text-decoration: underline 0.1em rgba(66, 135, 245, 0);
+    text-decoration-skip-ink: all;
+    transition: text-decoration 800ms;
+    -webkit-transition: text-decoration 800ms;
+    -moz-transition: text-decoration 800ms;
+    -ms-transition: text-decoration 800ms;
+    -o-transition: text-decoration 800ms;
 }
 .text_left a:hover{
-    text-decoration: underline;
+    text-decoration-color: rgba(66, 135, 245, 1);
+    -moz-text-decoration-color: rgba(66, 135, 245, 1);
 }
 
 /* media query for mobile viewports */
 @media all and (max-width: 1080px) {
+    /* General */
     html{
         min-height: 100%;
     }
@@ -224,6 +239,15 @@ p{
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+    #main_content{
+        position: absolute;
+        left: 0rem;
+        right: 0rem;
+        top: 125px;
+        display: flex;
+        flex-direction: column;
+    }
+    /* Main Navigation */
     .main_nav{
         display: flex;
         flex-direction: row;
@@ -265,14 +289,7 @@ p{
         height: 100%;
         align-items: center;
     }
-    #main_content{
-        position: absolute;
-        left: 0rem;
-        right: 0rem;
-        top: 125px;
-        display: flex;
-        flex-direction: column;
-    }
+    /* People and Projects */
     #main_content .dual_card_module{
         background-color: aliceblue;
         padding: 0% 2%;
@@ -284,7 +301,7 @@ p{
         -ms-border-radius: 0px;
         -o-border-radius: 0px;
         margin: 0rem auto 4rem;
-}
+    }
     .dual_card_module p{
         width: 90%;
         margin: 0% 4%;
@@ -346,11 +363,11 @@ p{
         -moz-border-radius: 40px;
         -ms-border-radius: 40px;
         -o-border-radius: 40px;
-        transition: background-color 500ms, width 1s;
-        -webkit-transition: background-color 500ms, width 1s;
-        -moz-transition: background-color 500ms, width 1s;
-        -ms-transition: background-color 500ms, width 1s;
-        -o-transition: background-color 500ms, width 1s;
+        transition: background-color 500ms, text-decoration 500ms, width 1s;
+        -webkit-transition: background-color 500ms, text-decoration 500ms, width 1s;
+        -moz-transition: background-color 500ms, text-decoration 500ms, width 1s;
+        -ms-transition: background-color 500ms, text-decoration 500ms, width 1s;
+        -o-transition: background-color 500ms, text-decoration 500ms, width 1s;
         color: #006de3;
 }
     .cards a:hover, a:focus{
