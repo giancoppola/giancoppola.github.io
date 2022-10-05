@@ -151,12 +151,15 @@ p{
     -moz-transition: background-color 500ms, width 1s;
     -ms-transition: background-color 500ms, width 1s;
     -o-transition: background-color 500ms, width 1s;
+    color: #006de3;
 }
 .cards a:hover, a:focus{
     text-decoration: underline;
-    background-color: black;
+    text-decoration-color: white;
+    background-color: #006de3;
     color: white;
     width: 7rem;
+    -moz-text-decoration-color: white;
 }
 #main_content .text_image{
     background-color: aliceblue;
@@ -348,11 +351,14 @@ p{
         -moz-transition: background-color 500ms, width 1s;
         -ms-transition: background-color 500ms, width 1s;
         -o-transition: background-color 500ms, width 1s;
+        color: #006de3;
 }
     .cards a:hover, a:focus{
         text-decoration: underline;
-        background-color: black;
+        background-color: #006de3;
+        text-decoration-color: white;
         color: white;
         width: 11rem;
-    }
+        -moz-text-decoration-color: white;
+}
 }
