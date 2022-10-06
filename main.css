@@ -170,7 +170,6 @@ p{
 /* About Us Module */
 #main_content .text_image{
     background-color: aliceblue;
-    border: 0px;
     border-radius: 20px;
     padding: 0% 2%;
     -webkit-border-radius: 20px;
@@ -380,6 +379,15 @@ p{
         width: 11rem;
         -moz-text-decoration-color: rgba(255, 255, 255, 1);
     }
+    #main_content .text_image{
+        border-top: 5px solid lightblue;
+        border-bottom: 5px solid lightblue;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+}
     .text_image .flex_container{
         flex-direction: column;
         justify-content: space-between;
@@ -388,6 +396,28 @@ p{
         align-items: center;
     }
     .text_left{
-        width: 70%;
+        width: 100%;
+    }
+    .text_left p{
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+    .text_left h1{
+        font-size: 3.5rem;
+    }
+    .text_image p{
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+    .image_right img{
+        width: 100vw;
+    }
+}
+
+/* media query for >1080p viewports */
+@media all and (min-width: 1921px) {
+    #main_content{
+        left: 20%;
+        right: 20%;
     }
 }
