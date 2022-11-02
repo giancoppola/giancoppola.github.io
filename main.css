@@ -56,7 +56,7 @@ p::-moz-selection{
 .main_nav{
     display: flex;
     flex-direction: row;
-    background-color: aliceblue;
+    background-color: white;
     border-bottom: 5px solid darkgreen;
     width: 100%;
     height: 60px;
@@ -96,7 +96,7 @@ p::-moz-selection{
 
 /* People and Projects Module */
 #main_content .dual_card_module{
-    background-color: aliceblue;
+    background-color: white;
     border: 0px;
     border-radius: 20px;
     padding: 0% 2%;
@@ -196,7 +196,7 @@ p::-moz-selection{
 
 /* About Us Module */
 #main_content .text_image{
-    background-color: aliceblue;
+    background-color: white;
     border-radius: 20px;
     padding: 0% 2%;
     -webkit-border-radius: 20px;
@@ -279,7 +279,7 @@ p::-moz-selection{
     .main_nav{
         display: flex;
         flex-direction: row;
-        background-color: aliceblue;
+        background-color: white;
         border-bottom: 5px solid darkgreen;
         width: 100%;
         height: 120px;
@@ -319,7 +319,7 @@ p::-moz-selection{
     }
     /* People and Projects */
     #main_content .dual_card_module{
-        background-color: aliceblue;
+        background-color: white;
         padding: 0% 2%;
         border-top: 5px solid lightblue;
         border-bottom: 5px solid lightblue;
