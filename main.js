@@ -1,3 +1,5 @@
+
+// slick slider for the tech page
 $(document).ready(function(){
     $('.multiple-items').slick({
         dots: true,
@@ -11,15 +13,15 @@ $(document).ready(function(){
             {
                 breakpoint: 1080,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     arrows: true
                 }
             },
             {
                 breakpoint: 800,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                     arrows: false
                 }

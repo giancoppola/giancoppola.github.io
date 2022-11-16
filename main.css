@@ -303,9 +303,9 @@ p::-moz-selection{
 .barcs_tech_slider .slick-slide{
     float: left;
     height: 100%;
-    min-height: 30vh;
+    min-height: 40vh;
     background-color: aliceblue;
-    margin: 10px 20px;
+    margin: 10px 10px;
     border-radius: 20px;
     padding: 10px 20px;
     display: flex;
@@ -324,10 +324,12 @@ p::-moz-selection{
 .slide_1{
     background-image: url(background--card-green-tech.jpg);
     background-size: cover;
+    background-position: right 25% bottom 100%;
 }
 .slide_2{
     background-image: url(background--card-data-science.jpg);
     background-size: cover;
+    background-position: right 45% bottom;
 }
 .tech_slider_slide .btn-white{
     margin: 0%;
