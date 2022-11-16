@@ -194,6 +194,38 @@ p::-moz-selection{
     -moz-text-decoration-color: rgba(255, 255, 255, 1);
 }
 
+.btn-white{
+    background-color: white;
+    width: 6rem;
+    margin: 5% 5%;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: inherit;
+    border: 0px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    -webkit-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    -moz-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    -ms-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    -o-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+    color: #006de3;
+}
+.btn-white:hover, :focus{
+    text-decoration-color: rgba(255, 255, 255, 1);
+    background-color: #006de3;
+    color: white;
+    width: 7rem;
+    -moz-text-decoration-color: rgba(255, 255, 255, 1);
+}
+
 /* About Us Module */
 #main_content .text_image{
     background-color: white;
@@ -251,6 +283,143 @@ p::-moz-selection{
 .text_left a:hover{
     text-decoration-color: rgba(66, 135, 245, 1);
     -moz-text-decoration-color: rgba(66, 135, 245, 1);
+}
+
+/* Tech Page Slider */
+#main_content .barcs_tech_slider{
+    background-color: white;
+    border: 0px;
+    border-radius: 20px;
+    padding: 0% 2%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 0rem auto 4rem;
+    max-width: 96%;
+    width: 100%;
+    height: 100%;
+}
+.barcs_tech_slider .slick-slide{
+    float: left;
+    height: 100%;
+    min-height: 30vh;
+    background-color: aliceblue;
+    margin: 10px 20px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-end;
+}
+.tech_slider_slide{
+    display: flex !important;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-between;
+}
+.tech_slider_slide .btn-white{
+    margin-bottom: 4% !important;
+}
+.slide_1{
+    background-image: url(background--card-green-tech.jpg);
+    background-size: cover;
+}
+.slide_2{
+    background-image: url(background--card-data-science.jpg);
+    background-size: cover;
+}
+.tech_slider_slide .btn-white{
+    margin: 0%;
+}
+.barcs_tech_slider .slick-next{
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    right: -1%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.barcs_tech_slider .slick-next::before{
+    content: url(arrow-blue-right.svg);
+}
+.barcs_tech_slider .slick-prev{
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: -1%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    cursor: pointer;
+    /* color: transparent; */
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.barcs_tech_slider .slick-prev::before{
+    content: url(arrow-blue-right.svg);
+}
+.barcs_tech_slider h1 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    width: 70%;
+    margin: 0% 4%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+.barcs_tech_slider h3 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    width: 70%;
+    margin: 2% 0%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+.barcs_tech_slider p{
+    width: 80%;
+    margin: 0% 4% 4%;
+    font-size: 1.14rem;
+    line-height: 1.6rem;
+}
+.tech_slider_intro a{
+    color: #006de3;
+    text-decoration: underline 0.15em rgb(0, 109, 227, 0);
+    transition: text-decoration-color 1s;
+    -webkit-transition: text-decoration-color 1s;
+    -moz-transition: text-decoration-color 1s;
+    -ms-transition: text-decoration-color 1s;
+    -o-transition: text-decoration-color 1s;
+}
+.tech_slider_intro a:hover, .tech_slider_intro a:focus{
+    color: rgb(0, 109, 227);
+    text-decoration: underline 0.15em rgb(0, 109, 227, 1);
+}
+.tech_slider_intro a:visited{
+    color: #006de3;
+    text-decoration: none;
 }
 
 /* media query for mobile viewports */
@@ -439,6 +608,38 @@ p::-moz-selection{
     }
     .image_right img{
         width: 100vw;
+    }
+
+    .btn-white{
+        background-color: white;
+        width: 10rem;
+        margin: 5% 5%;
+        padding: 15px 30px;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-decoration: none;
+        color: inherit;
+        border: 0px;
+        border-radius: 40px;
+        -webkit-border-radius: 40px;
+        -moz-border-radius: 40px;
+        -ms-border-radius: 40px;
+        -o-border-radius: 40px;
+        text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+        transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -webkit-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -moz-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -ms-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        -o-transition: background-color 500ms, text-decoration 1.2s, width 1s;
+        color: #006de3;
+    }
+    .btn-white:hover, :focus{
+        text-decoration-color: rgba(255, 255, 255, 1);
+        background-color: #006de3;
+        color: white;
+        width: 11rem;
+        -moz-text-decoration-color: rgba(255, 255, 255, 1);
     }
 }
 
