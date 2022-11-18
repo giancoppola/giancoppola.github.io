@@ -5,7 +5,7 @@ $(document).ready(function(){
         dots: true,
         arrows: false,
         infinite: true,
-        speed: 500,
+        speed: 600,
         slidesToShow: 1,
         slidesToScroll: 1,
         mobileFirst: true,
@@ -22,7 +22,7 @@ $(document).ready(function(){
                 breakpoint: 800,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 3,
                     arrows: false
                 }
             }
