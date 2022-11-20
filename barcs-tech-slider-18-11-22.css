@@ -16,7 +16,7 @@
 .barcs_tech_slider .slick-slide{
     float: left;
     height: 100%;
-    min-height: 250px;
+    min-height: 260px;
     background-color: aliceblue;
     margin: 10px 10px;
     border-radius: 20px;
@@ -24,29 +24,93 @@
     display: flex;
     flex-direction: column;
     justify-items: flex-end;
+    justify-content: center;
 }
 .tech_slider_slide{
     display: flex !important;
     flex-direction: column;
     justify-items: center;
-    justify-content: space-between;
-}
-.tech_slider_slide h3{
-    width: 75%;
+    /* justify-content: space-between; */
 }
 .tech_slider_slide .button--white{
     margin-bottom: 4%;
     width: fit-content;
 }
 .slide_1{
-    background-image: url(background--card-green-tech.jpg);
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_1.png);
     background-size: cover;
     background-position: right 25% bottom 100%;
 }
+.slide_1 h3{
+    color: #515151;
+}
+.barcs_tech_slider .slick-slide .slide_1{
+    background-color: #CFD7DB;
+}
 .slide_2{
-    background-image: url(background--card-data-science.jpg);
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_2.png);
     background-size: cover;
     background-position: right 45% bottom;
+}
+.slide_2 h3{
+    color: #515151;
+}
+.slide_3{
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_3.png);
+    background-size: cover;
+    background-position: right 45% bottom;
+}
+.slide_3 h3{
+    color: #EBEDFA;
+}
+.barcs_tech_slider .slick-slide .slide_3{
+    background-color: #000000;
+}
+.slide_4{
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_4.png);
+    background-size: cover;
+    background-position: right 45% bottom;
+}
+.slide_4 h3{
+    color: #515151;
+}
+.slide_5{
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_5.png);
+    background-size: cover;
+    background-position: right 45% bottom;
+}
+.slide_5 h3{
+    color: #EBEDFA;
+}
+.barcs_tech_slider .slick-slide .slide_5{
+    background-color: #000000;
+}
+.slide_6{
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_6.png);
+    background-size: cover;
+    background-position: right 45% bottom;
+}
+.slide_6 h3{
+    color: #EBEDFA;
+}
+.slide_7{
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_7.png);
+    background-size: cover;
+    background-position: right 45% bottom;
+}
+.slide_7 h3{
+    color: #EBEDFA;
+}
+.barcs_tech_slider .slick-slide .slide_7{
+    background-color: #000000;
+}
+.slide_8{
+    background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_8.png);
+    background-size: cover;
+    background-position: right 45% bottom;
+}
+.slide_8 h3{
+    color: #EBEDFA;
 }
 .tech_slider_slide .btn-white{
     margin: 0%;
@@ -132,7 +196,10 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 0;
+}
+#slick-dots{
+    display: flex;
 }
 #People-and-Projects .slider-controls .slick-dots{
     position: relative;
@@ -158,7 +225,7 @@
     width: 20px;
     height: 20px;
     padding: 5px;
-    margin: 0px 14px;
+    /* margin: 0px 14px; */
     cursor: pointer;
     color: transparent;
     border: 2px solid #006DE3;
