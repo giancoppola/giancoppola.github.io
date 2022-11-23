@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-items: flex-end;
-    justify-content: center;
+    justify-content: space-between;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
@@ -66,12 +66,13 @@
     justify-items: center;
     /* justify-content: space-between; */
 }
-.tech_slider_slide .button--white{
-    margin-bottom: 4%;
+.tech_slider_slide .btn-white{
+    margin: 0 0 5% 0;
     width: fit-content;
 }
 .tech_slider_slide h3{
-    font-size: 1.4rem;
+    margin-top: 20%;
+    font-size: 1.5rem;
 }
 .slide_1{
     background-image: url(https://tbcdn.talentbrew.com/company/22545/v1_0/img/refresh/tech-slider/barcs_tech_slide_1.png);
@@ -136,9 +137,6 @@
 }
 .slide_8 h3{
     color: #EBEDFA;
-}
-.tech_slider_slide .btn-white{
-    margin: 0%;
 }
 .slider-controls{
     position: relative;
