@@ -141,12 +141,12 @@ p::-moz-selection{
     -o-border-radius: 8px 20px 20px 8px;
 }
 .cards .left_card{
-    background-image: url(background--card-green-tech.jpg);
+    background-image: url(../img/background/background--card-green-tech.jpg);
     background-position: right;
     background-size: cover;
 }
 .cards .right_card{
-    background-image: url(background--card-data-science.jpg);
+    background-image: url(../img/background/background--card-data-science.jpg);
     background-position: right;
     background-size: cover;
 }
@@ -283,146 +283,6 @@ p::-moz-selection{
 .text_left a:hover{
     text-decoration-color: rgba(66, 135, 245, 1);
     -moz-text-decoration-color: rgba(66, 135, 245, 1);
-}
-
-/* Tech Page Slider */
-#main_content .barcs_tech_slider{
-    background-color: white;
-    border: 0px;
-    border-radius: 20px;
-    padding: 0% 2%;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    margin: 0rem auto 4rem;
-    max-width: 96%;
-    width: 100%;
-    height: 100%;
-}
-.barcs_tech_slider .slick-slide{
-    float: left;
-    height: 100%;
-    min-height: 40vh;
-    background-color: aliceblue;
-    margin: 10px 10px;
-    border-radius: 20px;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-end;
-}
-.tech_slider_slide{
-    display: flex !important;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: space-between;
-}
-.tech_slider_slide .btn-white{
-    margin-bottom: 4% !important;
-}
-.slide_1{
-    background-image: url(background--card-green-tech.jpg);
-    background-size: cover;
-    background-position: right 25% bottom 100%;
-}
-.slide_2{
-    background-image: url(background--card-data-science.jpg);
-    background-size: cover;
-    background-position: right 45% bottom;
-}
-.tech_slider_slide .btn-white{
-    margin: 0%;
-}
-.barcs_tech_slider .slick-next{
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    right: -1.5%;
-    display: block;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 2px solid #006de3;
-    padding: 0;
-    cursor: pointer;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    -ms-border-radius: 100%;
-    -o-border-radius: 100%;
-}
-.barcs_tech_slider .slick-next::before{
-    content: url(arrow-blue-right.svg);
-}
-#barcs_tech_slider .slider{
-    width: 90%;
-    left: 5%;
-}
-#barcs_tech_slider .slick-prev{
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: -1.5%;
-    display: block;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 2px solid #006de3;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    -ms-border-radius: 100%;
-    -o-border-radius: 100%;
-    padding: 0;
-    cursor: pointer;
-    transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-}
-.barcs_tech_slider .slick-prev::before{
-    content: url(arrow-blue-right.svg);
-}
-.barcs_tech_slider h1 {
-    font-size: 1.9rem;
-    font-weight: 900;
-    width: 70%;
-    margin: 0% 4%;
-    padding-top: 4%;
-    padding-bottom: 2%;
-}
-.barcs_tech_slider h3 {
-    font-size: 1.4rem;
-    font-weight: 900;
-    width: 70%;
-    margin: 2% 0%;
-    padding-top: 4%;
-    padding-bottom: 2%;
-}
-.barcs_tech_slider p{
-    width: 80%;
-    margin: 0% 4% 4%;
-    font-size: 1.14rem;
-    line-height: 1.6rem;
-}
-.tech_slider_intro a{
-    color: #006de3;
-    text-decoration: underline 0.15em rgb(0, 109, 227, 0);
-    transition: text-decoration-color 1s;
-    -webkit-transition: text-decoration-color 1s;
-    -moz-transition: text-decoration-color 1s;
-    -ms-transition: text-decoration-color 1s;
-    -o-transition: text-decoration-color 1s;
-}
-.tech_slider_intro a:hover, .tech_slider_intro a:focus{
-    color: rgb(0, 109, 227);
-    text-decoration: underline 0.15em rgb(0, 109, 227, 1);
-}
-.tech_slider_intro a:visited{
-    color: #006de3;
-    text-decoration: none;
 }
 
 /* media query for mobile viewports */
