@@ -1,18 +1,49 @@
+//Imports
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 // File variables
-$white: #fff;
-$blue: #1D2D50;
+$white: #ffffff;
+$black: #000000;
+$dark-grey: #636369;
+$grey: #f7f7f8;
+$blue: #0066ff;
+$pink: #FF0096;
 
 footer{
-    width: 100%;
-    height: 400px;
-    display: block;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
     position: relative;
     bottom: 0;
     left: 0;
+}
+ul{
+    padding: 0;
+}
+.footer{
     p{
-        font-size: 20px
+        font-size: 20px;
+        color: $black;
+        margin: auto 4%;
     }
     h3{
-        font-size: 40px
+        font-size: 40px;
+        color: $black;
+        margin: auto 4%;
+    }
+    &__links{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 150px;
+        background-color: $grey;
+    }
+    &__info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+        background-color: $grey;
     }
 }
