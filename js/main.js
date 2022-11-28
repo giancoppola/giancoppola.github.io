@@ -1,7 +1,7 @@
 // slick slider for the tech page
 $(document).ready(function(){
     $('.tech-slider').slick({
-        dots: true,
+        dots: false,
         appendDots: '#slick-dots',
         arrows: true,
         nextArrow: document.getElementById('next'),
@@ -45,7 +45,7 @@ $(document).ready(function(){
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     rows: 0,
-                    dots: true,
+                    dots: false,
                     appendDots: '#slick-dots',
                     arrows: true,
                     nextArrow: document.getElementById('next'),
