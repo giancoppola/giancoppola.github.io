@@ -44,6 +44,9 @@
     color: #006de3;
     text-decoration: none;
 }
+.slick-slider{
+    margin: 0% 3%;
+}
 .barcs_tech_slider .slick-slide{
     float: left;
     height: 100%;
