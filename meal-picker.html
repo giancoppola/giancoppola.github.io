@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/meal_picker.css">
+    <title>Meal Picker</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <section id="main_content">
+        <div class="container">
+            <div class="centre">
+              <p id="convo">Let's pick a meal for you!</p>
+              <div id="choice_buttons" class="btn_row">
+                <button class="btn" id="veg" onclick="vegDropDown()">Veggie</button>
+                <button class="btn" id="meat" onclick="meatDropDown()">Meaty</button>
+                <button class="btn" id="any" onclick="anyDropDown()">Any</button>
+              </div>
+              <div class="relative">
+                <div id="veg_buttons" class="btn_row">
+                    <button class="btn" onclick="quickVegMeals()">Quick</button>
+                    <button class="btn" onclick="longVegMeals()">Long</button>
+                    <button class="btn" onclick="anyVegMeals()">Any</button>
+                </div>
+                <div id="meat_buttons" class="btn_row">
+                    <button class="btn" onclick="quickVegMeals()">Quick</button>
+                    <button class="btn" onclick="longVegMeals()">Long</button>
+                    <button class="btn" onclick="anyVegMeals()">Any</button>
+                </div>
+                <div id="any_buttons" class="btn_row">
+                    <button class="btn" onclick="quickVegMeals()">Quick</button>
+                    <button class="btn" onclick="longVegMeals()">Long</button>
+                    <button class="btn" onclick="anyVegMeals()">Any</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <script type="text/javascript" src="../js/meal_picker.js"></script>
+</body>
+
+<footer> 
+
+</footer>
