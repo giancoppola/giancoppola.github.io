@@ -33,7 +33,7 @@ body{
 }
 .centre #convo{
   font-size: 4rem;
-  margin: 8% auto;
+  margin: 4% auto 0%;
   height: 8rem;
   padding: 2rem;
 }
