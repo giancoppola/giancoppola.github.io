@@ -39,12 +39,14 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  justify-items: space-between;
   margin: 2% 0%;
 }
 .btn{
   font-size: 2rem;
   padding: 1% 0%;
   margin: 0px 10px;
+  width: 10rem;
   background: none;
   border-bottom: solid black 6px;
   border-left: none;
@@ -52,20 +54,14 @@ body{
   border-top: none;
   cursor: pointer;
 }
-#choice_buttons .btn{
+#type_buttons .btn{
   margin: 0% 5%;
 }
-#veg_buttons{
-    position: absolute;
-    visibility: hidden;
+#length_buttons{
+  visibility: visible;
 }
-#meat_buttons{
-    position: absolute;
-    visibility: hidden;
-}
-#any_buttons{
-    position: absolute;
-    visibility: hidden;
+#length_buttons .btn{
+  margin: 0% 5%;
 }
 #veg::after{
   content: var(--veg-after);
@@ -77,9 +73,15 @@ body{
   content: var(--any-after);
 }
 
+.active-btn{
+  background-color: aqua;
+}
 .hide{
   display: none;
 }
 .relative{
     display: relative;
+}
+#alert{
+  text-align: center;
 }

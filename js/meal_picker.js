@@ -13,74 +13,131 @@ quick_any_meals = quick_veg_meals.concat(quick_meat_meals);
 long_any_meals = long_veg_meals.concat(long_meat_meals);
 any_any_meals = any_veg_meals.concat(any_meat_meals);
 
-function quickVegMeals() {
-  meals_length = quick_veg_meals.length
-  choice = getRandomInt(0, meals_length)
-  console.log(quick_veg_meals[choice])
-  document.getElementById("convo").innerHTML = quick_veg_meals[choice]
+alert_message = document.getElementById("alert")
+
+function quickMeals() {
+  if (veg_active == true) {
+    meals_length = quick_veg_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = quick_veg_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else if (meat_active == true) {
+    meals_length = quick_meat_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = quick_meat_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else if (any_active == true) {
+    meals_length = quick_any_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = quick_any_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else {
+    alert_message.innerHTML = "Please pick a type of meal!";
+  }
 }
 
-function longVegMeals() {
-  meals_length = long_veg_meals.length
-  choice = getRandomInt(0, meals_length)
-  console.log(long_veg_meals[choice])
-  document.getElementById("convo").innerHTML = long_veg_meals[choice]
+function longMeals() {
+  if (veg_active == true) {
+    meals_length = long_veg_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = long_veg_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else if (meat_active == true) {
+    meals_length = long_meat_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = long_meat_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else if (any_active == true) {
+    meals_length = long_any_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = long_any_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else {
+    alert_message.innerHTML = "Please pick a type of meal!";
+  }
 }
 
-function anyVegMeals() {
-  meals_length = any_veg_meals.length
-  choice = getRandomInt(0, meals_length)
-  console.log(any_veg_meals[choice])
-  document.getElementById("convo").innerHTML = any_veg_meals[choice]
+function anyMeals() {
+  if (veg_active == true) {
+    meals_length = any_veg_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = any_veg_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else if (meat_active == true) {
+    meals_length = any_meat_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = any_meat_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else if (any_active == true) {
+    meals_length = any_any_meals.length;
+    choice = getRandomInt(0, meals_length);
+    document.getElementById("convo").innerHTML = any_any_meals[choice];
+    alert_message.innerHTML = "";
+  }
+  else {
+    alert_message.innerHTML = "Please pick a type of meal!";
+  }
 }
 
-veg_drop = document.getElementById("veg_buttons");
-meat_drop = document.getElementById("meat_buttons");
-any_drop = document.getElementById("any_buttons");
+veg_btn = document.getElementById("veg")
 root = document.querySelector(':root');
 
-function vegDropDown() {
-  if (veg_drop.style.visibility !== "visible"){
-    veg_drop.style.visibility = "visible";
-    meat_drop.style.visibility = "hidden";
-    any_drop.style.visibility = "hidden";
-    root.style.setProperty('--veg-after', '" ⌄"')
-    root.style.setProperty('--meat-after', '" ⌃"')
-    root.style.setProperty('--any-after', '" ⌃"')
+veg_active = false;
+meat_active = false;
+any_active = false;
+
+function vegActive() {
+  if (veg_active !== true){
+    veg_active = true;
+    meat_active = false;
+    any_active = false;
+    veg_btn.classList.add("active-btn");
+    root.style.setProperty('--veg-after', '" ⌄"');
+    root.style.setProperty('--meat-after', '" ⌃"');
+    root.style.setProperty('--any-after', '" ⌃"');
   }
   else{
-    veg_drop.style.visibility = "hidden";
-    root.style.setProperty('--veg-after', '" ⌃"')
+    veg_active = false;
+    veg_btn.classList.remove("active-btn");
+    root.style.setProperty('--veg-after', '" ⌃"');
   }
 }
 
-function meatDropDown() {
-  if (meat_drop.style.visibility !== "visible"){
-    veg_drop.style.visibility = "hidden";
-    meat_drop.style.visibility = "visible";
-    any_drop.style.visibility = "hidden";
-    root.style.setProperty('--veg-after', '" ⌃"')
-    root.style.setProperty('--meat-after', '" ⌄"')
-    root.style.setProperty('--any-after', '" ⌃"')
+function meatActive() {
+  if (meat_active !== true){
+    veg_active = false;
+    meat_active = true;
+    any_active = false;
+    root.style.setProperty('--veg-after', '" ⌃"');
+    root.style.setProperty('--meat-after', '" ⌄"');
+    root.style.setProperty('--any-after', '" ⌃"');
   }
   else{
-    meat_drop.style.visibility = "hidden";
-    root.style.setProperty('--meat-after', '" ⌃"')
+    meat_active = false;
+    root.style.setProperty('--meat-after', '" ⌃"');
   }
 }
 
-function anyDropDown() {
-  if (any_drop.style.visibility !== "visible"){
-    veg_drop.style.visibility = "hidden";
-    meat_drop.style.visibility = "hidden";
-    any_drop.style.visibility = "visible";
-    root.style.setProperty('--veg-after', '" ⌃"')
-    root.style.setProperty('--meat-after', '" ⌃"')
-    root.style.setProperty('--any-after', '" ⌄"')
+function anyActive() {
+  if (any_active !== true){
+    veg_active = false;
+    meat_active = false;
+    any_active = true;
+    root.style.setProperty('--veg-after', '" ⌃"');
+    root.style.setProperty('--meat-after', '" ⌃"');
+    root.style.setProperty('--any-after', '" ⌄"');
   }
   else{
-    any_drop.style.visibility = "hidden";
-    root.style.setProperty('--any-after', '" ⌃"')
+    any_active = false;
+    root.style.setProperty('--any-after', '" ⌃"');
   }
 }
 

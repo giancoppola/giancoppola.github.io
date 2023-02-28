@@ -10,28 +10,17 @@
         <div class="container">
             <div class="centre">
               <p id="convo">Let's pick a meal for you!</p>
-              <div id="choice_buttons" class="btn_row">
-                <button class="btn" id="veg" onclick="vegDropDown()">Veggie</button>
-                <button class="btn" id="meat" onclick="meatDropDown()">Meaty</button>
-                <button class="btn" id="any" onclick="anyDropDown()">Any</button>
+              <div id="type_buttons" class="btn_row">
+                <button class="btn" id="veg" onclick="vegActive()">Veggie</button>
+                <button class="btn" id="meat" onclick="meatActive()">Meaty</button>
+                <button class="btn" id="any" onclick="anyActive()">Any</button>
               </div>
-              <div class="relative">
-                <div id="veg_buttons" class="btn_row">
-                    <button class="btn" onclick="quickVegMeals()">Quick</button>
-                    <button class="btn" onclick="longVegMeals()">Long</button>
-                    <button class="btn" onclick="anyVegMeals()">Any</button>
-                </div>
-                <div id="meat_buttons" class="btn_row">
-                    <button class="btn" onclick="quickVegMeals()">Quick</button>
-                    <button class="btn" onclick="longVegMeals()">Long</button>
-                    <button class="btn" onclick="anyVegMeals()">Any</button>
-                </div>
-                <div id="any_buttons" class="btn_row">
-                    <button class="btn" onclick="quickVegMeals()">Quick</button>
-                    <button class="btn" onclick="longVegMeals()">Long</button>
-                    <button class="btn" onclick="anyVegMeals()">Any</button>
-                </div>
+              <div id="length_buttons" class="btn_row">
+                  <button class="btn" onclick="quickMeals()">Quick</button>
+                  <button class="btn" onclick="longMeals()">Long</button>
+                  <button class="btn" onclick="anyMeals()">Any</button>
               </div>
+              <p id="alert"></p>
             </div>
           </div>
     </section>
