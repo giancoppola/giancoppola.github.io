@@ -87,7 +87,9 @@ function anyMeals() {
   }
 }
 
-veg_btn = document.getElementById("veg")
+veg_btn = document.getElementById("veg");
+meat_btn = document.getElementById("meat");
+any_btn = document.getElementById("any");
 root = document.querySelector(':root');
 
 veg_active = false;
@@ -100,14 +102,12 @@ function vegActive() {
     meat_active = false;
     any_active = false;
     veg_btn.classList.add("active-btn");
-    root.style.setProperty('--veg-after', '" ⌄"');
-    root.style.setProperty('--meat-after', '" ⌃"');
-    root.style.setProperty('--any-after', '" ⌃"');
+    meat_btn.classList.remove("active-btn");
+    any_btn.classList.remove("active-btn");
   }
   else{
     veg_active = false;
     veg_btn.classList.remove("active-btn");
-    root.style.setProperty('--veg-after', '" ⌃"');
   }
 }
 
@@ -116,13 +116,13 @@ function meatActive() {
     veg_active = false;
     meat_active = true;
     any_active = false;
-    root.style.setProperty('--veg-after', '" ⌃"');
-    root.style.setProperty('--meat-after', '" ⌄"');
-    root.style.setProperty('--any-after', '" ⌃"');
+    veg_btn.classList.remove("active-btn");
+    meat_btn.classList.add("active-btn");
+    any_btn.classList.remove("active-btn");
   }
   else{
     meat_active = false;
-    root.style.setProperty('--meat-after', '" ⌃"');
+    meat_btn.classList.remove("active-btn");
   }
 }
 
@@ -131,13 +131,13 @@ function anyActive() {
     veg_active = false;
     meat_active = false;
     any_active = true;
-    root.style.setProperty('--veg-after', '" ⌃"');
-    root.style.setProperty('--meat-after', '" ⌃"');
-    root.style.setProperty('--any-after', '" ⌄"');
+    veg_btn.classList.remove("active-btn");
+    meat_btn.classList.remove("active-btn");
+    any_btn.classList.add("active-btn");
   }
   else{
     any_active = false;
-    root.style.setProperty('--any-after', '" ⌃"');
+    any_btn.classList.remove("active-btn")
   }
 }
 

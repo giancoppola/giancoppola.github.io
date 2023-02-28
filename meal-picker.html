@@ -14,11 +14,16 @@
                 <button class="btn" id="veg" onclick="vegActive()">Veggie</button>
                 <button class="btn" id="meat" onclick="meatActive()">Meaty</button>
                 <button class="btn" id="any" onclick="anyActive()">Any</button>
+                <select name="type-dropdown" id="type-dropdown">
+                  <option value="veggie">Veggie</option>
+                  <option value="meaty">Meaty</option>
+                  <option value="any">Any</option>
+                </select>
               </div>
               <div id="length_buttons" class="btn_row">
-                  <button class="btn" onclick="quickMeals()">Quick</button>
-                  <button class="btn" onclick="longMeals()">Long</button>
-                  <button class="btn" onclick="anyMeals()">Any</button>
+                  <button class="btn" id="quick-length" onclick="quickMeals()">Quick</button>
+                  <button class="btn" id="long-length" onclick="longMeals()">Long</button>
+                  <button class="btn" id="any-length" onclick="anyMeals()">Any</button>
               </div>
               <p id="alert"></p>
             </div>
