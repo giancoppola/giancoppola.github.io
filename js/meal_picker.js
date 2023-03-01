@@ -87,6 +87,69 @@ function anyMeals() {
   }
 }
 
+type_dropdown = document.getElementById("type-dropdown")
+length_dropdown = document.getElementById("length-dropdown")
+
+function mobileMeals() {
+  if (type_dropdown.value == "veggie"){
+    veg_active = true;
+    meat_active = false;
+    any_active = false;
+    if (length_dropdown.value == "quick-length"){
+      quickMeals();
+    }
+    else if (length_dropdown.value == "long-length"){
+      longMeals();
+    }
+    else if (length_dropdown.value == "any-length"){
+      anyMeals();
+    }
+    else{
+      alert_message.innerHTML = "Please select a length of meal!";
+    }
+  }
+  else if (type_dropdown.value == "meaty"){
+    veg_active = false;
+    meat_active = true;
+    any_active = false;
+    if (length_dropdown.value == "quick-length"){
+      quickMeals();
+    }
+    else if (length_dropdown.value == "long-length"){
+      longMeals();
+    }
+    else if (length_dropdown.value == "any-length"){
+      anyMeals();
+    }
+    else{
+      alert_message.innerHTML = "Please select a length of meal!";
+    }
+  }
+  else if (type_dropdown.value == "any"){
+    veg_active = false;
+    meat_active = false;
+    any_active = true;
+    if (length_dropdown.value == "quick-length"){
+      quickMeals();
+    }
+    else if (length_dropdown.value == "long-length"){
+      longMeals();
+    }
+    else if (length_dropdown.value == "any-length"){
+      anyMeals();
+    }
+    else{
+      alert_message.innerHTML = "Please select a length of meal!";
+    }
+  }
+  else{
+    veg_active = false;
+    meat_active = false;
+    any_active = false;
+    alert_message.innerHTML = "Please select a type of meal!";
+  }
+}
+
 veg_btn = document.getElementById("veg");
 meat_btn = document.getElementById("meat");
 any_btn = document.getElementById("any");
@@ -104,10 +167,16 @@ function vegActive() {
     veg_btn.classList.add("active-btn");
     meat_btn.classList.remove("active-btn");
     any_btn.classList.remove("active-btn");
+    veg_btn.classList.remove("other-active-btn");
+    meat_btn.classList.add("other-active-btn");
+    any_btn.classList.add("other-active-btn");
   }
   else{
     veg_active = false;
     veg_btn.classList.remove("active-btn");
+    veg_btn.classList.remove("other-active-btn");
+    meat_btn.classList.remove("other-active-btn");
+    any_btn.classList.remove("other-active-btn");
   }
 }
 
@@ -119,10 +188,16 @@ function meatActive() {
     veg_btn.classList.remove("active-btn");
     meat_btn.classList.add("active-btn");
     any_btn.classList.remove("active-btn");
+    veg_btn.classList.add("other-active-btn");
+    meat_btn.classList.remove("other-active-btn");
+    any_btn.classList.add("other-active-btn");
   }
   else{
     meat_active = false;
     meat_btn.classList.remove("active-btn");
+    veg_btn.classList.remove("other-active-btn");
+    meat_btn.classList.remove("other-active-btn");
+    any_btn.classList.remove("other-active-btn");
   }
 }
 
@@ -134,10 +209,16 @@ function anyActive() {
     veg_btn.classList.remove("active-btn");
     meat_btn.classList.remove("active-btn");
     any_btn.classList.add("active-btn");
+    veg_btn.classList.add("other-active-btn");
+    meat_btn.classList.add("other-active-btn");
+    any_btn.classList.remove("other-active-btn");
   }
   else{
     any_active = false;
     any_btn.classList.remove("active-btn")
+    veg_btn.classList.remove("other-active-btn");
+    meat_btn.classList.remove("other-active-btn");
+    any_btn.classList.remove("other-active-btn");
   }
 }
 
