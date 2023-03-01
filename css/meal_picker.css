@@ -80,6 +80,9 @@ body{
 #type-dropdown{
   display: none;
 }
+#length-dropdown{
+  display: none;
+}
 #any-length:active{
   border-color: lightcoral;
   color: lightcoral;
