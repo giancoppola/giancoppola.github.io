@@ -112,12 +112,13 @@ body{
     /* background: none; */
   }
   .centre #convo{
-    font-size: 6rem;
-    height: 22rem;
+    font-size: 13rem;
+    height: 50rem;
   }
   .btn{
-    font-size: 4rem;
+    font-size: 10rem;
     width: auto;
+    border-bottom: solid black 15px;
   }
   .dropdown{
     margin-bottom: 1rem;
@@ -125,19 +126,19 @@ body{
   }
   #type-dropdown{
     display: block;
-    width: 80%;
+    width: 95%;
     text-align: center;
     background: none;
-    border: solid black 6px;
-    font-size: 2.5rem;
+    border: solid black 15px;
+    font-size: 5.5rem;
   }
   #length-dropdown{
     display: block;
-    width: 80%;
+    width: 95%;
     text-align: center;
     background: none;
-    border: solid black 6px;
-    font-size: 2.5rem;
+    border: solid black 15px;
+    font-size: 5.5rem;
   }
   #veg{
     display: none;
