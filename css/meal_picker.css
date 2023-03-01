@@ -108,12 +108,20 @@ body{
 }
 
 @media all and (max-width: 1080px){
+  body{
+    /* background: none; */
+  }
   .centre #convo{
     font-size: 6rem;
     height: 22rem;
   }
   .btn{
     font-size: 4rem;
+    width: auto;
+  }
+  .dropdown{
+    margin-bottom: 1rem;
+    padding: 1rem 0rem;
   }
   #type-dropdown{
     display: block;
