@@ -112,7 +112,7 @@ body{
 
 @media all and (max-width: 1080px){
   body{
-    /* background: none; */
+    background: #cbedff;
   }
   .centre #convo{
     font-size: 13rem;
@@ -163,5 +163,8 @@ body{
   }
   #submit_div{
     display: flex;
+  }
+  #alert{
+    font-size: 4rem;
   }
 }

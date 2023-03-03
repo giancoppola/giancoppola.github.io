@@ -1,3 +1,22 @@
+meals = {
+  veggie: {
+    quick: ['Pastina', 'Courgettes and Eggs', 'Spicy Aubergine'],
+    long: ['Veggie Lasagne', 'Parmigiana', 'Leek and Potato Soup'],
+    any: function(){return this.quick.concat(this.long)},
+  },
+  meaty: {
+    quick: ['Cotolette', 'Spice Tailor Curry', 'Massaman Curry', 'Sea Bass'],
+    long: ['Chilli', 'Roast', 'Lasagne', 'Haddock and Pea Risotto'],
+    any: function(){return this.quick.concat(this.long)}
+  },
+  any: {
+    // quick: 
+  },
+  quick: [1,2,3],
+  long: [4,5,6],
+}
+
+
 // veggie meal arrays
 quick_veg_meals = ['Pastina', 'Courgettes and Eggs', 'Spicy Aubergine'];
 long_veg_meals = ['Veggie Lasagne', 'Parmigiana', 'Leek and Potato Soup'];
