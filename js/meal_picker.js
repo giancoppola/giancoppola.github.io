@@ -1,28 +1,15 @@
-meals = {
-  veggie: {
-    quick: ['Pastina', 'Courgettes and Eggs', 'Spicy Aubergine'],
-    long: ['Veggie Lasagne', 'Parmigiana', 'Leek and Potato Soup'],
-    any: function(){return this.quick.concat(this.long)},
-  },
-  meaty: {
-    quick: ['Cotolette', 'Spice Tailor Curry', 'Massaman Curry', 'Sea Bass'],
-    long: ['Chilli', 'Roast', 'Lasagne', 'Haddock and Pea Risotto'],
-    any: function(){return this.quick.concat(this.long)}
-  },
-  any: {
-    quick: quick_any_meals,
-    // long: long_any_meals,
-    // any: any_any_meals
-  },
-}
+// veggie meal arrays
+quick_veg_meals = ['Pastina', 'Courgettes and Eggs', 'Spicy Aubergine'];
+long_veg_meals = ['Veggie Lasagne', 'Parmigiana', 'Leek and Potato Soup'];
+any_veg_meals = quick_veg_meals.concat(long_veg_meals);
 
-function any_meals(type) {
-  if (type == )
-  return meals.veggie.quick.concat(meals.meaty.quick)
-}
+// meat meal arrays
+quick_meat_meals = ['Cotolette', 'Spice Tailor Curry', 'Massaman Curry', 'Sea Bass'];
+long_meat_meals = ['Chilli', 'Roast', 'Lasagne', 'Haddock and Pea Risotto'];
+any_meat_meals = quick_meat_meals.concat(long_meat_meals);
 
 // any meal arrays
-// quick_any_meals = quick_veg_meals.concat(quick_meat_meals);
+quick_any_meals = quick_veg_meals.concat(quick_meat_meals);
 long_any_meals = long_veg_meals.concat(long_meat_meals);
 any_any_meals = any_veg_meals.concat(any_meat_meals);
 
