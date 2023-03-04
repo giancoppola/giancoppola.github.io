@@ -4,8 +4,10 @@ long_veg_meals = ['Veggie Lasagne', 'Parmigiana', 'Leek and Potato Soup'];
 any_veg_meals = quick_veg_meals.concat(long_veg_meals);
 
 // meat meal arrays
-quick_meat_meals = ['Cotolette', 'Spice Tailor Curry', 'Massaman Curry', 'Sea Bass'];
-long_meat_meals = ['Chilli', 'Roast', 'Lasagne', 'Haddock and Pea Risotto'];
+quick_meat_meals = ['Cotolette', 'Spice Tailor Curry', 'Massaman Curry', 'Sea Bass',
+                    'Carbonara', 'Chinese Rice Soup'];
+long_meat_meals = ['Chilli', 'Roast', 'Lasagne', 'Haddock and Pea Risotto',
+                    'Air Fryer Rotisserie', 'Nagi Chicken', 'Chicken Soup'];
 any_meat_meals = quick_meat_meals.concat(long_meat_meals);
 
 // any meal arrays
