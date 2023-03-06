@@ -111,9 +111,13 @@ body{
   body{
     background: #cbedff;
   }
+  .container{
+    overflow-x: hidden;
+  }
   .centre #convo{
-    font-size: 13rem;
+    font-size: 14rem;
     height: 50rem;
+    word-break: break-word;
   }
   .btn{
     font-size: 10rem;
