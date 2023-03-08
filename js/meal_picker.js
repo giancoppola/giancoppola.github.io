@@ -224,6 +224,35 @@ function anyActive() {
   }
 }
 
+emojiArr = ['🍝', '🍜', '🍛', '🍣'];
+
+let emoji = document.createElement('span');
+emoji.setAttribute('id', 'emoji');
+
+let bgAnim = document.getElementById("bg-anim");
+bgAnim.appendChild(emoji);
+
+let high = 100;
+emojiFall();
+function emojiFall(){
+  high = 0;
+  emoji.innerHTML = getRandomEmoji();
+  emoji.style.top = high + 'vh';
+  emoji.style.left = getRandomInt(1,90) + 'vw';
+  bgAnim.appendChild(emoji);
+}
+setInterval(fall, 10);
+function fall(){
+  if (high >= 85){emojiFall()}
+  high+= 0.2;
+  emoji.style.top = high + 'vh';
+}
+
+function getRandomEmoji(){
+  let rand = getRandomInt(0,emojiArr.length);
+  return emojiArr[rand];
+}
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);

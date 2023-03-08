@@ -7,37 +7,39 @@
 </head>
 <body>
     <section id="main_content">
-        <div class="container">
-            <div class="centre">
-              <p id="convo"><span class="v_align">Let's pick a meal for you!</span></p>
-              <div id="type_buttons" class="btn_row">
-                <button class="btn" id="veg" onclick="vegActive()">Veggie</button>
-                <button class="btn" id="meat" onclick="meatActive()">Meaty</button>
-                <button class="btn" id="any" onclick="anyActive()">Any</button>
-                <select name="type-dropdown" class="dropdown" id="type-dropdown">
-                  <option value="" disabled selected>Pick a type of meal...</option>
-                  <option value="veggie">Veggie</option>
-                  <option value="meaty">Meaty</option>
-                  <option value="any">Any</option>
-                </select>
-              </div>
-              <div id="length_buttons" class="btn_row">
-                <button class="btn" id="quick-length" onclick="quickMeals()">Quick</button>
-                <button class="btn" id="long-length" onclick="longMeals()">Long</button>
-                <button class="btn" id="any-length" onclick="anyMeals()">Any</button>
-                <select name="length-dropdown" class="dropdown" id="length-dropdown">
-                  <option value="" disabled selected>How long do you have...</option>
-                  <option value="quick-length">Quick</option>
-                  <option value="long-length">Long</option>
-                  <option value="any-length">Any</option>
-                </select>
-              </div>
-              <div class="btn_row" id="submit_div">
-                <button class="btn" id="submit" onclick="mobileMeals()">Submit</button>
-              </div>
-              <p id="alert"></p>
+      <div id="bg-anim">
+      </div>
+      <div class="container">
+          <div class="centre">
+            <p id="convo"><span class="v_align">Let's pick a meal for you!</span></p>
+            <div id="type_buttons" class="btn_row">
+              <button class="btn" id="veg" onclick="vegActive()">Veggie</button>
+              <button class="btn" id="meat" onclick="meatActive()">Meaty</button>
+              <button class="btn" id="any" onclick="anyActive()">Any</button>
+              <select name="type-dropdown" class="dropdown" id="type-dropdown">
+                <option value="" disabled selected>Pick a type of meal...</option>
+                <option value="veggie">Veggie</option>
+                <option value="meaty">Meaty</option>
+                <option value="any">Any</option>
+              </select>
             </div>
+            <div id="length_buttons" class="btn_row">
+              <button class="btn" id="quick-length" onclick="quickMeals()">Quick</button>
+              <button class="btn" id="long-length" onclick="longMeals()">Long</button>
+              <button class="btn" id="any-length" onclick="anyMeals()">Any</button>
+              <select name="length-dropdown" class="dropdown" id="length-dropdown">
+                <option value="" disabled selected>How long do you have...</option>
+                <option value="quick-length">Quick</option>
+                <option value="long-length">Long</option>
+                <option value="any-length">Any</option>
+              </select>
+            </div>
+            <div class="btn_row" id="submit_div">
+              <button class="btn" id="submit" onclick="mobileMeals()">Submit</button>
+            </div>
+            <p id="alert"></p>
           </div>
+        </div>
     </section>
     <script type="text/javascript" src="../js/meal_picker.js"></script>
 </body>

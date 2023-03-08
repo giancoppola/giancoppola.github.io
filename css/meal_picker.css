@@ -88,6 +88,15 @@ body{
   display: none;
 }
 
+#bg-anim{
+  position: relative;
+}
+#emoji{
+  position: absolute;
+  font-size: 10rem;
+  opacity: 25%;
+}
+
 .active-btn{
   background-color: none;
   color: black;
