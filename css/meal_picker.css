@@ -117,14 +117,11 @@ body{
 }
 
 @media all and (max-width: 1080px){
-  body{
-    background: #cbedff;
-  }
   .container{
     overflow-x: hidden;
   }
   .centre #convo{
-    font-size: 14rem;
+    font-size: 13rem;
     height: 50rem;
     word-break: break-word;
   }
