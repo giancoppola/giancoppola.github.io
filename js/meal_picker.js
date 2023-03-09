@@ -237,19 +237,23 @@ let bgAnim = document.getElementById("bg-anim");
 bgAnim.appendChild(emoji);
 
 let high = 100;
+let rotate = 0;
 emojiFall();
 function emojiFall(){
-  high = 0;
+  high = -20;
   emoji.innerHTML = getRandomEmoji();
   emoji.style.top = high + 'vh';
   emoji.style.left = getRandomInt(1,90) + 'vw';
+  emoji.style.transform = `rotate(${rotate}deg)`;
   bgAnim.appendChild(emoji);
 }
 setInterval(fall, 10);
 function fall(){
-  if (high >= 85){emojiFall()}
+  if (high >= 100){emojiFall()}
   high+= 0.2;
+  rotate+= 0.4;
   emoji.style.top = high + 'vh';
+  emoji.style.transform = `rotate(${rotate}deg)`;
 }
 
 function getRandomEmoji(){
