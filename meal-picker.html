@@ -10,8 +10,10 @@
       <div id="bg-anim"></div>
       <div id="modal" class="modal">
         <button class="btn modal-close" onclick="modalClose()">x</button>
+        <p class="modal-img" id="modal-img"></p>
+        <p class="modal-title margin-auto"></p>
         <div class="modal-items">
-          <img src="" alt="" class="modal-img">
+          <!-- <img src="" alt="" class="modal-img" id="modal-img"> -->
           <p class="modal-title"></p>
         </div>
       </div>
@@ -19,7 +21,7 @@
           <div class="centre">
             <div id="convo" onclick="recipe()">
               <span id="meal-text">Let's pick a meal for you!</span>
-              <img src="../img/icons/ui_icon_open_modal_window.svg" alt="" class="modal-icon">
+              <img src="../img/icons/ui_icon_open_modal_window.svg" alt="" class="modal-icon hide" id="modal-icon">
             </div>
             <div id="type_buttons" class="btn_row">
               <button class="btn" id="veg" onclick="vegActive()">Veggie</button>

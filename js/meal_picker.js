@@ -22,18 +22,27 @@ function quickMeals() {
     meals_length = quick_veg_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = quick_veg_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else if (meat_active == true) {
     meals_length = quick_meat_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = quick_meat_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else if (any_active == true) {
     meals_length = quick_any_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = quick_any_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else {
@@ -46,18 +55,27 @@ function longMeals() {
     meals_length = long_veg_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = long_veg_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else if (meat_active == true) {
     meals_length = long_meat_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = long_meat_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else if (any_active == true) {
     meals_length = long_any_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = long_any_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else {
@@ -70,18 +88,27 @@ function anyMeals() {
     meals_length = any_veg_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = any_veg_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else if (meat_active == true) {
     meals_length = any_meat_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = any_meat_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else if (any_active == true) {
     meals_length = any_any_meals.length;
     choice = getRandomInt(0, meals_length);
     document.getElementById("meal-text").innerHTML = any_any_meals[choice];
+    document.getElementById("modal-icon").classList.remove("hide");
+    document.getElementById("convo").style.cursor = "pointer";
+    document.getElementById("convo").style.pointerEvents = "auto";
     alert_message.innerHTML = "";
   }
   else {
@@ -283,9 +310,12 @@ xmlhttp.open("GET", "../JSON/meals.json");
 xmlhttp.send();
 
 function recipe(){
-  let meal = document.getElementById("convo").innerHTML.toLowerCase();
+  let meal = document.getElementById("meal-text").innerHTML.toLowerCase();
   // console.log(recipeObj[meal].recipe);
   modal.style.display = "flex";
+  console.log(recipeObj[meal].image);
+  document.getElementById("modal-img").innerHTML = recipeObj[meal].emoji;
+  document.getElementById('modal-title').innerHTML = recipeObj[meal].title;
 }
 
 // -------------------------------------------------------------------------------------------------------------------------------------
