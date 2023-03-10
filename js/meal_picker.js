@@ -316,6 +316,22 @@ function recipe(){
   console.log(recipeObj[meal].image);
   document.getElementById("modal-img").innerHTML = recipeObj[meal].emoji;
   document.getElementById('modal-title').innerHTML = recipeObj[meal].title;
+  document.getElementById('modal-time').innerHTML = recipeObj[meal].time;
+  document.getElementById('modal-desc').innerHTML = recipeObj[meal].description;
+  if (recipeObj[meal].recipe != null){
+    document.getElementById('modal-recipe').classList.remove('hide');
+    document.getElementById('modal-recipe').setAttribute('href', recipeObj[meal].recipe);
+  }
+  else{
+    document.getElementById('modal-recipe').classList.add('hide');
+  }
+  if (recipeObj[meal].video != null){
+    document.getElementById('modal-video').classList.remove('hide');
+    document.getElementById('modal-video').setAttribute('href', recipeObj[meal].video);
+  }
+  else{
+    document.getElementById('modal-video').classList.add('hide');
+  }
 }
 
 // -------------------------------------------------------------------------------------------------------------------------------------

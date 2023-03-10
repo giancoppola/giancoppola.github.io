@@ -104,7 +104,7 @@ body{
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 75%;
+  width: 60%;
   max-width: 100%;
   height: 75%;
   max-height: 100%;
@@ -122,6 +122,7 @@ body{
 .modal{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2rem;
 }
 .modal-icon{
@@ -132,6 +133,49 @@ body{
   font-size: 10rem;
   margin: auto;
   height: fit-content;
+}
+.modal-title{
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: left;
+}
+.modal-time{
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: left;
+}
+.modal-desc{
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: left;
+}
+.modal-buttons{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0.5rem auto;
+  justify-content: center;
+}
+.btn-modal{
+  background: none;
+  border: solid black 6px;
+  margin: 0 0.5rem;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.modal-buttons a{
+  margin: 0 0.5rem;
+  width: 80%;
+  cursor: pointer;
+}
+.modal-recipe{
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: left;
 }
 .modal-close{
   position: absolute;
@@ -174,8 +218,8 @@ body{
 .relative{
   display: relative;
 }
-.margin-auto{
-  margin: auto;
+.modal-margin{
+  margin: 0.5rem auto;
 }
 #alert{
   text-align: center;
