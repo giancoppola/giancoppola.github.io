@@ -1,0 +1,13 @@
+<svg id="THE_ICONS" data-name="THE ICONS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-1" d="M17,1H1V17H17ZM15,15H3V3H15Z"/>
+    <polygon class="cls-1" points="19 4 19 19 4 19 4 21 19 21 21 21 21 19 21 4 19 4"/>
+  </g>
+</svg>

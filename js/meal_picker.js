@@ -21,19 +21,19 @@ function quickMeals() {
   if (veg_active == true) {
     meals_length = quick_veg_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = quick_veg_meals[choice];
+    document.getElementById("meal-text").innerHTML = quick_veg_meals[choice];
     alert_message.innerHTML = "";
   }
   else if (meat_active == true) {
     meals_length = quick_meat_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = quick_meat_meals[choice];
+    document.getElementById("meal-text").innerHTML = quick_meat_meals[choice];
     alert_message.innerHTML = "";
   }
   else if (any_active == true) {
     meals_length = quick_any_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = quick_any_meals[choice];
+    document.getElementById("meal-text").innerHTML = quick_any_meals[choice];
     alert_message.innerHTML = "";
   }
   else {
@@ -45,19 +45,19 @@ function longMeals() {
   if (veg_active == true) {
     meals_length = long_veg_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = long_veg_meals[choice];
+    document.getElementById("meal-text").innerHTML = long_veg_meals[choice];
     alert_message.innerHTML = "";
   }
   else if (meat_active == true) {
     meals_length = long_meat_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = long_meat_meals[choice];
+    document.getElementById("meal-text").innerHTML = long_meat_meals[choice];
     alert_message.innerHTML = "";
   }
   else if (any_active == true) {
     meals_length = long_any_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = long_any_meals[choice];
+    document.getElementById("meal-text").innerHTML = long_any_meals[choice];
     alert_message.innerHTML = "";
   }
   else {
@@ -69,19 +69,19 @@ function anyMeals() {
   if (veg_active == true) {
     meals_length = any_veg_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = any_veg_meals[choice];
+    document.getElementById("meal-text").innerHTML = any_veg_meals[choice];
     alert_message.innerHTML = "";
   }
   else if (meat_active == true) {
     meals_length = any_meat_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = any_meat_meals[choice];
+    document.getElementById("meal-text").innerHTML = any_meat_meals[choice];
     alert_message.innerHTML = "";
   }
   else if (any_active == true) {
     meals_length = any_any_meals.length;
     choice = getRandomInt(0, meals_length);
-    document.getElementById("convo").innerHTML = any_any_meals[choice];
+    document.getElementById("meal-text").innerHTML = any_any_meals[choice];
     alert_message.innerHTML = "";
   }
   else {
@@ -224,6 +224,10 @@ function anyActive() {
   }
 }
 
+// -------------------------------------------------------------------------------------------------------------------------------------
+
+// JS Animation setup for falling food emojis
+
 emojiArr = ['🍝', '🍜', '🍛', '🍣', '🍱', '🍤', '🍥',
             '🥮', '🥡', '🥟', '🥧', '🥣', '🥗', '🍲',
             '🥘', '🍳', '🧆', '🥙', '🍖', '🍗', '🥩',
@@ -255,11 +259,36 @@ function fall(){
   emoji.style.top = high + 'vh';
   emoji.style.transform = `rotate(${rotate}deg)`;
 }
-
 function getRandomEmoji(){
   let rand = getRandomInt(0,emojiArr.length);
   return emojiArr[rand];
 }
+
+// -------------------------------------------------------------------------------------------------------------------------------------
+
+// functionality for the modal and pulling meal information from JSON
+
+const modal = document.getElementById("modal");
+function modalClose(){
+  modal.style.display = "none";
+}
+
+let recipeObj;
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const obj = JSON.parse(this.responseText);
+  recipeObj = obj;
+}
+xmlhttp.open("GET", "../JSON/meals.json");
+xmlhttp.send();
+
+function recipe(){
+  let meal = document.getElementById("convo").innerHTML.toLowerCase();
+  // console.log(recipeObj[meal].recipe);
+  modal.style.display = "flex";
+}
+
+// -------------------------------------------------------------------------------------------------------------------------------------
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);

@@ -7,11 +7,20 @@
 </head>
 <body>
     <section id="main_content">
-      <div id="bg-anim">
+      <div id="bg-anim"></div>
+      <div id="modal" class="modal">
+        <button class="btn modal-close" onclick="modalClose()">x</button>
+        <div class="modal-items">
+          <img src="" alt="" class="modal-img">
+          <p class="modal-title"></p>
+        </div>
       </div>
       <div class="container">
           <div class="centre">
-            <p id="convo"><span class="v_align">Let's pick a meal for you!</span></p>
+            <div id="convo" onclick="recipe()">
+              <span id="meal-text">Let's pick a meal for you!</span>
+              <img src="../img/icons/ui_icon_open_modal_window.svg" alt="" class="modal-icon">
+            </div>
             <div id="type_buttons" class="btn_row">
               <button class="btn" id="veg" onclick="vegActive()">Veggie</button>
               <button class="btn" id="meat" onclick="meatActive()">Meaty</button>
