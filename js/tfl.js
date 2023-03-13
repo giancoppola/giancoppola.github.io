@@ -1,7 +1,7 @@
 let searchApiStatus;
 let searchResponseObj;
 
-const searchList = document.getElementById("search-list");
+const resultsGrid = document.getElementById("results-grid");
 const alertText = document.getElementById("alert-text");
 const queryField = document.getElementById('search-query');
 queryField.addEventListener('keypress', (event) => {
@@ -45,19 +45,21 @@ function searchBikePoints(){
             else{
                 alertText.classList.add('hide');
             }
-            while(searchList.lastElementChild){
-                searchList.removeChild(searchList.lastElementChild);
+            while(resultsGrid.lastElementChild){
+                resultsGrid.removeChild(resultsGrid.lastElementChild);
             }
             while(locationDetails.lastElementChild){
                 locationDetails.removeChild(locationDetails.lastElementChild);
             }
             for (item of searchResponseObj){
-                let searchItem = document.createElement('li');
-                searchItem.classList.add('search-item');
+                let searchItem = document.createElement('div');
+                searchItem.classList.add('grid-item');
+                searchItem.setAttribute('id', 'grid-item')
                 searchItem.setAttribute('data', item.id);
+                searchItem.setAttribute('tabindex', '1');
                 searchItem.addEventListener("click", () => retrieveBikePoint(searchItem.getAttribute('data')));
                 searchItem.innerHTML = item.commonName;
-                searchList.appendChild(searchItem);
+                resultsGrid.appendChild(searchItem);
             }
         })
         .catch(err => console.error(err));
@@ -121,9 +123,13 @@ function addLocationInformation() {
 }
 
 function addMapBtn() {
+    let mapBtn = document.createElement('button');
     let mapLink = document.createElement('a');
     mapLink.setAttribute('href', `https://www.google.com/maps/search/?api=1&query=${retrieveResponseObj.lat}%2C${retrieveResponseObj.lon}`);
     mapLink.setAttribute('target', '_blank');
-    mapLink.innerHTML = 'View location on map';
-    locationDetails.appendChild(mapLink);
+    mapLink.innerHTML = 'view location';
+    mapLink.classList.add('btn-link');
+    mapBtn.classList.add('btn', 'location-link');
+    mapBtn.appendChild(mapLink);
+    locationDetails.appendChild(mapBtn);
 }

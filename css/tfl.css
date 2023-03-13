@@ -2,12 +2,25 @@
 :root {
   --black-col: #1B1D4A;
   --pink-col: #FF4879;
+  --grey-col: #e4e4e4 ;
 }
 
 * {
   font-weight: bolder;
   font-family: "Roboto", sans-serif;
   color: var(--black-col);
+}
+*::-moz-selection {
+  color: white;
+  background-color: var(--pink-col);
+}
+*::selection {
+  color: white;
+  background-color: var(--pink-col);
+}
+*::-moz-selection {
+  color: white;
+  background-color: var(--pink-col);
 }
 
 body {
@@ -58,11 +71,11 @@ input {
   border-bottom: solid var(--black-col) 2px;
 }
 
-.search-submit {
+.btn {
   margin: 1rem auto;
   background: none;
   cursor: pointer;
-  width: 10rem;
+  width: 5rem;
   height: 3rem;
   font-size: 1.2rem;
   border: solid var(--black-col) 2px;
@@ -74,8 +87,37 @@ input {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
 }
-.search-submit:hover {
+.btn:hover {
   background: var(--black-col);
+  color: white;
+  width: 6rem;
+}
+.btn.search-submit {
+  width: 10rem;
+  height: 3rem;
+}
+.btn.search-submit:hover {
+  width: 11rem;
+}
+.btn.location-link {
+  display: block;
+  width: 60%;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 3rem;
+  margin: 2rem auto;
+}
+.btn.location-link:hover {
+  width: 65%;
+}
+
+a {
+  color: inherit;
+}
+a.btn-link {
+  text-decoration: none;
+}
+a:hover {
   color: white;
 }
 
@@ -90,7 +132,7 @@ input {
 }
 
 .location-details {
-  width: 50%;
+  width: 33%;
 }
 
 .search-item {
@@ -102,13 +144,41 @@ input {
 }
 
 .results-container {
+  padding: 2rem;
+  width: 90%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   justify-items: center;
-  align-content: center;
   align-items: center;
+  align-content: center;
   max-height: 100%;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2rem;
+  width: 66%;
+  max-width: 1200px;
+  border-right-style: ridge;
+  padding: 0rem 2rem 0rem 0rem;
+}
+
+.grid-item {
+  min-width: 30%;
+  border: solid var(--grey-col) 2px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 1rem;
+  line-height: 1.8;
+  cursor: pointer;
+}
+.grid-item:focus {
+  box-shadow: 0px 0px 5px 1px var(--black-col);
+  border: solid var(--black-col) 2px;
 }
 
 .map-link {

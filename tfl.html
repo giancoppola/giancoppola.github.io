@@ -13,14 +13,12 @@
             <h1>TFL Bike Point Search</h1>
             <p>Search below to find a bike point near you, and click on the results for more information.</p>
             <input type="text" id="search-query" class="search-query">
-            <button id="search-submit" class="search-submit" onclick="searchBikePoints()">submit</button>
+            <button id="search-submit" class="btn search-submit" onclick="searchBikePoints()">submit</button>
             <p class="alert-text hide" id="alert-text"></p>
             <div class="results-container" id="results-container">
-                <ul id="search-list" class="search-list">
-
-                </ul>
+                <div class="results-grid" id="results-grid">
+                </div>
                 <div class="location-details" id="location-details">
-
                 </div>
             </div>
         </div>
