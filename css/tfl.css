@@ -77,6 +77,8 @@ input {
   margin: 1rem 1rem;
   min-width: -moz-max-content;
   min-width: max-content;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
 }
 
 .location-details {
