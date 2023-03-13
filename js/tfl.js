@@ -11,7 +11,8 @@ function searchBikePoints(){
         headers: {
             'Cache-Control': 'no-cache',
             'Access-Control-Allow-Origin':'*',}
-    }).then(response => {
+    })
+    .then(response => {
         searchApiStatus = response.status;
         if (searchApiStatus === 200){
             return response.json();
@@ -47,6 +48,8 @@ function searchBikePoints(){
 let retrieveApiStatus;
 let retrieveResponseObj;
 
+const locationDetails = document.getElementById('location-details');
+
 function retrieveBikePoint(id){
     fetch(`https://api.tfl.gov.uk/BikePoint/${id}`, {
         method: 'GET',
@@ -65,8 +68,43 @@ function retrieveBikePoint(id){
     })
     .then(data => {
         retrieveResponseObj = data;
-        console.log(data)
+        console.log(data);
+        while(locationDetails.lastElementChild){
+            locationDetails.removeChild(locationDetails.lastElementChild);
+        }
+        addLocationInformation();
+        addMapBtn();
     })
     .catch(err => console.error(err));
-    // google maps api link = https://www.google.com/maps/search/?api=1&query=${lat}%2C${lon}
+}
+
+function addLocationInformation() {
+    let numBikes = document.createElement('p');
+    numBikes.innerHTML = `Number of available bikes: ${retrieveResponseObj.additionalProperties[6].value}`;
+    let normBikes = document.createElement('p');
+    normBikes.innerHTML = `Number of standard bikes: ${retrieveResponseObj.additionalProperties[9].value}`;
+    let eBikes = document.createElement('p');
+    eBikes.innerHTML = `Number of e-bikes: ${retrieveResponseObj.additionalProperties[10].value}`;
+    let emptyDocks = document.createElement('p');
+    emptyDocks.innerHTML = `Number of empty docks: ${retrieveResponseObj.additionalProperties[7].value}`;
+    let brokeDocks = Number.parseInt(retrieveResponseObj.additionalProperties[8].value) -
+    (Number.parseInt(retrieveResponseObj.additionalProperties[6].value) + Number.parseInt(retrieveResponseObj.additionalProperties[7].value));
+    let brokenDocks = document.createElement('p');
+    brokenDocks.innerHTML = `Number of broken docks: ${brokeDocks}`;
+    let numDocks = document.createElement('p');
+    numDocks.innerHTML = `Total number of docks: ${retrieveResponseObj.additionalProperties[8].value}`;
+    locationDetails.appendChild(numBikes);
+    locationDetails.appendChild(normBikes);
+    locationDetails.appendChild(eBikes);
+    locationDetails.appendChild(emptyDocks);
+    locationDetails.appendChild(brokenDocks);
+    locationDetails.appendChild(numDocks);
+}
+
+function addMapBtn() {
+    let mapLink = document.createElement('a');
+    mapLink.setAttribute('href', `https://www.google.com/maps/search/?api=1&query=${retrieveResponseObj.lat}%2C${retrieveResponseObj.lon}`);
+    mapLink.setAttribute('target', '_blank');
+    mapLink.innerHTML = 'View location on map';
+    locationDetails.appendChild(mapLink);
 }

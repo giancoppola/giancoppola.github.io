@@ -76,6 +76,10 @@ input {
   align-items: center;
 }
 
+.map-link {
+  background: none;
+}
+
 .hide {
   display: none !important;
 }/*# sourceMappingURL=tfl.css.map */
