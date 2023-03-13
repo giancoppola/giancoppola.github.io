@@ -33,6 +33,9 @@ function searchBikePoints(){
         while(searchList.lastElementChild){
             searchList.removeChild(searchList.lastElementChild);
         }
+        while(locationDetails.lastElementChild){
+            locationDetails.removeChild(locationDetails.lastElementChild);
+        }
         for (item of searchResponseObj){
             let searchItem = document.createElement('li');
             searchItem.classList.add('search-item');
