@@ -29,9 +29,17 @@ body {
   margin: auto;
 }
 
+input {
+  border: none;
+}
+
 .search-query {
   margin: 1rem auto;
-  width: 25%;
+  width: 20%;
+  min-height: 2rem;
+  text-align: center;
+  background: none;
+  border-bottom: solid black 2px;
 }
 
 .search-submit {
@@ -66,4 +74,8 @@ body {
   justify-items: center;
   align-content: center;
   align-items: center;
+}
+
+.hide {
+  display: none !important;
 }/*# sourceMappingURL=tfl.css.map */

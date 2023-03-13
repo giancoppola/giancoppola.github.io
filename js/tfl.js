@@ -1,7 +1,8 @@
 let searchApiStatus;
 let searchResponseObj;
 
-const searchList = document.getElementById("search-list")
+const searchList = document.getElementById("search-list");
+const alertText = document.getElementById("alert-text");
 
 function searchBikePoints(){
     let query = document.getElementById("search-query").value;
@@ -20,6 +21,13 @@ function searchBikePoints(){
     })
     .then(data => {
         searchResponseObj = data;
+        if (searchResponseObj.length < 1){
+            alertText.classList.remove('hide');
+            alertText.innerHTML = "No results found!"
+        }
+        else{
+            alertText.classList.add('hide');
+        }
         while(searchList.lastElementChild){
             searchList.removeChild(searchList.lastElementChild);
         }
