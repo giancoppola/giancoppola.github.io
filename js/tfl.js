@@ -9,7 +9,8 @@ function searchBikePoints(){
     fetch(`https://api.tfl.gov.uk/BikePoint/Search?query=${query}`, {
         method: 'GET',
         headers: {
-            'Cache-Control': 'no-cache',}
+            'Cache-Control': 'no-cache',
+            'Access-Control-Allow-Origin':'*',}
     }).then(response => {
         searchApiStatus = response.status;
         if (searchApiStatus === 200){
@@ -50,7 +51,8 @@ function retrieveBikePoint(id){
     fetch(`https://api.tfl.gov.uk/BikePoint/${id}`, {
         method: 'GET',
         headers: {
-            'Cache-Control': 'no-cache',}
+            'Cache-Control': 'no-cache',
+            'Access-Control-Allow-Origin':'*',}
     })
     .then(response => {
         retrieveApiStatus = response.status;
