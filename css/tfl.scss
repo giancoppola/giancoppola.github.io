@@ -69,6 +69,7 @@ input{
     list-style: none;
     margin: 1rem 1rem;
     min-width: max-content;
+    max-height: 100%;
     padding-inline-start: 0px;
 }
 .location-details{
@@ -87,6 +88,7 @@ input{
     justify-items: center;
     align-content: center;
     align-items: center;
+    max-height: 100%;
 }
 .map-link{
     background: none;

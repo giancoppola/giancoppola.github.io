@@ -3,49 +3,65 @@ let searchResponseObj;
 
 const searchList = document.getElementById("search-list");
 const alertText = document.getElementById("alert-text");
+const queryField = document.getElementById('search-query');
+queryField.addEventListener('keypress', (event) => {
+    if (event.key === ('Enter')){
+        searchBikePoints();
+    }
+    else {
+        //pass
+    }
+})
 
 function searchBikePoints(){
-    let query = document.getElementById("search-query").value;
-    fetch(`https://api.tfl.gov.uk/BikePoint/Search?query=${query}`, {
+    let query = queryField.value;
+    if (query == '') {
+        alertText.classList.remove('hide');
+        alertText.innerHTML = 'Please enter a search term!'
+    }
+    else{
+        alertText.classList.add('hide');
+        fetch(`https://api.tfl.gov.uk/BikePoint/Search?query=${query}`, {
         method: 'GET',
         headers: {
             'Cache-Control': 'no-cache',
             'Access-Control-Allow-Origin':'*',}
-    })
-    .then(response => {
-        searchApiStatus = response.status;
-        if (searchApiStatus === 200){
-            return response.json();
-        }
-        else{
-            console.log('error!')
-        }
-    })
-    .then(data => {
-        searchResponseObj = data;
-        if (searchResponseObj.length < 1){
-            alertText.classList.remove('hide');
-            alertText.innerHTML = "No results found!"
-        }
-        else{
-            alertText.classList.add('hide');
-        }
-        while(searchList.lastElementChild){
-            searchList.removeChild(searchList.lastElementChild);
-        }
-        while(locationDetails.lastElementChild){
-            locationDetails.removeChild(locationDetails.lastElementChild);
-        }
-        for (item of searchResponseObj){
-            let searchItem = document.createElement('li');
-            searchItem.classList.add('search-item');
-            searchItem.setAttribute('data', item.id);
-            searchItem.addEventListener("click", () => retrieveBikePoint(searchItem.getAttribute('data')));
-            searchItem.innerHTML = item.commonName;
-            searchList.appendChild(searchItem);
-        }
-    })
-    .catch(err => console.error(err));
+        })
+        .then(response => {
+            searchApiStatus = response.status;
+            if (searchApiStatus === 200){
+                return response.json();
+            }
+            else{
+                console.log('error!')
+            }
+        })
+        .then(data => {
+            searchResponseObj = data;
+            if (searchResponseObj.length < 1){
+                alertText.classList.remove('hide');
+                alertText.innerHTML = "No results found!"
+            }
+            else{
+                alertText.classList.add('hide');
+            }
+            while(searchList.lastElementChild){
+                searchList.removeChild(searchList.lastElementChild);
+            }
+            while(locationDetails.lastElementChild){
+                locationDetails.removeChild(locationDetails.lastElementChild);
+            }
+            for (item of searchResponseObj){
+                let searchItem = document.createElement('li');
+                searchItem.classList.add('search-item');
+                searchItem.setAttribute('data', item.id);
+                searchItem.addEventListener("click", () => retrieveBikePoint(searchItem.getAttribute('data')));
+                searchItem.innerHTML = item.commonName;
+                searchList.appendChild(searchItem);
+            }
+        })
+        .catch(err => console.error(err));
+    }
 }
 
 let retrieveApiStatus;
