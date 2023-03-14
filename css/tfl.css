@@ -82,6 +82,12 @@ input {
   background: none;
   border-bottom: solid var(--black-col) 2px;
 }
+.search-query::-moz-placeholder {
+  opacity: 50%;
+}
+.search-query::placeholder {
+  opacity: 50%;
+}
 
 .btn {
   margin: 1rem auto;
