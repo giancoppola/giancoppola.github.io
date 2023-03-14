@@ -18,9 +18,17 @@ function searchBikePoints(){
     if (query == '') {
         alertText.classList.remove('hide');
         alertText.innerHTML = 'Please enter a search term!'
+        resultsGrid.classList.remove('outset-top-border');
+        while(resultsGrid.lastElementChild){
+            resultsGrid.removeChild(resultsGrid.lastElementChild);
+        }
+        while(locationDetails.lastElementChild){
+            locationDetails.removeChild(locationDetails.lastElementChild);
+        }
     }
     else{
         alertText.classList.add('hide');
+        resultsGrid.classList.add('outset-top-border');
         fetch(`https://api.tfl.gov.uk/BikePoint/Search?query=${query}`, {
         method: 'GET',
         headers: {
@@ -41,9 +49,12 @@ function searchBikePoints(){
             if (searchResponseObj.length < 1){
                 alertText.classList.remove('hide');
                 alertText.innerHTML = "No results found!"
+                resultsGrid.classList.remove('outset-top-border');
+
             }
             else{
                 alertText.classList.add('hide');
+                resultsGrid.classList.add('outset-top-border');
             }
             while(resultsGrid.lastElementChild){
                 resultsGrid.removeChild(resultsGrid.lastElementChild);
@@ -93,36 +104,28 @@ function retrieveBikePoint(id){
         while(locationDetails.lastElementChild){
             locationDetails.removeChild(locationDetails.lastElementChild);
         }
+        var url = location.href;
+        location.href = '#location-details';
+        history.replaceState(null, null, url);
         addLocationInformation();
-        addMapBtn();
     })
     .catch(err => console.error(err));
 }
 
 function addLocationInformation() {
+    // location name creation
+    let locationName = document.createElement('h2');
+    locationName.innerHTML = retrieveResponseObj.commonName;
+    // number of bikes creation
     let numBikes = document.createElement('p');
-    numBikes.innerHTML = `Number of available bikes: ${retrieveResponseObj.additionalProperties[6].value}`;
+    numBikes.innerHTML = `Available bikes: ${retrieveResponseObj.additionalProperties[6].value}`;
+    // number of standard bikes creation
     let normBikes = document.createElement('p');
-    normBikes.innerHTML = `Number of standard bikes: ${retrieveResponseObj.additionalProperties[9].value}`;
+    normBikes.innerHTML = `Standard bikes: ${retrieveResponseObj.additionalProperties[9].value}`;
+    // number of e-bikes creation
     let eBikes = document.createElement('p');
-    eBikes.innerHTML = `Number of e-bikes: ${retrieveResponseObj.additionalProperties[10].value}`;
-    let emptyDocks = document.createElement('p');
-    emptyDocks.innerHTML = `Number of empty docks: ${retrieveResponseObj.additionalProperties[7].value}`;
-    let brokeDocks = Number.parseInt(retrieveResponseObj.additionalProperties[8].value) -
-    (Number.parseInt(retrieveResponseObj.additionalProperties[6].value) + Number.parseInt(retrieveResponseObj.additionalProperties[7].value));
-    let brokenDocks = document.createElement('p');
-    brokenDocks.innerHTML = `Number of broken docks: ${brokeDocks}`;
-    let numDocks = document.createElement('p');
-    numDocks.innerHTML = `Total number of docks: ${retrieveResponseObj.additionalProperties[8].value}`;
-    locationDetails.appendChild(numBikes);
-    locationDetails.appendChild(normBikes);
-    locationDetails.appendChild(eBikes);
-    locationDetails.appendChild(emptyDocks);
-    locationDetails.appendChild(brokenDocks);
-    locationDetails.appendChild(numDocks);
-}
-
-function addMapBtn() {
+    eBikes.innerHTML = `E-bikes: ${retrieveResponseObj.additionalProperties[10].value}`;
+    // map button creation and function
     let mapBtn = document.createElement('button');
     let mapLink = document.createElement('a');
     mapLink.setAttribute('href', `https://www.google.com/maps/search/?api=1&query=${retrieveResponseObj.lat}%2C${retrieveResponseObj.lon}`);
@@ -131,5 +134,24 @@ function addMapBtn() {
     mapLink.classList.add('btn-link');
     mapBtn.classList.add('btn', 'location-link');
     mapBtn.appendChild(mapLink);
+    // number of empty docks creation
+    let emptyDocks = document.createElement('p');
+    emptyDocks.innerHTML = `Empty docks: ${retrieveResponseObj.additionalProperties[7].value}`;
+    // number of broken docks creation
+    let brokeDocks = Number.parseInt(retrieveResponseObj.additionalProperties[8].value) -
+    (Number.parseInt(retrieveResponseObj.additionalProperties[6].value) + Number.parseInt(retrieveResponseObj.additionalProperties[7].value));
+    let brokenDocks = document.createElement('p');
+    brokenDocks.innerHTML = `Broken docks: ${brokeDocks}`;
+    // total number of docks creation
+    let numDocks = document.createElement('p');
+    numDocks.innerHTML = `Total docks: ${retrieveResponseObj.additionalProperties[8].value}`;
+    // adding them to the div in the correct order
+    locationDetails.appendChild(locationName);
+    locationDetails.appendChild(numBikes);
+    locationDetails.appendChild(normBikes);
+    locationDetails.appendChild(eBikes);
     locationDetails.appendChild(mapBtn);
+    locationDetails.appendChild(emptyDocks);
+    locationDetails.appendChild(brokenDocks);
+    locationDetails.appendChild(numDocks);
 }

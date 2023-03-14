@@ -6,6 +6,7 @@
 }
 
 * {
+  scroll-behavior: smooth;
   font-weight: bolder;
   font-family: "Roboto", sans-serif;
   color: var(--black-col);
@@ -23,6 +24,10 @@
   background-color: var(--pink-col);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: white;
   background-size: cover;
@@ -33,6 +38,13 @@ h1 {
   font-size: 6rem;
   text-align: center;
   margin: 2rem 2rem;
+}
+
+h2.location-name {
+  margin: auto;
+  text-align: left;
+  width: 70%;
+  font-size: 1.5rem;
 }
 
 p {
@@ -105,7 +117,7 @@ input {
   min-width: -moz-fit-content;
   min-width: fit-content;
   height: 3rem;
-  margin: 2rem auto;
+  margin: auto auto;
 }
 .btn.location-link:hover {
   width: 65%;
@@ -132,7 +144,11 @@ a:hover {
 }
 
 .location-details {
-  width: 33%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding-bottom: 2rem;
 }
 
 .search-item {
@@ -144,9 +160,11 @@ a:hover {
 }
 
 .results-container {
+  scroll-behavior: smooth;
   padding: 2rem;
   width: 90%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -158,10 +176,9 @@ a:hover {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 2rem;
-  width: 66%;
+  width: 100%;
   max-width: 1200px;
-  border-right-style: ridge;
-  padding: 0rem 2rem 0rem 0rem;
+  padding: 2rem;
 }
 
 .grid-item {
@@ -187,4 +204,8 @@ a:hover {
 
 .hide {
   display: none !important;
+}
+
+.outset-top-border {
+  border-top-style: outset;
 }/*# sourceMappingURL=tfl.css.map */
