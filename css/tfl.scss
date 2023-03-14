@@ -36,8 +36,8 @@ h1{
 h2{
     &.location-name{
         margin: auto;
-        text-align: left;
-        width: 70%;
+        text-align: right;
+        width: 85%;
         font-size: 1.5rem;
     }
 }
@@ -128,7 +128,7 @@ a{
 }
 .location-details{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
     scroll-behavior: smooth;
     width: 100%;
     padding-bottom: 2rem;

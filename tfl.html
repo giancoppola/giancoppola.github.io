@@ -10,21 +10,13 @@
 <body>
     <section is="main_content">
         <div class="container">
-            <h1>TFL Bike Point Search</h1>
+            <h1 id="title">TFL Bike Point Search</h1>
             <p>Search below to find a bike point near you, and click on the results for more information.</p>
             <input type="text" id="search-query" class="search-query">
             <button id="search-submit" class="btn search-submit" onclick="searchBikePoints()">submit</button>
             <p class="alert-text hide" id="alert-text"></p>
             <div class="results-container" id="results-container">
                 <div class="location-details" id="location-details">
-                    <h2 class="location-name ">this is a location name</h2>
-                    <p class="avail-bikes grid-item">number of available bikes</p>
-                    <p class="standard-bikes grid-item">number of standard bikes</p>
-                    <p class="e-bikes grid-item">number of e-bikes</p>
-                    <button class="btn location-link">view location</button>
-                    <p class="empty-docks grid-item">number of empty docks</p>
-                    <p class="broke-docks grid-item">number of broken docks</p>
-                    <p class="total-docks grid-item">total number of docks</p>
                 </div>
                 <div class="results-grid" id="results-grid">
                 </div>

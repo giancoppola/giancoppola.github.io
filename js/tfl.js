@@ -105,7 +105,7 @@ function retrieveBikePoint(id){
             locationDetails.removeChild(locationDetails.lastElementChild);
         }
         var url = location.href;
-        location.href = '#location-details';
+        location.href = '#title';
         history.replaceState(null, null, url);
         addLocationInformation();
     })
@@ -115,15 +115,19 @@ function retrieveBikePoint(id){
 function addLocationInformation() {
     // location name creation
     let locationName = document.createElement('h2');
+    locationName.classList.add('location-name');
     locationName.innerHTML = retrieveResponseObj.commonName;
     // number of bikes creation
     let numBikes = document.createElement('p');
+    numBikes.classList.add('grid-item', 'detail');
     numBikes.innerHTML = `Available bikes: ${retrieveResponseObj.additionalProperties[6].value}`;
     // number of standard bikes creation
     let normBikes = document.createElement('p');
+    normBikes.classList.add('grid-item', 'detail');
     normBikes.innerHTML = `Standard bikes: ${retrieveResponseObj.additionalProperties[9].value}`;
     // number of e-bikes creation
     let eBikes = document.createElement('p');
+    eBikes.classList.add('grid-item', 'detail');
     eBikes.innerHTML = `E-bikes: ${retrieveResponseObj.additionalProperties[10].value}`;
     // map button creation and function
     let mapBtn = document.createElement('button');
@@ -136,14 +140,17 @@ function addLocationInformation() {
     mapBtn.appendChild(mapLink);
     // number of empty docks creation
     let emptyDocks = document.createElement('p');
+    emptyDocks.classList.add('grid-item', 'detail');
     emptyDocks.innerHTML = `Empty docks: ${retrieveResponseObj.additionalProperties[7].value}`;
     // number of broken docks creation
     let brokeDocks = Number.parseInt(retrieveResponseObj.additionalProperties[8].value) -
     (Number.parseInt(retrieveResponseObj.additionalProperties[6].value) + Number.parseInt(retrieveResponseObj.additionalProperties[7].value));
     let brokenDocks = document.createElement('p');
+    brokenDocks.classList.add('grid-item', 'detail');
     brokenDocks.innerHTML = `Broken docks: ${brokeDocks}`;
     // total number of docks creation
     let numDocks = document.createElement('p');
+    numDocks.classList.add('grid-item', 'detail');
     numDocks.innerHTML = `Total docks: ${retrieveResponseObj.additionalProperties[8].value}`;
     // adding them to the div in the correct order
     locationDetails.appendChild(locationName);
