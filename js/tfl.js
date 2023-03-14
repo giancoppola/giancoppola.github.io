@@ -104,9 +104,6 @@ function retrieveBikePoint(id){
         while(locationDetails.lastElementChild){
             locationDetails.removeChild(locationDetails.lastElementChild);
         }
-        var url = location.href;
-        location.href = '#title';
-        history.replaceState(null, null, url);
         addLocationInformation();
     })
     .catch(err => console.error(err));
