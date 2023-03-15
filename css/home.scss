@@ -111,3 +111,21 @@ a{
         }
     }
 }
+@media all and (max-width: 1080px) {
+    .main{
+        background-image: none;
+    }
+    .main-container{
+        flex-direction: column;
+        width: 100vw;
+    }
+    .right-handrail{
+        width: 100%;
+    }
+    .footer-links{
+        margin-right: 0;
+    }
+    .handrail-item{
+        margin: 2rem auto;
+    }
+}
