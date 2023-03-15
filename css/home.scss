@@ -55,7 +55,6 @@ body{
 .right-handrail{
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
     width: 20vw;
 }
@@ -85,11 +84,6 @@ a{
         -o-transition: all 0.5s;
         font-weight: 500;
         &:hover{
-            // transform: scale(1.2);
-            // -webkit-transform: scale(1.2);
-            // -moz-transform: scale(1.2);
-            // -ms-transform: scale(1.2);
-            // -o-transform: scale(1.2);
             border-bottom: solid var(--black-col) 5px;
             padding-bottom: 5px;
             font-size: 1.2rem;
@@ -108,26 +102,12 @@ a{
         &::after{
             content: url(../img/icons/link_line.svg);
             margin-left: 0.5rem;
-            margin-top: auto;
-            margin-bottom: auto;
 }
         &:hover{
-            // transform: scale(1.2);
-            // -webkit-transform: scale(1.2);
-            // -moz-transform: scale(1.2);
-            // -ms-transform: scale(1.2);
-            // -o-transform: scale(1.2);
             border-bottom: solid var(--black-col) 5px;
             padding-bottom: 5px;
             font-size: 2rem;
             font-weight: bolder;
-            &::after{
-                transform: scaleX(2);
-                -webkit-transform: scaleX(2);
-                -moz-transform: scaleX(2);
-                -ms-transform: scaleX(2);
-                -o-transform: scaleX(2);
-            }
         }
     }
 }
