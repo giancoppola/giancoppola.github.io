@@ -113,8 +113,10 @@ a.handrail-item {
   font-weight: 500;
 }
 a.handrail-item::after {
-  content: "----";
+  content: url(../img/icons/link_line.svg);
   margin-left: 0.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 a.handrail-item:hover {
   border-bottom: solid var(--black-col) 5px;
@@ -123,5 +125,9 @@ a.handrail-item:hover {
   font-weight: bolder;
 }
 a.handrail-item:hover::after {
-  content: "-----";
+  transform: scaleX(2);
+  -webkit-transform: scaleX(2);
+  -moz-transform: scaleX(2);
+  -ms-transform: scaleX(2);
+  -o-transform: scaleX(2);
 }/*# sourceMappingURL=home.css.map */
