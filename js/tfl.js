@@ -62,6 +62,10 @@ function searchBikePoints(){
             while(locationDetails.lastElementChild){
                 locationDetails.removeChild(locationDetails.lastElementChild);
             }
+            let srTitle = document.createElement('h2');
+            srTitle.classList.add('results-grid-title');
+            srTitle.innerHTML = 'Search Results';
+            resultsGrid.appendChild(srTitle);
             for (item of searchResponseObj){
                 let searchItem = document.createElement('div');
                 searchItem.classList.add('grid-item');
