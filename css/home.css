@@ -35,15 +35,15 @@ body {
   -webkit-background-size: cover;
 }
 
+h1 {
+  font-size: 6rem;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../img/profile_pic_1.png);
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: bottom left -20%;
   width: 100vw;
   height: 100vh;
 }
@@ -124,6 +124,9 @@ a.handrail-item:hover {
 }
 
 @media all and (max-width: 1080px) {
+  h1 {
+    font-size: 4rem;
+  }
   .main {
     background-image: none;
   }
