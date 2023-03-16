@@ -131,7 +131,7 @@ input {
 .btn.location-link::after {
   content: url(../img/icons/external-link-black.svg);
   display: inline-block;
-  padding-left: 0.5rem;
+  padding-left: 0.25rem;
 }
 .btn.location-link:hover {
   width: 75%;
@@ -139,7 +139,7 @@ input {
 .btn.location-link:hover::after {
   content: url(../img/icons/external-link-white.svg);
   display: inline-block;
-  padding-left: 0.5rem;
+  padding-left: 0.25rem;
 }
 
 a {
