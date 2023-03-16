@@ -35,10 +35,6 @@ body {
   -webkit-background-size: cover;
 }
 
-h1 {
-  font-size: 6rem;
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -59,6 +55,9 @@ h1 {
 .main-content {
   width: 80vw;
   text-align: center;
+}
+.main-content h1 {
+  font-size: 6rem;
 }
 
 .right-handrail {
@@ -124,9 +123,6 @@ a.handrail-item:hover {
 }
 
 @media all and (max-width: 1080px) {
-  h1 {
-    font-size: 4rem;
-  }
   .main {
     background-image: none;
   }
@@ -134,6 +130,9 @@ a.handrail-item:hover {
     flex-direction: column;
     justify-content: space-around;
     width: 100vw;
+  }
+  .main-content h1 {
+    font-size: 4rem;
   }
   .right-handrail {
     width: 100%;
