@@ -320,5 +320,6 @@ a:hover {
   .location-details a:nth-child(5) {
     grid-column: 2;
     grid-row: 1;
+    margin: auto;
   }
 }/*# sourceMappingURL=tfl.css.map */
