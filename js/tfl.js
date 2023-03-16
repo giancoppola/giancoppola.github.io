@@ -68,7 +68,7 @@ function searchBikePoints(){
             resultsGrid.appendChild(srTitle);
             for (item of searchResponseObj){
                 let searchItem = document.createElement('div');
-                searchItem.classList.add('grid-item');
+                searchItem.classList.add('grid-item', 'search-result');
                 searchItem.setAttribute('id', 'grid-item')
                 searchItem.setAttribute('data', item.id);
                 searchItem.setAttribute('tabindex', '1');
@@ -119,46 +119,49 @@ function addLocationInformation() {
     locationName.classList.add('location-name');
     locationName.innerHTML = retrieveResponseObj.commonName;
     // number of bikes creation
-    let numBikes = document.createElement('p');
-    numBikes.classList.add('grid-item', 'detail');
+    let numBikes = document.createElement('div');
+    numBikes.classList.add('grid-item', 'detail', 'all-bikes');
     numBikes.innerHTML = `Available bikes: ${retrieveResponseObj.additionalProperties[6].value}`;
     // number of standard bikes creation
-    let normBikes = document.createElement('p');
-    normBikes.classList.add('grid-item', 'detail');
+    let normBikes = document.createElement('div');
+    normBikes.classList.add('grid-item', 'detail', 'norm-bikes');
     normBikes.innerHTML = `Standard bikes: ${retrieveResponseObj.additionalProperties[9].value}`;
     // number of e-bikes creation
-    let eBikes = document.createElement('p');
-    eBikes.classList.add('grid-item', 'detail');
+    let eBikes = document.createElement('div');
+    eBikes.classList.add('grid-item', 'detail', 'e-bikes');
     eBikes.innerHTML = `E-bikes: ${retrieveResponseObj.additionalProperties[10].value}`;
     // map button creation and function
     let mapBtn = document.createElement('button');
     let mapLink = document.createElement('a');
     mapLink.setAttribute('href', `https://www.google.com/maps/search/?api=1&query=${retrieveResponseObj.lat}%2C${retrieveResponseObj.lon}`);
     mapLink.setAttribute('target', '_blank');
-    mapLink.innerHTML = 'view location';
+    // mapLink.innerHTML = 'view location';
+    mapBtn.innerHTML = 'view location';
     mapLink.classList.add('btn-link');
     mapBtn.classList.add('btn', 'location-link');
-    mapBtn.appendChild(mapLink);
+    // mapBtn.appendChild(mapLink);
+    mapLink.appendChild(mapBtn);
     // number of empty docks creation
-    let emptyDocks = document.createElement('p');
-    emptyDocks.classList.add('grid-item', 'detail');
+    let emptyDocks = document.createElement('div');
+    emptyDocks.classList.add('grid-item', 'detail', 'empty-docks');
     emptyDocks.innerHTML = `Empty docks: ${retrieveResponseObj.additionalProperties[7].value}`;
     // number of broken docks creation
     let brokeDocks = Number.parseInt(retrieveResponseObj.additionalProperties[8].value) -
     (Number.parseInt(retrieveResponseObj.additionalProperties[6].value) + Number.parseInt(retrieveResponseObj.additionalProperties[7].value));
-    let brokenDocks = document.createElement('p');
-    brokenDocks.classList.add('grid-item', 'detail');
+    let brokenDocks = document.createElement('div');
+    brokenDocks.classList.add('grid-item', 'detail', 'broken-docks');
     brokenDocks.innerHTML = `Broken docks: ${brokeDocks}`;
     // total number of docks creation
-    let numDocks = document.createElement('p');
-    numDocks.classList.add('grid-item', 'detail');
+    let numDocks = document.createElement('div');
+    numDocks.classList.add('grid-item', 'detail', 'total-docks');
     numDocks.innerHTML = `Total docks: ${retrieveResponseObj.additionalProperties[8].value}`;
     // adding them to the div in the correct order
     locationDetails.appendChild(locationName);
     locationDetails.appendChild(numBikes);
     locationDetails.appendChild(normBikes);
     locationDetails.appendChild(eBikes);
-    locationDetails.appendChild(mapBtn);
+    // locationDetails.appendChild(mapBtn);
+    locationDetails.appendChild(mapLink);
     locationDetails.appendChild(emptyDocks);
     locationDetails.appendChild(brokenDocks);
     locationDetails.appendChild(numDocks);

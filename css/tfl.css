@@ -101,6 +101,7 @@ input {
   border: solid var(--black-col) 2px;
   border-radius: 40px;
   padding: 0.4rem 0.4rem;
+  vertical-align: middle;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -121,14 +122,24 @@ input {
 }
 .btn.location-link {
   display: block;
-  width: 60%;
+  width: 70%;
   min-width: -moz-fit-content;
   min-width: fit-content;
   height: 3rem;
   margin: auto auto;
 }
+.btn.location-link::after {
+  content: url(../img/icons/external-link-black.svg);
+  display: inline-block;
+  padding-left: 0.5rem;
+}
 .btn.location-link:hover {
-  width: 65%;
+  width: 75%;
+}
+.btn.location-link:hover::after {
+  content: url(../img/icons/external-link-white.svg);
+  display: inline-block;
+  padding-left: 0.5rem;
 }
 
 a {
@@ -144,10 +155,12 @@ a:hover {
 .location-details {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
   scroll-behavior: smooth;
   width: 100%;
   max-width: 1200px;
   padding-bottom: 2rem;
+  gap: 2rem;
 }
 
 .search-item {
@@ -174,6 +187,7 @@ a:hover {
 .results-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
@@ -203,6 +217,48 @@ a:hover {
 }
 .grid-item.detail {
   cursor: default;
+}
+
+.search-result {
+  background-image: url(/img/icons/location-pin.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+.all-bikes {
+  background-image: url(/img/icons/norm-bikes.png);
+  background-position: bottom right 3%;
+  background-repeat: no-repeat;
+}
+
+.norm-bikes {
+  background-image: url(/img/icons/norm-bikes.png);
+  background-position: bottom right 3%;
+  background-repeat: no-repeat;
+}
+
+.e-bikes {
+  background-image: url(/img/icons/e-bikes.png);
+  background-position: bottom right 3%;
+  background-repeat: no-repeat;
+}
+
+.empty-docks {
+  background-image: url(/img/icons/empty-docks.png);
+  background-position: bottom 2% right 3%;
+  background-repeat: no-repeat;
+}
+
+.broken-docks {
+  background-image: url(/img/icons/broken.png);
+  background-position: bottom right 2%;
+  background-repeat: no-repeat;
+}
+
+.total-docks {
+  background-image: url(/img/icons/bike-docks.png);
+  background-position: bottom 2% right 3%;
+  background-repeat: no-repeat;
 }
 
 .map-link {
