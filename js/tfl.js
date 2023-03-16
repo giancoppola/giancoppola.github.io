@@ -50,7 +50,12 @@ function searchBikePoints(){
                 alertText.classList.remove('hide');
                 alertText.innerHTML = "No results found!"
                 resultsGrid.classList.remove('outset-top-border');
-
+                while(resultsGrid.lastElementChild){
+                    resultsGrid.removeChild(resultsGrid.lastElementChild);
+                }
+                while(locationDetails.lastElementChild){
+                    locationDetails.removeChild(locationDetails.lastElementChild);
+                }
             }
             else{
                 alertText.classList.add('hide');
@@ -65,7 +70,9 @@ function searchBikePoints(){
             let srTitle = document.createElement('h2');
             srTitle.classList.add('results-grid-title');
             srTitle.innerHTML = 'Search Results';
-            resultsGrid.appendChild(srTitle);
+            if (searchResponseObj.length != 0){
+                resultsGrid.appendChild(srTitle);
+            }
             for (item of searchResponseObj){
                 let searchItem = document.createElement('div');
                 searchItem.classList.add('grid-item', 'search-result');
