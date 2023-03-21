@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
-  --barcs-blue: #001276;
+  --barcs-dark-blue: #001276;
+  --barcs-blue: #026DE2;
   --barcs-light-blue: #AFFDFD;
   --barcs-grey: #444444;
   --barcs-white: #FFFFFF;
@@ -12,15 +13,15 @@
 }
 *::-moz-selection {
   color: white;
-  background-color: var(--barcs-blue);
+  background-color: var(--barcs-dark-blue);
 }
 *::selection {
   color: white;
-  background-color: var(--barcs-blue);
+  background-color: var(--barcs-dark-blue);
 }
 *::-moz-selection {
   color: white;
-  background-color: var(--barcs-blue);
+  background-color: var(--barcs-dark-blue);
 }
 
 html {
@@ -33,11 +34,12 @@ html {
 }
 
 .content-container {
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1440px;
 }
 .content-container-section {
-  width: 100%;
+  width: 80%;
+  max-width: 1200px;
   margin-bottom: 50px;
 }
 
@@ -49,11 +51,15 @@ html {
   font-weight: bold;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .header-section {
   display: flex;
   align-items: center;
   height: 562px;
-  background-color: var(--barcs-blue);
+  background-color: var(--barcs-dark-blue);
   margin: 0 auto;
 }
 
@@ -67,7 +73,7 @@ html {
   background-color: var(--barcs-light-blue);
 }
 .header-centre .header-text {
-  color: var(--barcs-blue);
+  color: var(--barcs-dark-blue);
   width: 50%;
   margin-left: 126px;
 }
@@ -99,7 +105,7 @@ html {
 .language-toggle {
   width: 300px;
   height: 50px;
-  background-color: var(--barcs-blue);
+  background-color: var(--barcs-dark-blue);
   border-radius: 25px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
@@ -125,11 +131,11 @@ html {
   flex-direction: column;
 }
 .job-areas h2 {
-  color: var(--barcs-blue);
+  color: var(--barcs-dark-blue);
   font-size: 2rem;
 }
 .job-areas p {
-  color: var(--barcs-blue);
+  color: var(--barcs-dark-blue);
   line-height: 1.5rem;
 }
 .job-areas-cards {
@@ -152,7 +158,7 @@ html {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-  background-color: var(--barcs-blue);
+  background-color: var(--barcs-dark-blue);
 }
 .job-areas-cards-card-img {
   margin: 0 auto;
@@ -167,15 +173,15 @@ html {
 }
 .job-areas-cards-card p::-moz-selection {
   background-color: var(--barcs-white);
-  color: var(--barcs-blue);
+  color: var(--barcs-dark-blue);
 }
 .job-areas-cards-card p::selection {
   background-color: var(--barcs-white);
-  color: var(--barcs-blue);
+  color: var(--barcs-dark-blue);
 }
 .job-areas-cards-card p::-moz-selection {
   background-color: var(--barcs-white);
-  color: var(--barcs-blue);
+  color: var(--barcs-dark-blue);
 }
 .job-areas-cards-overlay {
   border-radius: 15px;
@@ -187,21 +193,55 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 15%;
+  gap: 10%;
   position: absolute;
   width: 80%;
+  max-width: 1152px;
   height: 345px;
-  background-color: var(--barcs-blue);
+  background-color: var(--barcs-dark-blue);
 }
 .job-areas-cards-overlay p {
   color: var(--barcs-white);
 }
 .job-areas-cards-overlay-text {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
 }
 .job-areas-cards-overlay-close {
   cursor: pointer;
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.btn-blue {
+  cursor: pointer;
+  width: 12rem;
+  background-color: var(--barcs-blue);
+  border: none;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  color: var(--barcs-white);
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  margin: 0 auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.btn-blue:hover {
+  text-decoration: underline;
+  background-color: var(--barcs-white);
+  color: var(--barcs-blue);
+  width: 14rem;
+}
+
+.benefits {
+  background-color: var(--barcs-light-blue);
 }/*# sourceMappingURL=hamburg.css.map */
