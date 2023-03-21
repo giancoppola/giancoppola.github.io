@@ -41,6 +41,14 @@ html {
   margin-bottom: 50px;
 }
 
+.hide {
+  display: none !important;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
 .header-section {
   display: flex;
   align-items: center;
@@ -131,13 +139,14 @@ html {
   justify-content: space-between;
   gap: 1%;
   margin-top: 50px;
-  cursor: pointer;
 }
 .job-areas-cards-card {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 20%;
+  padding: 2rem 0;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -146,14 +155,14 @@ html {
   background-color: var(--barcs-blue);
 }
 .job-areas-cards-card-img {
-  margin: auto;
+  margin: 0 auto;
 }
 .job-areas-cards-card p {
   color: var(--barcs-white);
   font-weight: bold;
   line-height: 1.5rem;
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   width: 80%;
 }
 .job-areas-cards-card p::-moz-selection {
@@ -167,4 +176,32 @@ html {
 .job-areas-cards-card p::-moz-selection {
   background-color: var(--barcs-white);
   color: var(--barcs-blue);
+}
+.job-areas-cards-overlay {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  position: absolute;
+  width: 80%;
+  height: 345px;
+  background-color: var(--barcs-blue);
+}
+.job-areas-cards-overlay p {
+  color: var(--barcs-white);
+}
+.job-areas-cards-overlay-text {
+  width: 50%;
+}
+.job-areas-cards-overlay-close {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }/*# sourceMappingURL=hamburg.css.map */

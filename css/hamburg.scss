@@ -34,6 +34,12 @@ html{
         margin-bottom: 50px;
     }
 }
+.hide{
+    display: none !important;
+}
+.fw-bold{
+    font-weight: bold;
+}
 
 .header-section{
     display: flex;
@@ -120,12 +126,13 @@ html{
         justify-content: space-between;
         gap: 1%;
         margin-top: 50px;
-        cursor: pointer;
         &-card{
+            cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             width: 20%;
+            padding: 2rem 0;
             border-radius: 15px;
             -webkit-border-radius: 15px;
             -moz-border-radius: 15px;
@@ -133,14 +140,14 @@ html{
             -o-border-radius: 15px;
             background-color: var(--barcs-blue);
             &-img{
-                margin: auto;
+                margin: 0 auto;
             }
             & p{
                 color: var(--barcs-white);
                 font-weight: bold;
                 line-height: 1.5rem;
                 text-align: center;
-                margin: auto;
+                margin: 0 auto;
                 width: 80%;
                 &::selection{
                     background-color: var(--barcs-white);
@@ -150,6 +157,34 @@ html{
                     background-color: var(--barcs-white);
                     color: var(--barcs-blue);
                 }
+            }
+        }
+        &-overlay{
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15%;
+            position: absolute;
+            width: 80%;
+            height: 345px;
+            background-color: var(--barcs-blue);
+            & p{
+                color: var(--barcs-white);
+            }
+            &-text{
+                width: 50%;
+            }
+            &-close{
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
             }
         }
     }
