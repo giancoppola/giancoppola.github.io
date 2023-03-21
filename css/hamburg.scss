@@ -220,9 +220,17 @@ html{
         text-decoration: underline;
         background-color: var(--barcs-white);
         color: var(--barcs-blue);
-        width: 14rem;
+        width: 13rem;
     }
 }
 .benefits{
     background-color: var(--barcs-light-blue);
+    & h2{
+        color: var(--barcs-grey);
+        font-size: 2rem;
+    }
+    & p{
+        color: var(--barcs-grey);
+        line-height: 1.5rem;
+    }
 }
