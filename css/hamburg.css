@@ -372,7 +372,7 @@ html {
   position: absolute;
   width: 80%;
   max-width: 1152px;
-  height: 345px;
+  height: 259px;
   background-color: var(--barcs-dark-blue);
 }
 .benefits-content-cards-overlay p {
@@ -389,6 +389,34 @@ html {
   top: 10px;
   right: 10px;
 }
+.benefits-content-cards-overlay-close:hover {
+  animation: closeRotate 0.2s linear;
+  -webkit-animation: closeRotate 0.2s linear;
+}
 .benefits-content-cards-overlay-img {
   padding-left: 10%;
+}
+
+.diversity-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.diversity-content h2 {
+  color: var(--barcs-dark-blue);
+  font-size: 2rem;
+}
+.diversity-content p {
+  color: var(--barcs-dark-blue);
+  line-height: 1.5rem;
+}
+.diversity-content-img {
+  width: 60%;
+}
+.diversity-content-img img {
+  width: 95%;
+}
+.diversity-content-text {
+  width: 40%;
 }/*# sourceMappingURL=hamburg.css.map */

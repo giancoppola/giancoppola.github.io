@@ -351,7 +351,7 @@ html{
                 position: absolute;
                 width: 80%;
                 max-width: 1152px;
-                height: 345px;
+                height: 259px;
                 background-color: var(--barcs-dark-blue);
                 & p{
                     color: var(--barcs-white);
@@ -366,11 +366,40 @@ html{
                     position: absolute;
                     top: 10px;
                     right: 10px;
+                    &:hover{
+                        animation: closeRotate 0.2s linear;
+                        -webkit-animation: closeRotate 0.2s linear;
+                    }
                 }
                 &-img{
                     padding-left: 10%;
                 }
             }
+        }
+    }
+}
+.diversity{
+    &-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        & h2{
+            color: var(--barcs-dark-blue);
+            font-size: 2rem;
+        }
+        & p{
+            color: var(--barcs-dark-blue);
+            line-height: 1.5rem;
+        }
+        &-img{
+            width: 60%;
+            & img{
+                width: 95%;
+            }
+        }
+        &-text{
+            width: 40%;
         }
     }
 }
