@@ -8,7 +8,7 @@
         -moz-transform: scale(0.8);
         -ms-transform: scale(0.8);
         -o-transform: scale(0.8);
-}
+    }
     to {
         opacity: 1;
         transform: scale(1);
@@ -16,7 +16,7 @@
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
-}
+    }
 }
 
 @keyframes closeOverlay {
@@ -27,7 +27,7 @@
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
-}
+    }
     to {
         opacity: 0;
         transform: scale(0.8);
@@ -35,6 +35,23 @@
         -moz-transform: scale(0.8);
         -ms-transform: scale(0.8);
         -o-transform: scale(0.8);
+    }
+}
+
+@keyframes closeRotate {
+    from {
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+        -moz-transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
+        -o-transform: rotateZ(0deg);
+}
+    to {
+        transform: rotateZ(90deg);
+        -webkit-transform: rotateZ(90deg);
+        -moz-transform: rotateZ(90deg);
+        -ms-transform: rotateZ(90deg);
+        -o-transform: rotateZ(90deg);
 }
 }
 
@@ -80,8 +97,8 @@ html{
 .fw-bold{
     font-weight: bold;
 }
-.margin-auto{
-    margin: auto;
+.margin-bottom-50{
+    margin-bottom: 50px;
 }
 
 .header-section{
@@ -211,7 +228,6 @@ html{
             display: flex;
             flex-direction: row;
             justify-content: left;
-            padding-left: 5%;
             gap: 10%;
             align-items: center;
             position: absolute;
@@ -232,6 +248,13 @@ html{
                 position: absolute;
                 top: 10px;
                 right: 10px;
+                &:hover{
+                    animation: closeRotate 0.2s linear;
+                    -webkit-animation: closeRotate 0.2s linear;
+                }
+            }
+            &-img{
+                padding-left: 10%;
             }
         }
     }
@@ -264,12 +287,90 @@ html{
 }
 .benefits{
     background-color: var(--barcs-light-blue);
-    & h2{
-        color: var(--barcs-grey);
-        font-size: 2rem;
-    }
-    & p{
-        color: var(--barcs-grey);
-        line-height: 1.5rem;
+    &-content{
+        & h2{
+            color: var(--barcs-grey);
+            font-size: 2rem;
+            margin-top: 85px;
+        }
+        & p{
+            color: var(--barcs-grey);
+            line-height: 1.5rem;
+        }
+        &-cards{
+            min-height: 259px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1%;
+            margin-top: 50px;
+            &-card{
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 20%;
+                padding: 2rem 0;
+                border-radius: 33px;
+                -webkit-border-radius: 33px;
+                -moz-border-radius: 33px;
+                -ms-border-radius: 33px;
+                -o-border-radius: 33px;
+                background-color: var(--barcs-dark-blue);
+                &-img{
+                    margin: 0 auto;
+                }
+                & p{
+                    color: var(--barcs-white);
+                    font-weight: bold;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    margin: 0 auto;
+                    width: 80%;
+                    &::selection{
+                        background-color: var(--barcs-white);
+                        color: var(--barcs-dark-blue);
+                    }
+                    &::-moz-selection{
+                        background-color: var(--barcs-white);
+                        color: var(--barcs-dark-blue);
+                    }
+                }
+            }
+            &-overlay{
+                border-radius: 15px;
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -ms-border-radius: 15px;
+                -o-border-radius: 15px;
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                gap: 10%;
+                align-items: center;
+                position: absolute;
+                width: 80%;
+                max-width: 1152px;
+                height: 345px;
+                background-color: var(--barcs-dark-blue);
+                & p{
+                    color: var(--barcs-white);
+                }
+                &-text{
+                    display: flex;
+                    flex-direction: column;
+                    width: 60%;
+                }
+                &-close{
+                    cursor: pointer;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                }
+                &-img{
+                    padding-left: 10%;
+                }
+            }
+        }
     }
 }
