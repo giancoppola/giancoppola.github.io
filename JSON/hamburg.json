@@ -1,6 +1,6 @@
 {
     "header-title": {
-        "english": "Welcome to Barclays Hamburg",
+        "english": "Welcome to Barclays <br> Hamburg",
         "german": "Willkommen bei Barclays Hamburg"
     },
     "header-description": {
@@ -14,5 +14,13 @@
     "job-areas-description": {
         "english": "Learn more about the different job families we recruit into in Hamburg.",
         "german": "Erfahre mehr über die verschiedenen Arbeitsbereiche, die wir bei uns in Hamburg haben."
+    },
+    "benefits-title": {
+        "english": "Benefits",
+        "german": "Benefits"
+    },
+    "benefits-description": {
+        "english": "Discover the different benefits we offer to colleagues in Barclays Europe.",
+        "german": "Entdecke die verschiedenen Benefits, die wir unseren Kolleg:innen bei Barclays Europe bieten."
     }
 }
