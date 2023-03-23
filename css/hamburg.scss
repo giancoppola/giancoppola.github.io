@@ -462,11 +462,27 @@ html{
             color: var(--barcs-white);
             font-size: 2rem;
             margin-top: 80px;
+            &::selection{
+                background-color: var(--barcs-white);
+                color: var(--barcs-dark-blue);
+            }
+            &::-moz-selection{
+                background-color: var(--barcs-white);
+                color: var(--barcs-dark-blue);
+            }
         }
         & p{
             color: var(--barcs-white);
             line-height: 1.5rem;
             width: 50%;
+            &::selection{
+                background-color: var(--barcs-white);
+                color: var(--barcs-dark-blue);
+            }
+            &::-moz-selection{
+                background-color: var(--barcs-white);
+                color: var(--barcs-dark-blue);
+            }
         }
     }
 }

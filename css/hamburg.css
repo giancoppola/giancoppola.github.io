@@ -479,8 +479,32 @@ html {
   font-size: 2rem;
   margin-top: 80px;
 }
+.meet-our-people-content h2::-moz-selection {
+  background-color: var(--barcs-white);
+  color: var(--barcs-dark-blue);
+}
+.meet-our-people-content h2::selection {
+  background-color: var(--barcs-white);
+  color: var(--barcs-dark-blue);
+}
+.meet-our-people-content h2::-moz-selection {
+  background-color: var(--barcs-white);
+  color: var(--barcs-dark-blue);
+}
 .meet-our-people-content p {
   color: var(--barcs-white);
   line-height: 1.5rem;
   width: 50%;
+}
+.meet-our-people-content p::-moz-selection {
+  background-color: var(--barcs-white);
+  color: var(--barcs-dark-blue);
+}
+.meet-our-people-content p::selection {
+  background-color: var(--barcs-white);
+  color: var(--barcs-dark-blue);
+}
+.meet-our-people-content p::-moz-selection {
+  background-color: var(--barcs-white);
+  color: var(--barcs-dark-blue);
 }/*# sourceMappingURL=hamburg.css.map */
