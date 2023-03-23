@@ -159,7 +159,7 @@ html {
   position: relative;
   border-style: none;
   height: 110%;
-  bottom: 4%;
+  bottom: 22px;
 }
 
 .content-section {
@@ -507,4 +507,30 @@ html {
 .meet-our-people-content p::-moz-selection {
   background-color: var(--barcs-white);
   color: var(--barcs-dark-blue);
+}
+
+@media all and (max-width: 800px) {
+  .diversity-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .diversity-content h2 {
+    color: var(--barcs-dark-blue);
+    font-size: 2rem;
+  }
+  .diversity-content p {
+    color: var(--barcs-dark-blue);
+    line-height: 1.5rem;
+  }
+  .diversity-content-img {
+    width: 100%;
+  }
+  .diversity-content-img img {
+    width: 80%;
+  }
+  .diversity-content-text {
+    width: 80%;
+  }
 }/*# sourceMappingURL=hamburg.css.map */

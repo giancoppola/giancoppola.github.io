@@ -152,7 +152,7 @@ html{
         position: relative;
         border-style: none;
         height: 110%;
-        bottom: 4%;
+        bottom: 22px;
     }
 }
 .content-section{
@@ -482,6 +482,34 @@ html{
             &::-moz-selection{
                 background-color: var(--barcs-white);
                 color: var(--barcs-dark-blue);
+            }
+        }
+    }
+}
+
+@media all and (max-width: 800px){
+    .diversity{
+        &-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & h2{
+                color: var(--barcs-dark-blue);
+                font-size: 2rem;
+            }
+            & p{
+                color: var(--barcs-dark-blue);
+                line-height: 1.5rem;
+            }
+            &-img{
+                width: 100%;
+                & img{
+                    width: 80%;
+                }
+            }
+            &-text{
+                width: 80%;
             }
         }
     }
