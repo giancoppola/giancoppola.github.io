@@ -54,6 +54,7 @@ function languageToggle(active){
         englishButton.classList.add('inactive');
         germanButton.classList.remove('inactive');
         germanButton.classList.add('active');
+        langChange('german');
     }
     else if (active === 'german'){
         langToggle.setAttribute('active', 'english');
@@ -63,5 +64,34 @@ function languageToggle(active){
         englishButton.classList.remove('inactive');
         germanButton.classList.add('inactive');
         germanButton.classList.remove('active');
+        langChange('english');
+    }
+}
+
+//changing language via JSON
+
+let langObj;
+const xmlhttp = new XMLHttpRequest;
+xmlhttp.onload = function() {
+    const obj = JSON.parse(this.responseText);
+    langObj = obj;
+  }
+xmlhttp.open("GET", "../JSON/hamburg.json");
+xmlhttp.send();
+
+function langChange(lang){
+    if (lang === 'english'){
+        let node;
+        for (items in langObj){
+            node = document.getElementById(items);
+            node.innerHTML = langObj[items].english;
+        }
+    }
+    else if (lang === 'german'){
+        let node;
+        for (items in langObj){
+            node = document.getElementById(items);
+            node.innerHTML = langObj[items].german;
+        }
     }
 }
