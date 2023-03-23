@@ -51,6 +51,22 @@
     -o-transform: rotateZ(90deg);
   }
 }
+@keyframes langToGerman {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 140px;
+  }
+}
+@keyframes langToEnglish {
+  from {
+    left: 140px;
+  }
+  to {
+    left: 0px;
+  }
+}
 :root {
   --barcs-dark-blue: #001276;
   --barcs-blue: #026DE2;
@@ -155,6 +171,7 @@ html {
 }
 
 .language-toggle {
+  cursor: pointer;
   width: 300px;
   height: 50px;
   background-color: var(--barcs-dark-blue);
@@ -167,15 +184,33 @@ html {
   margin-bottom: 50px;
 }
 .language-toggle-inner {
+  position: relative;
+  top: 5px;
+  left: 0px;
   width: 150px;
   height: 40px;
   border-radius: 20px;
-  margin: auto;
+  margin: auto 5px;
   background-color: var(--barcs-white);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+}
+.language-toggle-text {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: -40px;
+  justify-content: space-between;
+  margin: 0 50px;
+  font-weight: bolder;
+}
+.language-toggle-text .active {
+  color: var(--barcs-dark-blue);
+}
+.language-toggle-text .inactive {
+  color: var(--barcs-white);
 }
 
 .job-areas {
@@ -210,7 +245,6 @@ html {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-  box-shadow: 0px 0px 15px 0px var(--barcs-grey);
   background-color: var(--barcs-dark-blue);
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -432,4 +466,21 @@ html {
 }
 .diversity-content-text {
   width: 40%;
+}
+
+.meet-our-people {
+  background-color: var(--barcs-dark-blue);
+  background-image: url(/img/hamburg/meet-our-people-bg.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.meet-our-people-content h2 {
+  color: var(--barcs-white);
+  font-size: 2rem;
+  margin-top: 80px;
+}
+.meet-our-people-content p {
+  color: var(--barcs-white);
+  line-height: 1.5rem;
+  width: 50%;
 }/*# sourceMappingURL=hamburg.css.map */

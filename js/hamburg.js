@@ -1,3 +1,5 @@
+// card overlay events and functions
+
 const jobCards = ['customer-service', 'information-technology', 'sales-marketing', 'comms-legal', 'product-management'];
 for (let i=0; i<jobCards.length; i++){
     document.getElementById(`${jobCards[i]}-card`).addEventListener('click', function() {
@@ -30,4 +32,36 @@ function closeOverlay(node) {
 function openOverlay(node) {
     node.classList.remove('hide');
     node.style.animation = 'openOverlay 0.2s linear'
+}
+
+// language toggle event and function
+
+const langToggle = document.getElementById('language-toggle');
+langToggle.addEventListener('click', function() {
+    let active = langToggle.getAttribute('active');
+    languageToggle(active);
+});
+
+function languageToggle(active){
+    const englishButton = document.getElementById('language-toggle-text-english');
+    const germanButton = document.getElementById('language-toggle-text-german');
+    const langToggleInner = document.getElementById('language-toggle-inner');
+    if (active === 'english'){
+        langToggle.setAttribute('active', 'german');
+        langToggleInner.style.animation = 'langToGerman 0.2s linear';
+        langToggleInner.style.left = '140px';
+        englishButton.classList.remove('active');
+        englishButton.classList.add('inactive');
+        germanButton.classList.remove('inactive');
+        germanButton.classList.add('active');
+    }
+    else if (active === 'german'){
+        langToggle.setAttribute('active', 'english');
+        langToggleInner.style.animation = 'langToEnglish 0.2s linear';
+        langToggleInner.style.left = '0px';
+        englishButton.classList.add('active');
+        englishButton.classList.remove('inactive');
+        germanButton.classList.add('inactive');
+        germanButton.classList.remove('active');
+    }
 }

@@ -23,9 +23,12 @@
             </div>
         </section>
         <section class="content-section content-container" id="content-section">
-            <div class="language-toggle content-container-section" id="language-toggle">
-                <div class="language-toggle-inner">
-                    english
+            <div class="language-toggle content-container-section" id="language-toggle" active="english">
+                <div class="language-toggle-inner" id="language-toggle-inner">
+                </div>
+                <div class="language-toggle-text">
+                    <p class="active" id="language-toggle-text-english">English</p>
+                    <p class="inactive" id="language-toggle-text-german">German</p>
                 </div>
             </div>
             <div class="job-areas content-container-section" id="job-areas">
@@ -186,7 +189,7 @@
                                 <img src="img/hamburg/icons/plus-button.svg" alt="">
                             </div>
                         </div>
-                        <div class="benefits-content-cards-card" id="information-technology-card">
+                        <div class="benefits-content-cards-card" id="employee-credit-card">
                             <div class="benefits-content-cards-card-img">
                                 <img src="img/hamburg/icons/employee-credit.svg" alt="">
                             </div>
@@ -195,7 +198,7 @@
                                 <img src="img/hamburg/icons/plus-button.svg" alt="">
                             </div>
                         </div>
-                        <div class="benefits-content-cards-card" id="sales-marketing-card">
+                        <div class="benefits-content-cards-card" id="community-days-card">
                             <div class="benefits-content-cards-card-img">
                                 <img src="img/hamburg/icons/community-days.svg" alt="">
                             </div>
@@ -204,7 +207,7 @@
                                 <img src="img/hamburg/icons/plus-button.svg" alt="">
                             </div>
                         </div>
-                        <div class="benefits-content-cards-card" id="comms-legal-card">
+                        <div class="benefits-content-cards-card" id="personal-development-card">
                             <div class="benefits-content-cards-card-img">
                                 <img src="img/hamburg/icons/personal-development.svg" alt="">
                             </div>
@@ -213,7 +216,7 @@
                                 <img src="img/hamburg/icons/plus-button.svg" alt="">
                             </div>
                         </div>
-                        <div class="benefits-content-cards-card" id="product-management-card">
+                        <div class="benefits-content-cards-card" id="flexible-budget-card">
                             <div class="benefits-content-cards-card-img">
                                 <img src="img/hamburg/icons/flexible-budget.svg" alt="">
                             </div>
@@ -222,7 +225,7 @@
                                 <img src="img/hamburg/icons/plus-button.svg" alt="">
                             </div>
                         </div>
-                        <div class="benefits-content-cards-card" id="product-management-card">
+                        <div class="benefits-content-cards-card" id="company-pension-card">
                             <div class="benefits-content-cards-card-img">
                                 <img src="img/hamburg/icons/company-pension.svg" alt="">
                             </div>
@@ -250,6 +253,96 @@
                             </div>
                             <img class="benefits-content-cards-overlay-close" id="arena-tickets-overlay-close" src="img/hamburg/icons/close-button.svg" alt="Close icon for the overlay">
                         </div>
+                        <div class="benefits-content-cards-overlay hide" id="employee-credit-overlay">
+                            <div class="benefits-content-cards-overlay-img">
+                                <img src="img/hamburg/icons/employee-credit.svg" alt="">
+                            </div>
+                            <div class="benefits-content-cards-overlay-text">
+                                <p class="fw-bold">Employee Credit</p>
+                                <p>Barclays offers employees the opportunity to further
+                                    develop according to their individual strengths. For
+                                    example, during a varied training program or an internal
+                                    internship in another area. Solutions can be found for
+                                    different situations with our flexitime model and part-time
+                                    employment offers, as well as sabbaticals. In addition,
+                                    we actively promote international cooperation with colleagues
+                                    from different countries.
+                                </p>
+                            </div>
+                            <img class="benefits-content-cards-overlay-close" id="employee-credit-overlay-close" src="img/hamburg/icons/close-button.svg" alt="Close icon for the overlay">
+                        </div>
+                        <div class="benefits-content-cards-overlay hide" id="community-days-overlay">
+                            <div class="benefits-content-cards-overlay-img">
+                                <img src="img/hamburg/icons/community-days.svg" alt="">
+                            </div>
+                            <div class="benefits-content-cards-overlay-text">
+                                <p class="fw-bold">Community Days</p>
+                                <p>Barclays offers employees the opportunity to further
+                                    develop according to their individual strengths. For
+                                    example, during a varied training program or an internal
+                                    internship in another area. Solutions can be found for
+                                    different situations with our flexitime model and part-time
+                                    employment offers, as well as sabbaticals. In addition,
+                                    we actively promote international cooperation with colleagues
+                                    from different countries.
+                                </p>
+                            </div>
+                            <img class="benefits-content-cards-overlay-close" id="community-days-overlay-close" src="img/hamburg/icons/close-button.svg" alt="Close icon for the overlay">
+                        </div>
+                        <div class="benefits-content-cards-overlay hide" id="personal-development-overlay">
+                            <div class="benefits-content-cards-overlay-img">
+                                <img src="img/hamburg/icons/personal-development.svg" alt="">
+                            </div>
+                            <div class="benefits-content-cards-overlay-text">
+                                <p class="fw-bold">Personal Development</p>
+                                <p>Barclays offers employees the opportunity to further
+                                    develop according to their individual strengths. For
+                                    example, during a varied training program or an internal
+                                    internship in another area. Solutions can be found for
+                                    different situations with our flexitime model and part-time
+                                    employment offers, as well as sabbaticals. In addition,
+                                    we actively promote international cooperation with colleagues
+                                    from different countries.
+                                </p>
+                            </div>
+                            <img class="benefits-content-cards-overlay-close" id="personal-development-overlay-close" src="img/hamburg/icons/close-button.svg" alt="Close icon for the overlay">
+                        </div>
+                        <div class="benefits-content-cards-overlay hide" id="flexible-budget-overlay">
+                            <div class="benefits-content-cards-overlay-img">
+                                <img src="img/hamburg/icons/flexible-budget.svg" alt="">
+                            </div>
+                            <div class="benefits-content-cards-overlay-text">
+                                <p class="fw-bold">Flexible Budget</p>
+                                <p>Barclays offers employees the opportunity to further
+                                    develop according to their individual strengths. For
+                                    example, during a varied training program or an internal
+                                    internship in another area. Solutions can be found for
+                                    different situations with our flexitime model and part-time
+                                    employment offers, as well as sabbaticals. In addition,
+                                    we actively promote international cooperation with colleagues
+                                    from different countries.
+                                </p>
+                            </div>
+                            <img class="benefits-content-cards-overlay-close" id="flexible-budget-overlay-close" src="img/hamburg/icons/close-button.svg" alt="Close icon for the overlay">
+                        </div>
+                        <div class="benefits-content-cards-overlay hide" id="company-pension-overlay">
+                            <div class="benefits-content-cards-overlay-img">
+                                <img src="img/hamburg/icons/company-pension.svg" alt="">
+                            </div>
+                            <div class="benefits-content-cards-overlay-text">
+                                <p class="fw-bold">Company Pension</p>
+                                <p>Barclays offers employees the opportunity to further
+                                    develop according to their individual strengths. For
+                                    example, during a varied training program or an internal
+                                    internship in another area. Solutions can be found for
+                                    different situations with our flexitime model and part-time
+                                    employment offers, as well as sabbaticals. In addition,
+                                    we actively promote international cooperation with colleagues
+                                    from different countries.
+                                </p>
+                            </div>
+                            <img class="benefits-content-cards-overlay-close" id="company-pension-overlay-close" src="img/hamburg/icons/close-button.svg" alt="Close icon for the overlay">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -276,6 +369,15 @@
                             Transformation: you can help shape the future of payment and finance.
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="meet-our-people max-width-container margin-bottom-50">
+                <div class="meet-our-people-content content-container-section">
+                    <h2>Meet our people</h2>
+                    <p>There are no limits to development at Barclays. Learn more
+                        about our employees' success stories and their journey at
+                        Barclays. You too can become part of this special company culture.
+                    </p>
                 </div>
             </div>
         </section>
