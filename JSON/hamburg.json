@@ -1,7 +1,7 @@
 {
     "header-title": {
         "english": "Welcome to Barclays <br> Hamburg",
-        "german": "Willkommen bei Barclays Hamburg"
+        "german": "Willkommen bei Barclays <br> Hamburg"
     },
     "header-description": {
         "english": "Hamburg is home to Barclays Consumer Bank Europe. For more than 30 years, we have been offering consumers in Germany innovative payment and financing solutions – from credit cards to instalment loans. Our well-connected offices are located in Bahrenfeld, close to the city centre. They are now home to more than 700 employees who focus on millions of our customers every day.",
@@ -22,5 +22,21 @@
     "benefits-description": {
         "english": "Discover the different benefits we offer to colleagues in Barclays Europe.",
         "german": "Entdecke die verschiedenen Benefits, die wir unseren Kolleg:innen bei Barclays Europe bieten."
+    },
+    "diversity-title-1": {
+        "english": "Diversity makes us stronger",
+        "german": "Vielfalt macht uns stärker"
+    },
+    "diversity-description-1": {
+        "english": "The personal backgrounds of all colleagues are just as diverse as the tasks they deliver. We strongly believe that being a diverse, inclusive and equitable employer makes us better for our customers, clients and colleagues. That's why we promote diversity, equity and inclusion throughout the company and support all colleagues in reaching their full potential at all times. We offer flexible working time models, hybrid working and many other benefits.",
+        "german": "Ebenso vielfältig wie die Aufgaben, sind die persönlichen Hintergründe aller Kolleg:innen. Wir sind der festen Überzeugung, dass uns Diversität und Inklusion besser machen. Deswegen fördern wir Vielfalt im ganzen Unternehmen und unterstützen alle Kolleg:innen dabei, jederzeit ihr volles Potenzial auszuschöpfen. Was für uns als moderner Arbeitgeber ganz natürlich dazugehört: flexible Arbeitszeitmodelle, mobiles Arbeiten und viele weitere Vorteile."
+    },
+    "diversity-title-2": {
+        "english": "Rich in possibilities",
+        "german": "Reich an Möglichkeiten"
+    },
+    "diversity-description-2": {
+        "english": "Barclays is a bank. However, the education and skills we are looking for are more diverse than you might think. We are looking for new colleagues for a variety of roles, with opportunities to develop yourself. From Customer Service, Product Management, Marketing, Legal & Compliance to IT and Digital Transformation: you can help shape the future of payment and finance. ",
+        "german": "Barclays ist eine Bank. Allerdings sind die Ausbildungen und Fähigkeiten, die wir suchen, diverser als du vielleicht denkst. Wir suchen neue Kolleg:innen für eine Vielzahl von verschiedenen Jobs. Daher bieten wir dir auch eine Vielfalt von Möglichkeiten, um dich weiterzuentwickeln. Von Kundenservice, Produktmanagement, Marketing & Kommunikation, Legal und Compliance bis hin zu IT und digitaler Transformation: Hier kannst Du die Zukunft des Bezahlens und Finanzierens mit neu gestalten."
     }
 }
