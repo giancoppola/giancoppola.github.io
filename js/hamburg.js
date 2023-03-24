@@ -1,3 +1,5 @@
+window.alert('Work in progress!');
+
 // card overlay events and functions
 
 const jobCards = ['customer-service', 'information-technology', 'sales-marketing', 'comms-legal', 'product-management'];
