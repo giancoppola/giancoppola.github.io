@@ -531,7 +531,7 @@ html{
     .header-section{
         display: flex;
         align-items: center;
-        height: 562px;
+        height: 700px;
         background-color: var(--barcs-dark-blue);
         margin: 0 auto;
     }
@@ -580,8 +580,8 @@ html{
                 line-height: 1.5rem;
             }
             &-img{
-                width: 80%;
-                margin: 50px auto 45px;
+                width: 100%;
+                margin: 50px 0 45px;
                 & img{
                     width: 100%;
                 }
@@ -597,7 +597,7 @@ html{
     .header-section{
         display: flex;
         align-items: center;
-        height: 800px;
+        height: 900px;
         background-color: var(--barcs-dark-blue);
         margin: 0 auto;
     }
@@ -771,6 +771,7 @@ html{
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                align-items: center;
                 gap: 6px;
                 margin-top: 50px;
                 & .active{
@@ -779,6 +780,13 @@ html{
                     -moz-border-radius: 15px 15px 0px 0px;
                     -ms-border-radius: 15px 15px 0px 0px;
                     -o-border-radius: 15px 15px 0px 0px;
+                    & .action{
+                        transform: rotateZ(45deg);
+                        -webkit-transform: rotateZ(45deg);
+                        -moz-transform: rotateZ(45deg);
+                        -ms-transform: rotateZ(45deg);
+                        -o-transform: rotateZ(45deg);
+                    }
                 }
                 &-card{
                     cursor: pointer;
@@ -830,7 +838,7 @@ html{
                     padding: 2rem;
                     margin-top: -6px;
                     max-width: 1152px;
-                    height: 300px;
+                    height: 400px;
                     background-color: var(--barcs-dark-blue);
                     & p{
                         color: var(--barcs-white);
