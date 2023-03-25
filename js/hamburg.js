@@ -5,35 +5,56 @@ window.alert('Work in progress!');
 const jobCards = ['customer-service', 'information-technology', 'sales-marketing', 'comms-legal', 'product-management'];
 for (let i=0; i<jobCards.length; i++){
     document.getElementById(`${jobCards[i]}-card`).addEventListener('click', function() {
-        var node = document.getElementById(`${jobCards[i]}-overlay`);
-        openOverlay(node);
+        let overlay = document.getElementById(`${jobCards[i]}-overlay`);
+        let card = document.getElementById(`${jobCards[i]}-card`);
+        openOverlay(overlay, card);
     });
     document.getElementById(`${jobCards[i]}-overlay-close`).addEventListener('click', function() {
-        var node = document.getElementById(`${jobCards[i]}-overlay`);
-        closeOverlay(node);
+        let overlay = document.getElementById(`${jobCards[i]}-overlay`);
+        let card = document.getElementById(`${jobCards[i]}-card`);
+        closeOverlay(overlay, card);
     });
 }
 
 const benefitCards = ['arena-tickets', 'employee-credit', 'community-days', 'personal-development', 'flexible-budget', 'company-pension']
 for (let i=0; i<benefitCards.length; i++){
     document.getElementById(`${benefitCards[i]}-card`).addEventListener('click', function() {
-        var node = document.getElementById(`${benefitCards[i]}-overlay`);
-        openOverlay(node);
+        let overlay = document.getElementById(`${benefitCards[i]}-overlay`);
+        let card = document.getElementById(`${benefitCards[i]}-card`);
+        openOverlay(overlay, card);
     });
     document.getElementById(`${benefitCards[i]}-overlay-close`).addEventListener('click', function() {
-        var node = document.getElementById(`${benefitCards[i]}-overlay`);
-        closeOverlay(node);
+        let overlay = document.getElementById(`${benefitCards[i]}-overlay`);
+        let card = document.getElementById(`${benefitCards[i]}-card`);
+        closeOverlay(overlay, card);
     });
 }
 
-function closeOverlay(node) {
-    node.style.animation = 'closeOverlay 0.2s linear'
-    setTimeout(() => {node.classList.add('hide')}, 150);
+function closeOverlay(overlay, card) {
+    if (window.matchMedia("(max-width: 1080px)").matches) {
+        overlay.style.animation = 'closeOverlayMobile 0.2s linear';
+    }
+    else {
+        overlay.style.animation = 'closeOverlay 0.2s linear';
+    }
+    setTimeout(() => {overlay.classList.add('hide')}, 150);
+    card.classList.remove('active');
 }
 
-function openOverlay(node) {
-    node.classList.remove('hide');
-    node.style.animation = 'openOverlay 0.2s linear'
+function openOverlay(overlay, card) {
+    if (card.classList.contains('active')){
+        closeOverlay(overlay, card);
+    }
+    else {
+        overlay.classList.remove('hide');
+        if (window.matchMedia("(max-width: 1080px)").matches) {
+            overlay.style.animation = 'openOverlayMobile 0.2s linear';
+        }
+        else {
+            overlay.style.animation = 'openOverlay 0.2s linear';
+        }
+        card.classList.add('active');
+    }
 }
 
 // language toggle event and function

@@ -17,6 +17,24 @@
     -o-transform: scale(1);
   }
 }
+@keyframes openOverlayMobile {
+  from {
+    transform-origin: top;
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
+  }
+  to {
+    transform-origin: top;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+  }
+}
 @keyframes closeOverlay {
   from {
     opacity: 1;
@@ -33,6 +51,24 @@
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
     -o-transform: scale(0.8);
+  }
+}
+@keyframes closeOverlayMobile {
+  from {
+    transform-origin: top;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+  }
+  to {
+    transform-origin: top;
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
   }
 }
 @keyframes closeRotate {
@@ -351,6 +387,10 @@ html {
 .benefits {
   background-color: var(--barcs-light-blue);
 }
+.benefits-content {
+  display: flex;
+  flex-direction: column;
+}
 .benefits-content h2 {
   color: var(--barcs-grey);
   font-size: 2rem;
@@ -562,10 +602,11 @@ html {
     line-height: 1.5rem;
   }
   .diversity-content-img {
-    width: 100%;
+    width: 80%;
+    margin: 50px auto 45px;
   }
   .diversity-content-img img {
-    width: 80%;
+    width: 100%;
   }
   .diversity-content-text {
     width: 80%;
@@ -631,6 +672,13 @@ html {
     align-items: center;
     gap: 6px;
     margin-top: 50px;
+  }
+  .job-areas-cards .active {
+    border-radius: 15px 15px 0px 0px;
+    -webkit-border-radius: 15px 15px 0px 0px;
+    -moz-border-radius: 15px 15px 0px 0px;
+    -ms-border-radius: 15px 15px 0px 0px;
+    -o-border-radius: 15px 15px 0px 0px;
   }
   .job-areas-cards-card {
     cursor: pointer;
@@ -707,9 +755,15 @@ html {
   .job-areas-cards-overlay-text {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 90%;
+    gap: 2rem;
+    margin: auto;
+  }
+  .job-areas-cards-overlay-text .fw-bold {
+    display: none;
   }
   .job-areas-cards-overlay-close {
+    display: none;
     cursor: pointer;
     position: absolute;
     top: 10px;
@@ -720,6 +774,119 @@ html {
     -webkit-animation: closeRotate 0.2s linear;
   }
   .job-areas-cards-overlay-img {
+    display: none;
+    padding-left: 10%;
+  }
+  .benefits {
+    background-color: var(--barcs-light-blue);
+  }
+  .benefits-content h2 {
+    color: var(--barcs-grey);
+    font-size: 2rem;
+    margin-top: 85px;
+  }
+  .benefits-content p {
+    color: var(--barcs-grey);
+    line-height: 1.5rem;
+  }
+  .benefits-content-cards {
+    min-height: 259px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 50px;
+  }
+  .benefits-content-cards .active {
+    border-radius: 15px 15px 0px 0px;
+    -webkit-border-radius: 15px 15px 0px 0px;
+    -moz-border-radius: 15px 15px 0px 0px;
+    -ms-border-radius: 15px 15px 0px 0px;
+    -o-border-radius: 15px 15px 0px 0px;
+  }
+  .benefits-content-cards-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    background-color: var(--barcs-dark-blue);
+  }
+  .benefits-content-cards-card-img {
+    margin: 0 auto;
+  }
+  .benefits-content-cards-card p {
+    color: var(--barcs-white);
+    font-weight: bold;
+    line-height: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .benefits-content-cards-card p::-moz-selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .benefits-content-cards-card p::selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .benefits-content-cards-card p::-moz-selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .benefits-content-cards-overlay {
+    border-radius: 0px 0px 15px 15px;
+    -webkit-border-radius: 0px 0px 15px 15px;
+    -moz-border-radius: 0px 0px 15px 15px;
+    -ms-border-radius: 0px 0px 15px 15px;
+    -o-border-radius: 0px 0px 15px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10%;
+    align-items: center;
+    position: initial;
+    width: 100%;
+    padding: 2rem;
+    margin-top: -6px;
+    max-width: 1152px;
+    height: 300px;
+    background-color: var(--barcs-dark-blue);
+  }
+  .benefits-content-cards-overlay p {
+    color: var(--barcs-white);
+  }
+  .benefits-content-cards-overlay-text {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 2rem;
+    margin: auto;
+  }
+  .benefits-content-cards-overlay-text .fw-bold {
+    display: none;
+  }
+  .benefits-content-cards-overlay-close {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .benefits-content-cards-overlay-close:hover {
+    animation: closeRotate 0.2s linear;
+    -webkit-animation: closeRotate 0.2s linear;
+  }
+  .benefits-content-cards-overlay-img {
+    display: none;
     padding-left: 10%;
   }
 }/*# sourceMappingURL=hamburg.css.map */
