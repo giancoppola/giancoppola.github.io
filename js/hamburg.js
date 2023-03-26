@@ -1,5 +1,16 @@
 window.alert('Work in progress!');
 
+$(document).ready(function(){
+    $('.meet-our-people-content-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        appendArrows: $('.meet-our-people-content-navigation-arrows'),
+        appendDots: $('.meet-our-people-content-navigation-dots'),
+    });
+});
+
 // card overlay events and functions
 
 const jobCards = ['customer-service', 'information-technology', 'sales-marketing', 'comms-legal', 'product-management'];
