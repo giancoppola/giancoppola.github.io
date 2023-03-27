@@ -614,7 +614,7 @@ html {
 }
 .meet-our-people-content-slider-slide-right-inner p {
   width: 90%;
-  margin: auto;
+  margin: 1rem auto;
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -965,6 +965,179 @@ html {
   .benefits-content-cards-overlay-img {
     display: none;
     padding-left: 10%;
+  }
+  .meet-our-people {
+    background-color: var(--barcs-dark-blue);
+    background-image: none;
+  }
+  .meet-our-people-content h2 {
+    color: var(--barcs-white);
+    font-size: 2rem;
+    margin-top: 80px;
+  }
+  .meet-our-people-content h2::-moz-selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .meet-our-people-content h2::selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .meet-our-people-content h2::-moz-selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .meet-our-people-content p {
+    color: var(--barcs-white);
+    line-height: 1.5rem;
+    width: 100%;
+  }
+  .meet-our-people-content p::-moz-selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .meet-our-people-content p::selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .meet-our-people-content p::-moz-selection {
+    background-color: var(--barcs-white);
+    color: var(--barcs-dark-blue);
+  }
+  .meet-our-people-content-slider-slide.slick-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+  }
+  .meet-our-people-content-slider-slide-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--barcs-dark-blue);
+    color: var(--barcs-white);
+    border-radius: 20px 20px 0 20px;
+    -webkit-border-radius: 20px 20px 0 20px;
+    -moz-border-radius: 20px 20px 0 20px;
+    -ms-border-radius: 20px 20px 0 20px;
+    -o-border-radius: 20px 20px 0 20px;
+  }
+  .meet-our-people-content-slider-slide-left p {
+    color: var(--barcs-white);
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+  }
+  .meet-our-people-content-slider-slide-left img {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    height: 250px;
+    width: 100%;
+    margin: 1rem;
+  }
+  .meet-our-people-content-slider-slide-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    background-color: var(--barcs-dark-blue);
+  }
+  .meet-our-people-content-slider-slide-right-inner {
+    width: 100%;
+    margin: 1rem;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    background-color: var(--barcs-dark-blue);
+    color: var(--barcs-white);
+  }
+  .meet-our-people-content-slider-slide-right-inner p {
+    display: none;
+    width: 100%;
+    margin: 1rem auto;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  .meet-our-people-content-slider-slide-right-inner p.fw-bold {
+    display: block;
+  }
+  .meet-our-people-content-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 0;
+  }
+  .meet-our-people-content-navigation-arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .meet-our-people-content-navigation-arrows .slick-prev {
+    cursor: pointer;
+    font-size: 0;
+    background: none;
+    border: none;
+  }
+  .meet-our-people-content-navigation-arrows .slick-prev::before {
+    cursor: pointer;
+    content: url(/img/hamburg/icons/arrow-left-white.svg);
+  }
+  .meet-our-people-content-navigation-arrows .slick-next {
+    cursor: pointer;
+    font-size: 0;
+    background: none;
+    border: none;
+  }
+  .meet-our-people-content-navigation-arrows .slick-next::before {
+    cursor: pointer;
+    content: url(/img/hamburg/icons/arrow-right-white.svg);
+  }
+  .meet-our-people-content-navigation-dots ul.slick-dots {
+    display: flex;
+    flex: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+  .meet-our-people-content-navigation-dots ul.slick-dots li {
+    list-style: none;
+  }
+  .meet-our-people-content-navigation-dots ul.slick-dots li button {
+    height: 7px;
+    width: 40px;
+    font-size: 0;
+    background: none;
+    border: solid var(--barcs-pink) 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .meet-our-people-content-navigation-dots ul.slick-dots li.slick-active button {
+    width: 70px;
+    background-color: var(--barcs-white);
+    border: solid var(--barcs-white) 1px;
   }
 }
 @media all and (max-width: 800px) {
