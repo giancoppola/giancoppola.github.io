@@ -528,7 +528,7 @@ html {
 .meet-our-people {
   background-color: var(--barcs-dark-blue);
   background-image: url(/img/hamburg/meet-our-people-bg.png);
-  background-size: 33%;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
 }
