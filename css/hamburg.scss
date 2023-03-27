@@ -763,6 +763,13 @@ html{
                 -moz-border-radius: 15px 15px 0px 0px;
                 -ms-border-radius: 15px 15px 0px 0px;
                 -o-border-radius: 15px 15px 0px 0px;
+                & .action{
+                    transform: rotateZ(45deg);
+                    -webkit-transform: rotateZ(45deg);
+                    -moz-transform: rotateZ(45deg);
+                    -ms-transform: rotateZ(45deg);
+                    -o-transform: rotateZ(45deg);
+                }
             }
             &-card{
                 cursor: pointer;
