@@ -103,6 +103,22 @@
     left: 0px;
   }
 }
+@keyframes sliderDotsActive {
+  from {
+    width: 40px;
+  }
+  to {
+    width: 70px;
+  }
+}
+@keyframes sliderDots {
+  from {
+    width: 70px;
+  }
+  to {
+    width: 40px;
+  }
+}
 :root {
   --barcs-dark-blue: #001276;
   --barcs-blue: #026DE2;
@@ -550,12 +566,17 @@ html {
   background-color: var(--barcs-white);
   color: var(--barcs-dark-blue);
 }
+.meet-our-people-content-slider .slick-list {
+  padding: 0 2rem;
+}
 .meet-our-people-content-slider-slide.slick-slide {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
+  min-height: 600px;
   width: 100%;
+  margin: 0 0.5rem;
 }
 .meet-our-people-content-slider-slide-left {
   display: flex;
@@ -577,6 +598,7 @@ html {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: bold;
+  margin-bottom: 3rem;
 }
 .meet-our-people-content-slider-slide-left img {
   border-radius: 20px;
@@ -587,6 +609,8 @@ html {
   height: 250px;
   width: 90%;
   margin: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .meet-our-people-content-slider-slide-right {
   display: flex;
@@ -674,11 +698,15 @@ html {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  animation: sliderDots 0.25s linear;
+  -webkit-animation: sliderDots 0.25s linear;
 }
 .meet-our-people-content-navigation-dots ul.slick-dots li.slick-active button {
   width: 70px;
   background-color: var(--barcs-white);
   border: solid var(--barcs-white) 1px;
+  animation: sliderDotsActive 0.25s linear;
+  -webkit-animation: sliderDotsActive 0.25s linear;
 }
 
 @media all and (max-width: 1080px) {
@@ -972,7 +1000,8 @@ html {
   }
   .meet-our-people-content h2 {
     color: var(--barcs-white);
-    font-size: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.75;
     margin-top: 80px;
   }
   .meet-our-people-content h2::-moz-selection {
@@ -989,6 +1018,7 @@ html {
   }
   .meet-our-people-content p {
     color: var(--barcs-white);
+    font-size: 0.875;
     line-height: 1.5rem;
     width: 100%;
   }
@@ -1004,12 +1034,16 @@ html {
     background-color: var(--barcs-white);
     color: var(--barcs-dark-blue);
   }
+  .meet-our-people-content-slider .slick-list {
+    padding: 0;
+  }
   .meet-our-people-content-slider-slide.slick-slide {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     width: 100%;
+    margin: 0 1rem;
   }
   .meet-our-people-content-slider-slide-left {
     display: flex;
@@ -1028,7 +1062,7 @@ html {
   .meet-our-people-content-slider-slide-left p {
     color: var(--barcs-white);
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.5rem;
     font-weight: bold;
   }
@@ -1039,7 +1073,8 @@ html {
     -ms-border-radius: 0;
     -o-border-radius: 0;
     height: 250px;
-    width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
     margin: 1rem;
   }
   .meet-our-people-content-slider-slide-right {
@@ -1070,7 +1105,7 @@ html {
     display: none;
     width: 100%;
     margin: 1rem auto;
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.5rem;
     text-align: center;
   }

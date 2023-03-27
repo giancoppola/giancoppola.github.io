@@ -110,6 +110,23 @@
     }
 }
 
+@keyframes sliderDotsActive {
+    from {
+        width: 40px;
+    }
+    to{
+        width: 70px;
+    }
+}
+@keyframes sliderDots {
+    from {
+        width: 70px;
+    }
+    to{
+        width: 40px;
+    }
+}
+
 :root{
     --barcs-dark-blue: #001276;
     --barcs-blue: #026DE2;
@@ -527,13 +544,18 @@ html{
             }
         }
         &-slider{
+            & .slick-list{
+                padding: 0 2rem;
+            }
             &-slide{
                 &.slick-slide{
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
                     align-items: flex-end;
+                    min-height: 600px;
                     width: 100%;
+                    margin: 0 0.5rem;
                 }
                 &-left{
                     display: flex;
@@ -554,6 +576,7 @@ html{
                         font-size: 1rem;
                         line-height: 1.5rem;
                         font-weight: bold;
+                        margin-bottom: 3rem;
                     }
                     & img{
                         border-radius: 20px;
@@ -564,6 +587,7 @@ html{
                         height: 250px;
                         width: 90%;
                         margin: 1rem;
+                        object-fit: cover;
                     }
                 }
                 &-right{
@@ -652,12 +676,16 @@ html{
                             -moz-border-radius: 5px;
                             -ms-border-radius: 5px;
                             -o-border-radius: 5px;
+                            animation: sliderDots 0.25s linear;
+                            -webkit-animation: sliderDots 0.25s linear;
                         }
                         &.slick-active{
                             & button{
                                 width: 70px;
                                 background-color: var(--barcs-white);
                                 border: solid var(--barcs-white) 1px;
+                                animation: sliderDotsActive 0.25s linear;
+                                -webkit-animation: sliderDotsActive 0.25s linear;
                             }
                         }
                     }
@@ -953,7 +981,8 @@ html{
         &-content{
             & h2{
                 color: var(--barcs-white);
-                font-size: 2rem;
+                font-size: 1.5rem;
+                line-height: 1.75;
                 margin-top: 80px;
                 &::selection{
                     background-color: var(--barcs-white);
@@ -966,6 +995,7 @@ html{
             }
             & p{
                 color: var(--barcs-white);
+                font-size: 0.875;
                 line-height: 1.5rem;
                 width: 100%;
                 &::selection{
@@ -978,6 +1008,9 @@ html{
                 }
             }
             &-slider{
+                & .slick-list{
+                    padding: 0;
+                }
                 &-slide{
                     &.slick-slide{
                         display: flex;
@@ -985,6 +1018,7 @@ html{
                         justify-content: center;
                         align-items: flex-end;
                         width: 100%;
+                        margin: 0 1rem;
                     }
                     &-left{
                         display: flex;
@@ -1002,7 +1036,7 @@ html{
                         & p{
                             color: var(--barcs-white);
                             width: 100%;
-                            font-size: 1rem;
+                            font-size: 0.875rem;
                             line-height: 1.5rem;
                             font-weight: bold;
                         }
@@ -1013,7 +1047,7 @@ html{
                             -ms-border-radius: 0;
                             -o-border-radius: 0;
                             height: 250px;
-                            width: 100%;
+                            width: fit-content;
                             margin: 1rem;
                         }
                     }
@@ -1043,7 +1077,7 @@ html{
                                 display: none;
                                 width: 100%;
                                 margin: 1rem auto;
-                                font-size: 1rem;
+                                font-size: 0.875rem;
                                 line-height: 1.5rem;
                                 text-align: center;
                                 &.fw-bold{

@@ -1,7 +1,8 @@
-window.alert('Work in progress!');
+// slider for meet our people module
 
 $(document).ready(function(){
     $('.meet-our-people-content-slider').slick({
+        speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
