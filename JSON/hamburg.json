@@ -1,6 +1,6 @@
 {
     "header-title": {
-        "english": "Welcome to Barclays <br> Hamburg",
+        "english": "Welcome to Barclays Hamburg",
         "german": "Willkommen bei Barclays Hamburg"
     },
     "header-description": {
@@ -14,6 +14,66 @@
     "job-areas-description": {
         "english": "Learn more about the different job families we recruit into in Hamburg.",
         "german": "Erfahre mehr über die verschiedenen Arbeitsbereiche, die wir bei uns in Hamburg haben."
+    },
+    "job-areas-title-1": {
+        "english": "Customer Service",
+        "german": "Kundenservice"
+    },
+    "job-areas-title-1o": {
+        "english": "Customer Service",
+        "german": "Kundenservice"
+    },
+    "job-areas-description-1": {
+        "english": "Our Customer Service Teams provide an end-to-end service to all of our customers including customer on-boarding, customer care, complaints handling, fraud/chargeback, financial crime, collections & recoveries for all Barclays Germany product lines.<br> In collaboration with our technology teams, they’re constantly working make our customer services smarter, easier and more use friendly.",
+        "german": "Unsere Kundenservice-Teams beraten und unterstützen Kund:innen bei Fragestellen jeglicher Art „ent-to-end“. Dazu gehören die Auftragsbearbeitung, Unterstützung für Bestandskunden, Beschwerdemanagement, Unterstützung bei Betrug oder Kreditkartenverlust sowie Beratung zu Rückzahlungsoptionen für alle unser Produkte und Dienstleistungen. In Zusammenarbeit mit unserem Technologie-Teams arbeiten die Kollegen:innen kontinuierlich daran unseren Kundenservice einfacher, digitaler und kundenfreundlicher zu gestalten."
+    },
+    "job-areas-title-2": {
+        "english": "Information Technology & Digital Transformation",
+        "german": "Information Technology & Digital Transformation"
+    },
+    "job-areas-title-2o": {
+        "english": "Information Technology & Digital Transformation",
+        "german": "Information Technology & Digital Transformation"
+    },
+    "job-areas-description-2": {
+        "english": "Learn more about the different job families we recruit into in Hamburg.",
+        "german": "Die Barclays Tech und Transformation Teams sind Experten für alle unsere IT-Lösungen (bspw. Barclays Customer App, Webseite, interne Systeme, Soft und Hardware) und teilen sich in die Bereiche „RUN“ und „CHANGE“ auf. Einerseits stellen sie sicher, dass alle Kollegen:innen und unsere Kund:innen stabil mit IT Lösungen arbeiten können (RUN). Andererseits arbeiten Sie fortlaufend an der Digitalisierung und Optimierung unserer Prozesse sowie IT- und Produkt-Lösungen."
+    },
+    "job-areas-title-3": {
+        "english": "Sales & Marketing",
+        "german": "Sales & Marketing"
+    },
+    "job-areas-title-3o": {
+        "english": "Sales & Marketing",
+        "german": "Sales & Marketing"
+    },
+    "job-areas-description-3": {
+        "english": "Learn more about the different job families we recruit into in Hamburg.",
+        "german": "Sales & Marketing besteht bei uns aus den Teams Brand & Communication, Sales, Customer Engagement und Digital Experience. Gemeinsam arbeiten sie an innovativen und kundenfokussierten Lösungen. Dazu gehören beispielsweise die aktive Gestaltung der Marken- und Kommunikationsaktivitäten, die Weiterentwicklung unserer digitalen Distributionskanäle – auch in Zusammenarbeit mit Distributionspartnern – zur Steigerung unseres Vertriebserfolgs. Außerdem vertiefen sie unsere Beziehung mit Bestandskunden, entwickeln die mobile Apps und Webseite weiter und optimieren die übergreifende Erfahrung, die unsere Kund:innen mit uns haben."
+    },
+    "job-areas-title-4": {
+        "english": "Communications, Compliance, Credit Risk, Finance, Human Resources & Legal",
+        "german": "Communications, Compliance, Credit Risk, Finance, Human Resources & Legal"
+    },
+    "job-areas-title-4o": {
+        "english": "Communications, Compliance, Credit Risk, Finance, Human Resources & Legal",
+        "german": "Communications, Compliance, Credit Risk, Finance, Human Resources & Legal"
+    },
+    "job-areas-description-4": {
+        "english": "Learn more about the different job families we recruit into in Hamburg.",
+        "german": "Die Bereiche Communications, Compliance, Credit Risk, Finance, Human Resources und Legal unterstützen alle Bereiche unsere Bank in ihren täglichen Aufgaben und bei der Umsetzung von Projekten. Als Unterstützungsfunktionen sind sie wichtiger Bestandteil in nahezu allen Unternehmensprozessen und tragen wesentlich zu unserer Kultur und zum Erreichen unserer Unternehmensziele bei."
+    },
+    "job-areas-title-5": {
+        "english": "Product Management & Strategic Analytics",
+        "german": "Product Management & Strategic Analytics"
+    },
+    "job-areas-title-5o": {
+        "english": "Product Management & Strategic Analytics",
+        "german": "Product Management & Strategic Analytics"
+    },
+    "job-areas-description-5": {
+        "english": "Learn more about the different job families we recruit into in Hamburg.",
+        "german": "Unsere Product Management Teams treiben kundenorientierte und innovative Produktlösungen voran, die für den Erfolg und die fortlaufende Digitalisierung unserer Bank von immenser Bedeutung sind. Diese Lösungen betreffen alle unsere Produkte und Services, wie Kreditkarten, Ratenkredite, Ratenkauf und Geldanlagen. Unsere Strategic Analytics Teams entwickeln und arbeiten an Strategien, um die Profitabilität unter Berücksichtigung unserer strategischen Unternehmensziele und Risikobereitschaft zu optimieren."
     },
     "benefits-title": {
         "english": "Benefits",
@@ -38,5 +98,13 @@
     "diversity-description-2": {
         "english": "Barclays is a bank. However, the education and skills we are looking for are more diverse than you might think. We are looking for new colleagues for a variety of roles, with opportunities to develop yourself. From Customer Service, Product Management, Marketing, Legal & Compliance to IT and Digital Transformation: you can help shape the future of payment and finance. ",
         "german": "Barclays ist eine Bank. Allerdings sind die Ausbildungen und Fähigkeiten, die wir suchen, diverser als du vielleicht denkst. Wir suchen neue Kolleg:innen für eine Vielzahl von verschiedenen Jobs. Daher bieten wir dir auch eine Vielfalt von Möglichkeiten, um dich weiterzuentwickeln. Von Kundenservice, Produktmanagement, Marketing & Kommunikation, Legal und Compliance bis hin zu IT und digitaler Transformation: Hier kannst Du die Zukunft des Bezahlens und Finanzierens mit neu gestalten."
+    },
+    "meet-our-people-title": {
+        "english": "Meet our people",
+        "german": "Lern unser Team kennen"
+    },
+    "meet-our-people-description": {
+        "english": "There are no limits to development at Barclays. Learn more about our employees' success stories and their journey at Barclays. You too can become part of this special company culture.",
+        "german": "Der Entwicklung bei Barclays sind keine Grenzen gesetzt Erfahre mehr über Erfolgsgeschichten unserer Mitarbeiter:innen und ihren Weg bei Barclays. Auch du kannst Teil dieser besonderen Unternehmenskultur werden."
     }
 }
