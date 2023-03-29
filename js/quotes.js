@@ -5,7 +5,7 @@ $(document).ready(function(){
         arrows: true,
         dots: true,
         appendArrows: $('.grid-container-navigation-arrows'),
-        appendDots: $('.grid-container-dots'),
+        appendDots: $('.grid-container-navigation-dots'),
         mobileFirst: true,
         responsive: [
             {
