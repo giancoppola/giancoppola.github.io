@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.grid-container-grid').slick({
+    $('#grid-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
@@ -15,3 +15,14 @@ $(document).ready(function(){
         ]
     });
 });
+
+const mobileMedia = window.matchMedia("(max-width: 800px)");
+mobileMedia.onchange = (query) => {
+    if (query.matches){
+        console.log('mobile viewport')
+        $('#grid-slider').slick('refresh');
+    }
+    else{
+        // do nothing
+    }
+}

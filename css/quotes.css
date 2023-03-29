@@ -142,26 +142,10 @@ body {
     height: 300px;
     max-width: 800px;
     width: 100%;
-    overflow: hidden;
     gap: 0;
-  }
-  .container .grid-container-grid.slick-slider {
-    max-width: 100vw;
-    width: 100%;
-    overflow: hidden !important;
-  }
-  .container .grid-container-grid .slick-list {
-    width: 100vw;
-  }
-  .container .grid-container-grid .slick-track {
-    width: 100vw;
-    max-width: 100vw;
   }
   .container .grid-container-grid-item {
     height: 150px;
-    width: 100%;
-  }
-  .container .grid-container-grid-item.slick-slide {
     width: 100%;
   }
 }/*# sourceMappingURL=quotes.css.map */
