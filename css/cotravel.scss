@@ -32,6 +32,9 @@
 }
 *{
     font-family: "San Francisco";
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
     &::selection{
         background-color: var(--yellow-col);
         color: var(--green-col);
@@ -40,10 +43,14 @@
 h1, h2, h3 {
     font-family: "San Francisco Bold";
 }
+html{
+    height: 100%;
+}
 body{
     background-image: url(/img/cotravel/bg-img.png);
     background-size: cover;
     background-color: var(--black-col);
+    min-height: 100%;
 }
 .yellow-text{
     color: var(--yellow-col);
@@ -56,9 +63,11 @@ body{
         "d d d"
         "e f f";
     grid-template-columns: 2fr 1fr 2fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-height: 99vh;
     // gap: 1rem;
     &-logo{
+        cursor: pointer;
         grid-area: a;
         margin: 2rem;
     }
@@ -66,6 +75,7 @@ body{
         grid-area: b;
         margin: 2rem;
         text-align: center;
+        font-size: 1.2rem;
     }
     &-menu{
         grid-area: c;
@@ -73,12 +83,14 @@ body{
         &-list{
             list-style-type: none;
             &-item{
-                margin: 1rem auto;
+                margin: 10px auto;
                 cursor: pointer;
-                font-size: 1.75rem;
-                line-height: 1.875rem;
+                font-size: 1.5rem;
+                line-height: 1rem;
                 text-align: right;
                 color: var(--white-col);
+                border-right: solid white 2px;
+                padding-right: 10px;
                 transition: all 0.5s;
                 -webkit-transition: all 0.5s;
                 -moz-transition: all 0.5s;
@@ -89,6 +101,7 @@ body{
                     display: block;
                     width: 100%;
                     height: 2px;
+                    margin-top: 5px;
                     background-color: var(--white-col);
                     animation: menuHide 0.4s linear forwards;
                     -webkit-animation: menuHide 0.4s linear forwards;
@@ -113,28 +126,28 @@ body{
                         background-color: var(--white-col);
                         animation: menuReveal 0.4s linear forwards;
                         -webkit-animation: menuReveal 0.4s linear forwards;
-}
+                    }
                 }
             }
         }
     }
     &-text{
         grid-area: d;
-        width: 70%;
+        width: 50%;
         margin: auto 2rem;
         &-title{
             & span{
                 font-family: "San Francisco Bold";
             }
             margin: 0;
-            font-size: 5.75rem;
+            font-size: 3.5rem;
             color: var(--white-col);
         }
         &-intro{
             width: 60%;
             margin: 0;
-            font-size: 1.75rem;
-            line-height: 1.875rem;
+            font-size: 1.5rem;
+            line-height: 1.75rem;
             color: var(--white-col);
         }
     }
@@ -146,19 +159,34 @@ body{
         grid-area: f;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
+        gap: 20px;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
         gap: 1rem;
         &-box{
+            width: 20%;
+            min-height: 240px;
             display: flex;
             flex-direction: column;
+            justify-content: flex-end;
+            gap: 10px;
             color: var(--white-col);
             & .number{
-                font-size: 2.5rem;
+                font-size: 1.5rem;
                 font-weight: bold;
+                margin: auto 0;
             }
             & .title{
-                font-size: 1.75rem;
+                font-family: "San Francisco";
+                font-weight: bold;
+                font-size: 1.25rem;
+                margin: auto 0;
+            }
+            & .description{
+                font-size: 0.9rem;
+                margin: auto 0;
             }
         }
     }
@@ -168,6 +196,14 @@ a.link{
     line-height: 1.875rem;
     color: var(--white-col);
     text-decoration: underline;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    &:hover{
+        font-size: 1.85rem;
+    }
 }
 .btn{
     cursor: pointer;
@@ -211,6 +247,44 @@ a.link{
             width: 100%;
             height: 2px;
             background-color: var(--green-col);
+        }
+    }
+}
+
+@media all and (min-width: 1500px){
+    .home-grid{
+        &-menu{
+            &-list{
+                &-item{
+                    font-size: 1.75rem;
+                    line-height: 1.875rem;
+                }
+            }
+        }
+        &-text{
+            &-title{
+                & span{
+                    font-family: "San Francisco Bold";
+                }
+                font-size: 5.75rem;
+                color: var(--white-col);
+            }
+            &-intro{
+                font-size: 1.75rem;
+                line-height: 1.875rem;
+                color: var(--white-col);
+            }
+        }
+        &-boxes{
+            &-box{
+                & .number{
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                }
+                & .title{
+                    font-size: 1.75rem;
+                }
+            }
         }
     }
 }
