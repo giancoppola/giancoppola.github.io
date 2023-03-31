@@ -64,8 +64,7 @@ body{
         "e f f";
     grid-template-columns: 2fr 1fr 2fr;
     grid-template-rows: 1fr 1fr 1fr;
-    max-height: 99vh;
-    // gap: 1rem;
+    min-height: 100vh;
     &-logo{
         cursor: pointer;
         grid-area: a;
@@ -89,8 +88,6 @@ body{
                 line-height: 1rem;
                 text-align: right;
                 color: var(--white-col);
-                border-right: solid white 2px;
-                padding-right: 10px;
                 transition: all 0.5s;
                 -webkit-transition: all 0.5s;
                 -moz-transition: all 0.5s;
@@ -160,7 +157,7 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        align-items: center;
+        align-items: flex-end;
         gap: 20px;
         margin-right: 2rem;
         margin-bottom: 2rem;
