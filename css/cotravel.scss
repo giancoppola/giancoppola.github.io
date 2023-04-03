@@ -114,8 +114,8 @@ body{
         "d d d"
         "e f f";
     grid-template-columns: 2fr 1fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    min-height: 100vh;
+    grid-template-rows: auto auto auto;
+    min-height: 100dvh;
     &-logo{
         cursor: pointer;
         grid-area: a;
@@ -144,6 +144,9 @@ body{
                 -moz-transition: all 0.5s;
                 -ms-transition: all 0.5s;
                 -o-transition: all 0.5s;
+                &:nth-child(6){
+                    display: none;
+                }
                 &::after{
                     content: '';
                     display: block;
@@ -181,7 +184,8 @@ body{
     }
     &-text{
         grid-area: d;
-        width: 50%;
+        width: 75%;
+        max-width: 600px;
         margin: auto 2rem;
         &-title{
             & span{
@@ -331,6 +335,44 @@ a.link{
                 }
                 & .title{
                     font-size: 1.75rem;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 800px){
+    .home-grid{
+        &-menu{
+            &-list{
+                &-item{
+                    font-size: 1rem;
+                    line-height: 1.25rem;
+                }
+            }
+        }
+        &-text{
+            &-title{
+                & span{
+                    font-family: "San Francisco Bold";
+                }
+                font-size: 2rem;
+                color: var(--white-col);
+            }
+            &-intro{
+                font-size: 1rem;
+                line-height: 1.25rem;
+                color: var(--white-col);
+            }
+        }
+        &-boxes{
+            &-box{
+                & .number{
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+                & .title{
+                    font-size: 1.3rem;
                 }
             }
         }

@@ -124,8 +124,8 @@ body {
   display: grid;
   grid-template-areas: "a b c" "d d d" "e f f";
   grid-template-columns: 2fr 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  min-height: 100vh;
+  grid-template-rows: auto auto auto;
+  min-height: 100dvh;
 }
 .home-grid-logo {
   cursor: pointer;
@@ -158,6 +158,9 @@ body {
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
 }
+.home-grid-menu-list-item:nth-child(6) {
+  display: none;
+}
 .home-grid-menu-list-item::after {
   content: "";
   display: block;
@@ -187,7 +190,8 @@ body {
 }
 .home-grid-text {
   grid-area: d;
-  width: 50%;
+  width: 75%;
+  max-width: 600px;
   margin: auto 2rem;
 }
 .home-grid-text-title {
@@ -329,5 +333,30 @@ a.link:hover {
   }
   .home-grid-boxes-box .title {
     font-size: 1.75rem;
+  }
+}
+@media all and (max-width: 800px) {
+  .home-grid-menu-list-item {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+  .home-grid-text-title {
+    font-size: 2rem;
+    color: var(--white-col);
+  }
+  .home-grid-text-title span {
+    font-family: "San Francisco Bold";
+  }
+  .home-grid-text-intro {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: var(--white-col);
+  }
+  .home-grid-boxes-box .number {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .home-grid-boxes-box .title {
+    font-size: 1.3rem;
   }
 }/*# sourceMappingURL=cotravel.css.map */
