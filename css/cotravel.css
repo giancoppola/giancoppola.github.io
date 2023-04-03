@@ -85,8 +85,6 @@ body {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-  width: 50%;
-  height: 25%;
   padding: 2rem;
   color: var(--green-col);
 }
