@@ -463,13 +463,16 @@ a.link{
             margin: 2rem;
             &-box{
                 width: auto;
-                min-height: 272px;
+                min-height: 245px;
                 & .number{
                     font-size: 1.4rem;
                     font-weight: bold;
                 }
                 & .title{
                     font-size: 1.2rem;
+                }
+                & .description{
+                    font-size: 0.8rem;
                 }
             }
         }

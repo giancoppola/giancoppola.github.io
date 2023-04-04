@@ -455,7 +455,7 @@ a.link:hover {
   }
   .home-grid-boxes-box {
     width: auto;
-    min-height: 272px;
+    min-height: 245px;
   }
   .home-grid-boxes-box .number {
     font-size: 1.4rem;
@@ -463,5 +463,8 @@ a.link:hover {
   }
   .home-grid-boxes-box .title {
     font-size: 1.2rem;
+  }
+  .home-grid-boxes-box .description {
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=cotravel.css.map */
