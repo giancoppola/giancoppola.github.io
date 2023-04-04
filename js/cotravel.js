@@ -5,3 +5,15 @@ for (el of alertArr){
         designDialog.showModal();
     })
 }
+
+const burgerMenu = document.querySelector('#home-grid-menu-burger');
+burgerMenu.addEventListener('click', function() {
+    burgerMenuToggle();
+});
+
+function burgerMenuToggle() {
+    burgerMenu.classList.toggle('open');
+    for (node of burgerMenu.getElementsByTagName('span')){
+        node.classList.toggle('open');
+    }
+}
