@@ -359,7 +359,7 @@ a.link:hover {
     position: absolute;
     width: 100dvw;
     height: 100dvh;
-    top: 1000px;
+    top: -100dvh;
     left: 0;
     background-color: var(--yellow-col);
     transition: all 0.5s;
@@ -389,11 +389,12 @@ a.link:hover {
     background-color: var(--green-col);
   }
   .home-grid-menu-burger {
+    width: 30px;
+    height: 24px;
     z-index: 2;
     display: block;
     position: relative;
     margin-top: 0.5rem;
-    margin-right: 2rem;
     background: none;
     border: none;
     cursor: pointer;
