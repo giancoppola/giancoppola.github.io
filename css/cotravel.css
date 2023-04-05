@@ -356,6 +356,7 @@ a.link:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     position: absolute;
     width: 100dvw;
     height: 100dvh;
@@ -382,6 +383,7 @@ a.link:hover {
     background-color: var(--yellow-col);
   }
   .home-grid-menu.open ul li {
+    font-size: 2rem;
     color: var(--green-col);
     font-weight: bold;
   }

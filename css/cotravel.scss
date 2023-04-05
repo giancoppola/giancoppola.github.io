@@ -359,6 +359,7 @@ a.link{
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                gap: 2rem;
                 position: absolute;
                 width: 100dvw;
                 height: 100dvh;
@@ -385,6 +386,7 @@ a.link{
                     left: 0;
                     background-color: var(--yellow-col);
                     & li{
+                        font-size: 2rem;
                         color: var(--green-col);
                         font-weight: bold;
                         &::after{
