@@ -11,8 +11,10 @@ burgerMenu.addEventListener('click', function() {
     burgerMenuToggle();
 });
 
+const menu = document.querySelector('#home-grid-menu');
 function burgerMenuToggle() {
     burgerMenu.classList.toggle('open');
+    menu.classList.toggle('open');
     for (node of burgerMenu.getElementsByTagName('span')){
         node.classList.toggle('open');
     }
