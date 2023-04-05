@@ -361,16 +361,19 @@ a.link{
                 align-items: center;
                 gap: 2rem;
                 position: absolute;
-                width: 100dvw;
+                width: 0dvw;
                 height: 100dvh;
                 top: 0;
-                left: -100dvw;
+                left: 0;
                 background-color: var(--yellow-col);
                 transition: all 0.5s;
                 -webkit-transition: all 0.5s;
                 -moz-transition: all 0.5s;
                 -ms-transition: all 0.5s;
                 -o-transition: all 0.5s;
+                & li{
+                    font-size: 0;
+                }
             }
             &.open{
                 & ul{
