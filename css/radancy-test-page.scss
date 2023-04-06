@@ -317,15 +317,100 @@ p{
 }
 
 @media all and (max-width: 800px) {
+    footer{
+        margin-top: 4.375rem;
+    }
     .content-container{
         padding: 0 18px;
-        margin: 1.5rem auto;
+        margin: 2.75rem auto;
     }
     .main{
         &-navigation{
             &-bar{
                 display: flex;
                 justify-content: center;
+            }
+        }
+        &-our-investment{
+            &-container{
+                & .break{
+                    margin: 1rem 0;
+                }
+                & p{
+                    margin: 0 0 2.75rem 0;
+                }
+            }
+        }
+        &-citizens-advantage{
+            &-grid{
+                grid-template-areas:
+                    "a"
+                    "b"
+                    "c"
+                    "d"
+                    "e";
+                grid-template-rows: repeat(5, auto);
+                grid-template-columns: 1fr;
+                // gap: 1.5rem;
+                &-title{
+                    grid-area: a;
+                    & h2{
+                        text-align: center;
+                    }
+                }
+                &-tile{
+                    &.tile-1{
+                        grid-area: b;
+                        margin: 0;
+                        padding: 0 0 1.5rem 0;
+                        border-right: none;
+                        border-bottom: solid 1px var(--grey-col);
+                    }
+                    &.tile-2{
+                        grid-area: c;
+                        margin: 0;
+                        padding: 1.5rem 0 1.5rem 0;
+                        border-bottom: solid 1px var(--grey-col);
+                    }
+                    &.tile-3{
+                        grid-area: d;
+                        margin: 0;
+                        padding: 1.5rem 0 1.5rem 0;
+                        border-right: none;
+                        border-bottom: solid 1px var(--grey-col);
+                    }
+                    &.tile-4{
+                        grid-area: e;
+                        margin: 0;
+                        padding: 1.5rem 0 0 0;
+                    }
+                }
+            }
+        }
+        &-loans{
+            &-container{
+                &-content{
+                    & p{
+                    margin: 1rem;
+                    }
+                }
+            }
+        }
+        &-quotes{
+            &-container{
+                flex-direction: column;
+                gap: 2rem;
+                &-quote{
+                    gap: 1rem;
+                    width: 100%;
+                    &:nth-child(2){
+                        width: 100%;
+                    }
+                    & blockquote{
+                        width: 60%;
+                        min-height: 0;
+                    }
+                }
             }
         }
     }
