@@ -109,8 +109,6 @@ p{
         }
     }
     &-our-investment{
-        margin-top: 64px;
-        margin-bottom: 44px;
         &-container{
             display: flex;
             flex-direction: column;
@@ -121,8 +119,7 @@ p{
             }
             & p{
                 color: var(--grey-col);
-                margin-top: 26px;
-                margin-bottom: 44px;
+                margin-bottom: 2.75rem;
             }
         }
     }
@@ -143,6 +140,9 @@ p{
                 align-items: center;
                 & h2{
                     color: var(--green-col);
+                }
+                & .break{
+                    margin: 18px 0 0 0;
                 }
             }
             &-tile{
@@ -362,7 +362,7 @@ p{
                     &.tile-1{
                         grid-area: b;
                         margin: 0;
-                        padding: 0 0 1.5rem 0;
+                        padding: 1.5rem 0 1.5rem 0;
                         border-right: none;
                         border-bottom: solid 1px var(--grey-col);
                     }

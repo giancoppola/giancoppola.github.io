@@ -117,10 +117,6 @@ p {
   width: 100%;
   max-width: 100%;
 }
-.main-our-investment {
-  margin-top: 64px;
-  margin-bottom: 44px;
-}
 .main-our-investment-container {
   display: flex;
   flex-direction: column;
@@ -132,8 +128,7 @@ p {
 }
 .main-our-investment-container p {
   color: var(--grey-col);
-  margin-top: 26px;
-  margin-bottom: 44px;
+  margin-bottom: 2.75rem;
 }
 .main-citizens-advantage-grid {
   display: grid;
@@ -150,6 +145,9 @@ p {
 }
 .main-citizens-advantage-grid-title h2 {
   color: var(--green-col);
+}
+.main-citizens-advantage-grid-title .break {
+  margin: 18px 0 0 0;
 }
 .main-citizens-advantage-grid-tile {
   display: flex;
@@ -350,7 +348,7 @@ p {
   .main-citizens-advantage-grid-tile.tile-1 {
     grid-area: b;
     margin: 0;
-    padding: 0 0 1.5rem 0;
+    padding: 1.5rem 0 1.5rem 0;
     border-right: none;
     border-bottom: solid 1px var(--grey-col);
   }
