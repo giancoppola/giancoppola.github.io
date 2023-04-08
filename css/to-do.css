@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --black-col: #37352f;
+  --dark-grey-col: #dddddd;
+  --grey-col: #f3f3f3;
+  --white-col: #FFFFFF;
+  --darker-red-col: #5d1715;
+  --dark-red-col: #e16f64;
+  --red-col: #FFE1DD;
+  --light-red-col: #FEF8F7;
+  --darker-orange-col: #402c1b;
+  --dark-orange-col: #cb9433;
+  --orange-col: #FDECC8;
+  --light-orange-col: #FBFAF2;
+  --darker-green-col: #1c3829;
+  --dark-green-col: #6c9b7d;
+  --green-col: #DBEDDB;
+  --light-green-col: #F7FAF7;
+}
+
+* {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  color: var(--black-col);
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+.new-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.main {
+  max-width: 1440px;
+  margin: auto;
+}
+.main-grid {
+  margin: 2rem;
+  display: grid;
+  grid-template-areas: "a b c";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 2rem;
+}
+.main-grid-to-do {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--light-red-col);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.main-grid-to-do .new-btn {
+  color: var(--dark-red-col);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+.main-grid-to-do .new-btn:hover {
+  background-color: rgba(55, 53, 47, 0.05);
+}
+.main-grid-to-do-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+.main-grid-to-do-title h2 {
+  color: var(--darker-red-col);
+  background-color: var(--red-col);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.main-grid-to-do-title .amount {
+  color: var(--dark-red-col);
+}
+.main-grid-to-do-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main-grid-to-do-list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  background-color: var(--white-col);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 0 4px 0;
+  padding: 1rem;
+}
+.main-grid-to-do-list-item-close {
+  font-size: 1.1rem;
+  display: none;
+  cursor: pointer;
+  background-color: var(--white-col);
+  border: solid 1px var(--dark-grey-col);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.main-grid-to-do-list-item:hover {
+  background-color: var(--grey-col);
+}
+.main-grid-to-do-list-item:hover input {
+  background-color: var(--grey-col);
+}
+.main-grid-to-do-list-item:hover button {
+  display: block;
+}
+.main-grid-to-do-list-item input {
+  width: 100%;
+  font-size: 1.25rem;
+  border: none;
+}/*# sourceMappingURL=to-do.css.map */
