@@ -28,7 +28,6 @@ window.addEventListener('load', function () {
     }
 });
 
-
 const todoNew = document.querySelector('#todo-new');
 const doingNew = document.querySelector('#doing-new');
 const doneNew = document.querySelector('#done-new');
@@ -42,9 +41,11 @@ todoNew.addEventListener('click', function () {
     addNewItem('todo', value);
 });
 doingNew.addEventListener('click', function () {
+    let value = doingInput.value;
     addNewItem('doing', value);
 });
 doneNew.addEventListener('click', function () {
+    let value = doneInput.value;
     addNewItem('done', value);
 });
 
@@ -52,6 +53,18 @@ todoInput.addEventListener('keypress', (event) => {
     if (event.code == 'Enter') {
         let value = todoInput.value;
         addNewItem('todo', value);
+    }
+})
+doingInput.addEventListener('keypress', (event) => {
+    if (event.code == 'Enter') {
+        let value = doingInput.value;
+        addNewItem('doing', value);
+    }
+})
+doneInput.addEventListener('keypress', (event) => {
+    if (event.code == 'Enter') {
+        let value = doneInput.value;
+        addNewItem('done', value);
     }
 })
 
@@ -75,7 +88,8 @@ function recoverItems(type, key, value){
             }, 390);
         });
         item.classList.add('main-grid-to-do-list-item');
-        item.setAttribute('data', `${key}`)
+        item.setAttribute('data', `${key}`);
+        item.setAttribute('draggable', 'true');
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
@@ -88,8 +102,63 @@ function recoverItems(type, key, value){
         obj.todo[`${key}`] = text.innerHTML;
         todoInput.value = '';
     }
-    else{
-        // comment
+    else if (type === 'doing'){
+        let item = document.createElement('div');
+        let text = document.createElement('p');
+        let close = document.createElement('button');
+        close.classList.add('main-grid-doing-list-item-close');
+        close.innerHTML = 'X';
+        close.addEventListener('click', function() {
+            document.querySelector(`div[data="${key}"]`).style.animation = 'deleteItem 0.4s linear';
+            setTimeout(function() {
+                document.querySelector(`div[data="${key}"]`).remove();
+                delete obj.doing[`${key}`];
+                localStorage.setItem('obj', JSON.stringify(obj));
+            }, 390);
+        });
+        item.classList.add('main-grid-doing-list-item');
+        item.setAttribute('data', `${key}`);
+        item.setAttribute('draggable', 'true');
+        if (value === ''){
+            text.innerHTML = 'Untitled';
+        }
+        else{
+            text.innerHTML = value;
+        }
+        item.appendChild(text);
+        item.appendChild(close);
+        doingList.appendChild(item);
+        obj.doing[`${key}`] = text.innerHTML;
+        doingInput.value = '';
+    }
+    else if (type === 'done'){
+        let item = document.createElement('div');
+        let text = document.createElement('p');
+        let close = document.createElement('button');
+        close.classList.add('main-grid-done-list-item-close');
+        close.innerHTML = 'X';
+        close.addEventListener('click', function() {
+            document.querySelector(`div[data="${key}"]`).style.animation = 'deleteItem 0.4s linear';
+            setTimeout(function() {
+                document.querySelector(`div[data="${key}"]`).remove();
+                delete obj.done[`${key}`];
+                localStorage.setItem('obj', JSON.stringify(obj));
+            }, 390);
+        });
+        item.classList.add('main-grid-done-list-item');
+        item.setAttribute('data', `${key}`);
+        item.setAttribute('draggable', 'true');
+        if (value === ''){
+            text.innerHTML = 'Untitled';
+        }
+        else{
+            text.innerHTML = value;
+        }
+        item.appendChild(text);
+        item.appendChild(close);
+        doneList.appendChild(item);
+        obj.done[`${key}`] = text.innerHTML;
+        doneInput.value = '';
     }
 }
 
@@ -110,7 +179,8 @@ function addNewItem(type, value){
             }, 390);
         });
         item.classList.add('main-grid-to-do-list-item');
-        item.setAttribute('data', `todo-${number}`)
+        item.setAttribute('data', `todo-${number}`);
+        item.setAttribute('draggable', 'true');
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
@@ -124,7 +194,66 @@ function addNewItem(type, value){
         localStorage.setItem('obj', JSON.stringify(obj));
         todoInput.value = '';
     }
-    else{
-        // comment
+    else if (type === 'doing'){
+        let number = Object.keys(obj.todo).length + 1;
+        let item = document.createElement('div');
+        let text = document.createElement('p');
+        let close = document.createElement('button');
+        close.classList.add('main-grid-doing-list-item-close');
+        close.innerHTML = 'X';
+        close.addEventListener('click', function() {
+            document.querySelector(`div[data="doing-${number}"]`).style.animation = 'deleteItem 0.4s linear';
+            setTimeout(function() {
+                document.querySelector(`div[data="doing-${number}"]`).remove();
+                delete obj.doing[`doing-${number}`];
+                localStorage.setItem('obj', JSON.stringify(obj));
+            }, 390);
+        });
+        item.classList.add('main-grid-doing-list-item');
+        item.setAttribute('data', `doing-${number}`);
+        item.setAttribute('draggable', 'true');
+        if (value === ''){
+            text.innerHTML = 'Untitled';
+        }
+        else{
+            text.innerHTML = value;
+        }
+        item.appendChild(text);
+        item.appendChild(close);
+        doingList.appendChild(item);
+        obj.doing[`doing-${number}`] = text.innerHTML;
+        localStorage.setItem('obj', JSON.stringify(obj));
+        doingInput.value = '';
+    }
+    else if (type === 'done'){
+        let number = Object.keys(obj.todo).length + 1;
+        let item = document.createElement('div');
+        let text = document.createElement('p');
+        let close = document.createElement('button');
+        close.classList.add('main-grid-done-list-item-close');
+        close.innerHTML = 'X';
+        close.addEventListener('click', function() {
+            document.querySelector(`div[data="done-${number}"]`).style.animation = 'deleteItem 0.4s linear';
+            setTimeout(function() {
+                document.querySelector(`div[data="done-${number}"]`).remove();
+                delete obj.done[`done-${number}`];
+                localStorage.setItem('obj', JSON.stringify(obj));
+            }, 390);
+        });
+        item.classList.add('main-grid-done-list-item');
+        item.setAttribute('data', `done-${number}`);
+        item.setAttribute('draggable', 'true');
+        if (value === ''){
+            text.innerHTML = 'Untitled';
+        }
+        else{
+            text.innerHTML = value;
+        }
+        item.appendChild(text);
+        item.appendChild(close);
+        doneList.appendChild(item);
+        obj.done[`done-${number}`] = text.innerHTML;
+        localStorage.setItem('obj', JSON.stringify(obj));
+        doneInput.value = '';
     }
 }
