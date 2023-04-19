@@ -80,6 +80,24 @@ const todoList = document.querySelector('#main-grid-to-do-list');
 const doingList = document.querySelector('#main-grid-doing-list');
 const doneList = document.querySelector('#main-grid-done-list');
 
+document.addEventListener('drop', function(event){
+    event.preventDefault();
+    if (event.target.classList.contains("main-grid-doing")){
+        let data = event.dataTransfer.getData('text');
+        if (data){
+            window.alert(data);
+        }
+    }
+})
+
+doingList.addEventListener('drop', function(event){
+    event.preventDefault();
+    console.log('test');
+})
+doingList.addEventListener('dragover', function(event){
+    event.preventDefault();
+})
+
 // on page load this function is called to recover the to do list items
 // that are held within local storage
 function recoverItems(type, key, value){
@@ -105,6 +123,9 @@ function recoverItems(type, key, value){
         item.classList.add('main-grid-to-do-list-item');
         item.setAttribute('data', `${key}`);
         item.setAttribute('draggable', 'true');
+        item.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text', event.target.querySelector('p').innerHTML);
+        })
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
@@ -216,6 +237,9 @@ function addNewItem(type, value){
         item.classList.add('main-grid-to-do-list-item');
         item.setAttribute('data', `todo-${number}`);
         item.setAttribute('draggable', 'true');
+        item.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text', event.target.innerHTML);
+        })
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
