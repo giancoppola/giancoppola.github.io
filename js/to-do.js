@@ -1,4 +1,5 @@
 let obj;
+let dragged = null;
 
 // onload function reads local storage to determine if object exists,
 // if it does it runs the recoverItems function for all three columns,
@@ -75,28 +76,47 @@ doneInput.addEventListener('keypress', (event) => {
     }
 })
 
+
+// list column parent elements
+const todo = document.querySelector('#main-grid-to-do');
+const doing = document.querySelector('#main-grid-doing');
+const done = document.querySelector('#main-grid-done');
+
+// drag event handlers based on above elements
+todo.addEventListener('dragover', function(event){
+    event.preventDefault();
+})
+todo.addEventListener('drop', function(event){
+    event.preventDefault();
+    let data = event.dataTransfer.getData('text');
+    addNewItem('todo', data);
+    dragged.querySelector('button').click();
+})
+
+doing.addEventListener('dragover', function(event){
+    event.preventDefault();
+})
+doing.addEventListener('drop', function(event){
+    event.preventDefault();
+    let data = event.dataTransfer.getData('text');
+    addNewItem('doing', data);
+    dragged.querySelector('button').click();
+})
+
+done.addEventListener('dragover', function(event){
+    event.preventDefault();
+})
+done.addEventListener('drop', function(event){
+    event.preventDefault();
+    let data = event.dataTransfer.getData('text');
+    addNewItem('done', data);
+    dragged.querySelector('button').click();
+})
+
 // elements for each column
 const todoList = document.querySelector('#main-grid-to-do-list');
 const doingList = document.querySelector('#main-grid-doing-list');
 const doneList = document.querySelector('#main-grid-done-list');
-
-document.addEventListener('drop', function(event){
-    event.preventDefault();
-    if (event.target.classList.contains("main-grid-doing")){
-        let data = event.dataTransfer.getData('text');
-        if (data){
-            window.alert(data);
-        }
-    }
-})
-
-doingList.addEventListener('drop', function(event){
-    event.preventDefault();
-    console.log('test');
-})
-doingList.addEventListener('dragover', function(event){
-    event.preventDefault();
-})
 
 // on page load this function is called to recover the to do list items
 // that are held within local storage
@@ -115,16 +135,18 @@ function recoverItems(type, key, value){
             setTimeout(function() {
                 document.querySelector(`div[data="${key}"]`).remove();
                 delete obj.todo[`${key}`];
-                localStorage.setItem('obj', JSON.stringify(obj));
+                updateLocalStorage();
             }, 390);
         });
         // set item class, data value to determine its relation to the object,
         // text, and sets it to be draggable to move from list to list
         item.classList.add('main-grid-to-do-list-item');
         item.setAttribute('data', `${key}`);
+        // enables dragging for the item, and sets the data as the text
         item.setAttribute('draggable', 'true');
         item.addEventListener('dragstart', function(event){
             event.dataTransfer.setData('text', event.target.querySelector('p').innerHTML);
+            dragged = event.target;
         })
         if (value === ''){
             text.innerHTML = 'Untitled';
@@ -153,14 +175,19 @@ function recoverItems(type, key, value){
             setTimeout(function() {
                 document.querySelector(`div[data="${key}"]`).remove();
                 delete obj.doing[`${key}`];
-                localStorage.setItem('obj', JSON.stringify(obj));
+                updateLocalStorage();
             }, 390);
         });
         // set item class, data value to determine its relation to the object,
         // text, and sets it to be draggable to move from list to list
         item.classList.add('main-grid-doing-list-item');
         item.setAttribute('data', `${key}`);
+        // enables dragging for the item, and sets the data as the text
         item.setAttribute('draggable', 'true');
+        item.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text', event.target.querySelector('p').innerHTML);
+            dragged = event.target;
+        })
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
@@ -188,14 +215,19 @@ function recoverItems(type, key, value){
             setTimeout(function() {
                 document.querySelector(`div[data="${key}"]`).remove();
                 delete obj.done[`${key}`];
-                localStorage.setItem('obj', JSON.stringify(obj));
+                updateLocalStorage();
             }, 390);
         });
         // set item class, data value to determine its relation to the object,
         // text, and sets it to be draggable to move from list to list
         item.classList.add('main-grid-done-list-item');
         item.setAttribute('data', `${key}`);
+        // enables dragging for the item, and sets the data as the text
         item.setAttribute('draggable', 'true');
+        item.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text', event.target.querySelector('p').innerHTML);
+            dragged = event.target;
+        })
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
@@ -229,16 +261,22 @@ function addNewItem(type, value){
             setTimeout(function() {
                 document.querySelector(`div[data="todo-${number}"]`).remove();
                 delete obj.todo[`todo-${number}`];
-                localStorage.setItem('obj', JSON.stringify(obj));
+                updateLocalStorage();
             }, 390);
         });
         // set item class, data value to determine its relation to the object,
         // text, and sets it to be draggable to move from list to list
         item.classList.add('main-grid-to-do-list-item');
         item.setAttribute('data', `todo-${number}`);
+        // enables dragging for the item, and sets the data as the text
         item.setAttribute('draggable', 'true');
         item.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text', event.target.querySelector('p').innerHTML);
+            dragged = event.target;
+        })
+        item.addEventListener('dragstart', function(event){
             event.dataTransfer.setData('text', event.target.innerHTML);
+            dragged = event.target;
         })
         if (value === ''){
             text.innerHTML = 'Untitled';
@@ -252,7 +290,7 @@ function addNewItem(type, value){
         // adds to JS object to be referenced easily
         obj.todo[`todo-${number}`] = text.innerHTML;
         // updates object within local storage
-        localStorage.setItem('obj', JSON.stringify(obj));
+        updateLocalStorage();
         todoInput.value = '';
     }
     else if (type === 'doing'){
@@ -271,14 +309,19 @@ function addNewItem(type, value){
             setTimeout(function() {
                 document.querySelector(`div[data="doing-${number}"]`).remove();
                 delete obj.doing[`doing-${number}`];
-                localStorage.setItem('obj', JSON.stringify(obj));
+                updateLocalStorage();
             }, 390);
         });
         // set item class, data value to determine its relation to the object,
         // text, and sets it to be draggable to move from list to list
         item.classList.add('main-grid-doing-list-item');
         item.setAttribute('data', `doing-${number}`);
+        // enables dragging for the item, and sets the data as the text
         item.setAttribute('draggable', 'true');
+        item.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text', event.target.querySelector('p').innerHTML);
+            dragged = event.target;
+        })
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
@@ -291,7 +334,7 @@ function addNewItem(type, value){
         // adds to JS object to be referenced easily
         obj.doing[`doing-${number}`] = text.innerHTML;
         // updates object within local storage
-        localStorage.setItem('obj', JSON.stringify(obj));
+        updateLocalStorage();
         doingInput.value = '';
     }
     else if (type === 'done'){
@@ -310,14 +353,19 @@ function addNewItem(type, value){
             setTimeout(function() {
                 document.querySelector(`div[data="done-${number}"]`).remove();
                 delete obj.done[`done-${number}`];
-                localStorage.setItem('obj', JSON.stringify(obj));
+                updateLocalStorage();
             }, 390);
         });
         // set item class, data value to determine its relation to the object,
         // text, and sets it to be draggable to move from list to list
         item.classList.add('main-grid-done-list-item');
         item.setAttribute('data', `done-${number}`);
+        // enables dragging for the item, and sets the data as the text
         item.setAttribute('draggable', 'true');
+        item.addEventListener('dragstart', function(event){
+            event.dataTransfer.setData('text', event.target.querySelector('p').innerHTML);
+            dragged = event.target;
+        })
         if (value === ''){
             text.innerHTML = 'Untitled';
         }
@@ -330,7 +378,11 @@ function addNewItem(type, value){
         // adds to JS object to be referenced easily
         obj.done[`done-${number}`] = text.innerHTML;
         // updates object within local storage
-        localStorage.setItem('obj', JSON.stringify(obj));
+        updateLocalStorage();
         doneInput.value = '';
     }
+}
+
+function updateLocalStorage() {
+    localStorage.setItem('obj', JSON.stringify(obj));
 }
