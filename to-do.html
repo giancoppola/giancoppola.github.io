@@ -10,10 +10,10 @@
 <body>
     <main class="main">
         <section class="main-modal">
-            <dialog open class="overlay">
+            <dialog tabindex="0" class="overlay" id="overlay">
                 <p class="modal-text">Please choose an option below to continue;</p>
+                <button id="sign-in-google">Sign in with Google</button>
                 <form method="dialog">
-                    <button id="sign-in-google">Sign in with Google</button>
                     <button>Save your list locally</button>
                 </form>
             </dialog>

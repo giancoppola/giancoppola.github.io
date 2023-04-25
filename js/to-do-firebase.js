@@ -20,8 +20,10 @@ export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
-
 // google auth login handling
+window.addEventListener('load', function() {
+    document.querySelector('#overlay').showModal();
+})
 document.querySelector('#sign-in-google').addEventListener('click', function() {
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -32,6 +34,7 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         console.log(user)
         console.log(user.uid)
         console.log(`Welcome ${user.displayName}!`)
+        document.querySelector('#overlay').close();
     }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
