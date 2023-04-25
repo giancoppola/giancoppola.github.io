@@ -63,6 +63,26 @@ h1,h2,h3,h4,p {
 .main{
     max-width: 1440px;
     margin: auto;
+    &-modal{
+        & .overlay{
+            background-color: white;
+            height: 400px;
+            width: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            &::backdrop{
+                background: #1c3829;
+                filter: blur(10px);
+                -webkit-filter: blur(10px);
+                backdrop-filter: blur(10px);
+            }
+        }
+    }
     &-grid{
         margin: 2rem;
         display: grid;

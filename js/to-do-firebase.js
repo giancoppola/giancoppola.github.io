@@ -18,7 +18,11 @@ export const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
-document.querySelector('#sign-in').addEventListener('click', function() {
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
+
+// google auth login handling
+document.querySelector('#sign-in-google').addEventListener('click', function() {
     signInWithPopup(auth, provider)
     .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -42,7 +46,3 @@ document.querySelector('#sign-in').addEventListener('click', function() {
         console.log(credential);
     });
 });
-// Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
-console.log(auth.uid)
-console.log(ref(database, '/'));
