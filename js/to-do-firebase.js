@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 import { getDatabase, set, get, ref, update} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
-import { usingGoogleTest } from "./to-do";
+import { usingGoogleTest } from "./to-do.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBMPSHMl12La6g8xmpkO2q0MrYp5u_ZIas",
@@ -46,7 +46,7 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         const errorCode = error.code;
         const errorMessage = error.message;
         // The email of the user's account used.
-        const email = error.customData.email;
+        // const email = error.customData.email;
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
