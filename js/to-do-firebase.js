@@ -2,7 +2,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 import { getDatabase, set, get, ref, update} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
-import { usingGoogleTest } from "./to-do.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBMPSHMl12La6g8xmpkO2q0MrYp5u_ZIas",
@@ -40,7 +39,6 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         console.log(user);
         console.log(token);
         uiUpdateGoogle(user);
-        usingGoogleTest();
     }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;

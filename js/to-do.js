@@ -389,7 +389,3 @@ function addNewItem(type, value){
 function updateLocalStorage() {
     localStorage.setItem('obj', JSON.stringify(obj));
 }
-
-export function usingGoogleTest() {
-    console.log(usingGoogle);
-}
