@@ -70,6 +70,7 @@ function uiUpdateGoogle() {
     }
 }
 
+const user = auth().currentUser;
 const dbRef = ref(getDatabase());
 get(dbRef, '')
 .then((snapshot) => {
