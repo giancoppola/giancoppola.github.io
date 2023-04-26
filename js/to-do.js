@@ -1,8 +1,6 @@
 import { usingGoogle } from "./to-do-firebase.js";
 import { usingLocal } from "./to-do-firebase.js";
 
-console.log(usingGoogle);
-
 let obj;
 let dragged = null;
 
@@ -390,4 +388,8 @@ function addNewItem(type, value){
 
 function updateLocalStorage() {
     localStorage.setItem('obj', JSON.stringify(obj));
+}
+
+export function usingGoogleTest() {
+    console.log(usingGoogle);
 }
