@@ -39,7 +39,7 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         const user = result.user;
         console.log(user);
         console.log(token);
-        uiUpdateGoogle();
+        uiUpdateGoogle(user);
         usingGoogleTest();
     }).catch((error) => {
         // Handle Errors here.
@@ -61,7 +61,7 @@ document.querySelector('#sign-in-local').addEventListener('click', function() {
     document.querySelector('#overlay').close();
 });
 
-function uiUpdateGoogle() {
+function uiUpdateGoogle(user) {
     document.querySelector('#overlay').close();
     document.querySelector('#welcome-title').innerHTML = `Welcome, ${user.displayName}!`;
     document.querySelector('#welcome-text').innerHTML = `Your list is linked to your Google account`;
@@ -70,7 +70,6 @@ function uiUpdateGoogle() {
     }
 }
 
-const user = auth().currentUser;
 const dbRef = ref(getDatabase());
 get(dbRef, '')
 .then((snapshot) => {
