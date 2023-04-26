@@ -22,8 +22,8 @@ const database = getDatabase(app);
 
 
 // login handling
-let usingGoogle = false;
-let usingLocal = true;
+export let usingGoogle = false;
+export let usingLocal = true;
 window.onload = () => {document.querySelector('#overlay').showModal();};
 // google auth login handling
 document.querySelector('#sign-in-google').addEventListener('click', function() {
@@ -54,6 +54,10 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         document.querySelector('#overlay-error-text').innerHTML = `Error occurred - ${errorCode}`;
     });
 });
+// if the user chooses local just close the modal as that is the standard behaviour
+document.querySelector('#sign-in-local').addEventListener('click', function() {
+    document.querySelector('#overlay').close();
+});
 
 function uiUpdateGoogle() {
     document.querySelector('#overlay').close();
@@ -63,3 +67,16 @@ function uiUpdateGoogle() {
         node.classList.add("hide")
     }
 }
+
+const dbRef = ref(getDatabase());
+get(dbRef, '')
+.then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+})
+.catch((error) => {
+  console.error(error);
+});

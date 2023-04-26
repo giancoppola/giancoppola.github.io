@@ -1,3 +1,8 @@
+import { usingGoogle } from "./to-do-firebase.js";
+import { usingLocal } from "./to-do-firebase.js";
+
+console.log(usingGoogle);
+
 let obj;
 let dragged = null;
 
