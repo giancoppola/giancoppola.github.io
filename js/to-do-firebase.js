@@ -38,6 +38,9 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         document.querySelector('#overlay').close();
         document.querySelector('#welcome-title').innerHTML = `Welcome, ${user.displayName}!`;
         document.querySelector('#welcome-text').innerHTML = `Your list is linked to your Google account`;
+        for (let node of document.querySelectorAll('#local-info')){
+            node.classList.add("hide")
+        }
     }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;

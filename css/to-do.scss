@@ -50,6 +50,9 @@ h1,h2,h3,h4,p {
 .code{
     font-family: monospace, monospace;
 }
+.hide{
+    display: none !important;
+}
 
 .new-btn{
     cursor: pointer;
