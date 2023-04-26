@@ -6,7 +6,6 @@ import { getDatabase, set, get, ref, update} from "https://www.gstatic.com/fireb
 const firebaseConfig = {
     apiKey: "AIzaSyBMPSHMl12La6g8xmpkO2q0MrYp5u_ZIas",
     authDomain: "to-do-list-1c280.firebaseapp.com",
-    // authDomain: "giancoppola.github.io",
     projectId: "to-do-list-1c280",
     storageBucket: "to-do-list-1c280.appspot.com",
     messagingSenderId: "77052671119",
@@ -17,14 +16,16 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider();
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
+// END FIREBASE INITIAL SETUP
+
+
+// login handling
+window.onload = () => {document.querySelector('#overlay').showModal();};
 // google auth login handling
-window.addEventListener('load', function() {
-    document.querySelector('#overlay').showModal();
-})
 document.querySelector('#sign-in-google').addEventListener('click', function() {
+    const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
     .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -35,6 +36,8 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         console.log(user.uid)
         console.log(`Welcome ${user.displayName}!`)
         document.querySelector('#overlay').close();
+        document.querySelector('#welcome-title').innerHTML = `Welcome, ${user.displayName}!`;
+        document.querySelector('#welcome-text').innerHTML = `Your list is linked to your Google account`;
     }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
@@ -47,5 +50,6 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         console.log('error message');
         console.log(errorMessage);
         console.log(credential);
+        document.querySelector('#overlay-error-text').innerHTML = `Error occurred - ${errorCode}`;
     });
 });

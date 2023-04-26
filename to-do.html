@@ -11,12 +11,23 @@
     <main class="main">
         <section class="main-modal">
             <dialog tabindex="0" class="overlay" id="overlay">
-                <p class="modal-text">Please choose an option below to continue;</p>
-                <button id="sign-in-google">Sign in with Google</button>
+                <h1 class="overlay-title">Welcome!</h1>
+                <p class="overlay-text">
+                    You can either save your list by signing in to your Google account
+                    to access from anywhere, or save your data locally meaning your data 
+                    will only accessible using the same device.
+                </p>
+                <p class="overlay-text">Please choose an option below to continue;</p>
+                <button id="sign-in-google" class="sign-in-btn sign-in-google">Sign in with Google</button>
                 <form method="dialog">
-                    <button>Save your list locally</button>
+                    <button id="sign-in-local" class="sign-in-btn sign-in-local">Save your list locally</button>
                 </form>
+                <p class="overlay-error-text" id="overlay-error-text"></p>
             </dialog>
+        </section>
+        <section class="main-title">
+            <h1 id="welcome-title">Welcome!</h1>
+            <p id="welcome-text">Your list is being saved locally</p>
         </section>
         <section class="main-grid">
             <div class="main-grid-to-do" id="main-grid-to-do">
@@ -61,8 +72,8 @@
                 <p>The list will save when you add or delete an item</p>
                 <p>Add items with the save button or enter, delete items with the delete button</p>
                 <p>Transfer items between columns by dragging and dropping the item</p>
-                <p>The list will be saved in local storage as long as you don't clear it</p>
-                <p>You can clear the list in local storage with <span class="code">localStorage.clear('obj')</span></p>
+                <p id="local-info">The list will be saved in local storage as long as you don't clear it</p>
+                <p id="local-info">You can clear the list in local storage with <span class="code">localStorage.clear('obj')</span></p>
             </div>
         </section>
     </main>
