@@ -22,9 +22,13 @@ const database = getDatabase(app);
 
 
 // login handling
+let usingGoogle = false;
+let usingLocal = true;
 window.onload = () => {document.querySelector('#overlay').showModal();};
 // google auth login handling
 document.querySelector('#sign-in-google').addEventListener('click', function() {
+    usingGoogle = true;
+    usingLocal = false;
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
     .then((result) => {
@@ -32,15 +36,9 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        console.log(user)
-        console.log(user.uid)
-        console.log(`Welcome ${user.displayName}!`)
-        document.querySelector('#overlay').close();
-        document.querySelector('#welcome-title').innerHTML = `Welcome, ${user.displayName}!`;
-        document.querySelector('#welcome-text').innerHTML = `Your list is linked to your Google account`;
-        for (let node of document.querySelectorAll('#local-info')){
-            node.classList.add("hide")
-        }
+        console.log(user);
+        console.log(token);
+        uiUpdateGoogle();
     }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
@@ -56,3 +54,12 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         document.querySelector('#overlay-error-text').innerHTML = `Error occurred - ${errorCode}`;
     });
 });
+
+function uiUpdateGoogle() {
+    document.querySelector('#overlay').close();
+    document.querySelector('#welcome-title').innerHTML = `Welcome, ${user.displayName}!`;
+    document.querySelector('#welcome-text').innerHTML = `Your list is linked to your Google account`;
+    for (let node of document.querySelectorAll('#local-info')){
+        node.classList.add("hide")
+    }
+}

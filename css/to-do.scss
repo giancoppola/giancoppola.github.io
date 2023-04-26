@@ -100,6 +100,11 @@ h1,h2,h3,h4,p {
                 line-height: 2;
                 background-color: var(--white-col);
                 border: solid 2px var(--black-col);
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
                 &.sign-in-google{
                     &::before{
                         content: url(/img/todo/icons8-google.svg);
