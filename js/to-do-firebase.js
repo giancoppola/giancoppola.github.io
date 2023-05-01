@@ -1,7 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
-import { getDatabase, set, get, ref, update} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
+import { getDatabase, set, get, ref, update, child, push} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
+import { obj } from "./to-do.js";
+import { updateObj } from "./to-do.js";
+import { recoverItems } from "./to-do.js";
+import { usingLocal } from "./to-do.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBMPSHMl12La6g8xmpkO2q0MrYp5u_ZIas",
@@ -22,23 +26,23 @@ const database = getDatabase(app);
 
 
 // login handling
-export let usingGoogle = false;
-export let usingLocal = true;
+export let googleUser = false;
+export let user = null;
 window.onload = () => {document.querySelector('#overlay').showModal();};
 // google auth login handling
 document.querySelector('#sign-in-google').addEventListener('click', function() {
-    usingGoogle = true;
-    usingLocal = false;
+    googleUser = true;
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
     .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         // The signed-in user info.
-        const user = result.user;
-        console.log(user);
-        console.log(token);
+        user = result.user;
+        // console.log(user);
+        // console.log(token);
         uiUpdateGoogle(user);
+        checkDatabase(user);
     }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
@@ -54,9 +58,10 @@ document.querySelector('#sign-in-google').addEventListener('click', function() {
         document.querySelector('#overlay-error-text').innerHTML = `Error occurred - ${errorCode}`;
     });
 });
-// if the user chooses local just close the modal as that is the standard behaviour
+// if the user chooses local execute function from the other JS file and then close the modal
 document.querySelector('#sign-in-local').addEventListener('click', function() {
-    document.querySelector('#overlay').close();
+  usingLocal();
+  document.querySelector('#overlay').close();
 });
 
 function uiUpdateGoogle(user) {
@@ -69,6 +74,8 @@ function uiUpdateGoogle(user) {
 }
 
 const dbRef = ref(getDatabase());
+
+// get entire database snapshot
 get(dbRef, '')
 .then((snapshot) => {
   if (snapshot.exists()) {
@@ -80,3 +87,68 @@ get(dbRef, '')
 .catch((error) => {
   console.error(error);
 });
+
+// get snapshot of users data on database
+// child allows you to get the specific subset of data
+// or you can use a more specific data ref
+function checkDatabase(user) {
+  const dataRef = ref(getDatabase(), `users/${user.uid}`);
+  get(dataRef)
+  .then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log("returning user data");
+      console.log(snapshot.val());
+      let userData = snapshot.val();
+      updateObj(userData);
+      for (let key of Object.keys(userData.todo)){
+        recoverItems('google', 'todo', key, userData.todo[key]);
+      }
+      for (let key of Object.keys(userData.doing)){
+        recoverItems('google', 'doing', key, userData.doing[key]);
+      }
+      for (let key of Object.keys(userData.done)){
+        recoverItems('google', 'done', key, userData.done[key]);
+      }
+    } else {
+      console.log("No data available");
+      addNewUser();
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+  // get(child(dbRef, `users/${user.uid}`))
+  // .then((snapshot) => {
+  //   if (snapshot.exists()) {
+  //     console.log("here");
+  //     console.log(snapshot.val());
+  //   } else {
+  //     console.log("No data available");
+  //     updateDatabase();
+  //   }
+  // })
+  // .catch((error) => {
+  //   console.error(error);
+  // });
+}
+
+function addNewUser() {
+  const dataRef = ref(getDatabase(), `users/${user.uid}`);
+  set(dataRef, {
+    todo: '',
+    doing: '',
+    done: ''
+  });
+  console.log("new user setup");
+}
+
+export function updateGoogleUser(type, key, value) {
+  const dataRef = ref(getDatabase(), `users/${user.uid}`);
+  // set(dataRef, obj);
+  // console.log("user data updated");
+  // checkDatabase(user)
+  const updates = {};
+  updates[type] = {};
+  updates[type][key] = value;
+  return update(dataRef, updates);
+}
