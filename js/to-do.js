@@ -1,11 +1,11 @@
-import { googleUser } from "./to-do-firebase.js";
-import { updateGoogleUser } from "./to-do-firebase.js";
+import { deleteGoogleUserData, googleUser, updateGoogleUserData } from "./to-do-firebase.js";
 
 export let obj;
 let dragged = null;
 let localUser = false;
 
 export function updateObj(data){
+    console.log(data);
     if (data.todo === ''){
         data.todo = {};
     }
@@ -15,6 +15,7 @@ export function updateObj(data){
     if (data.done === ''){
         data.done = {};
     }
+    console.log(data);
     obj = data;
     console.log(obj);
 }
@@ -277,7 +278,7 @@ export function recoverItems(userType, listType, key, value){
                 setTimeout(function() {
                     document.querySelector(`div[data="${key}"]`).remove();
                     delete obj.todo[`${key}`];
-                    updateGoogleUser();
+                    deleteGoogleUserData('todo', key);
                 }, 390);
             });
             // set item class, data value to determine its relation to the object,
@@ -317,7 +318,7 @@ export function recoverItems(userType, listType, key, value){
                 setTimeout(function() {
                     document.querySelector(`div[data="${key}"]`).remove();
                     delete obj.doing[`${key}`];
-                    updateGoogleUser();
+                    deleteGoogleUserData('doing', key);
                 }, 390);
             });
             // set item class, data value to determine its relation to the object,
@@ -357,7 +358,7 @@ export function recoverItems(userType, listType, key, value){
                 setTimeout(function() {
                     document.querySelector(`div[data="${key}"]`).remove();
                     delete obj.done[`${key}`];
-                    updateGoogleUser();
+                    deleteGoogleUserData('done', key);
                 }, 390);
             });
             // set item class, data value to determine its relation to the object,
@@ -528,9 +529,9 @@ function addNewItem(type, value){
     }
     else if (googleUser){
         if (type === 'todo'){
-            let number = 0;
+            let number = 1;
             // figures out id based on length of keys in object section plus 1
-            if (Object.keys(obj.todo).length != null || Object.keys(obj.todo).length != undefined){
+            if (Object.keys(obj.todo).length >= 1){
                 number = Object.keys(obj.todo).length + 1;
             }
             // creating new elements to populate with info from input field
@@ -546,7 +547,7 @@ function addNewItem(type, value){
                 setTimeout(function() {
                     document.querySelector(`div[data="todo-${number}"]`).remove();
                     delete obj.todo[`todo-${number}`];
-                    updateGoogleUser('todo', `todo-${number}`, text.innerHTML);
+                    deleteGoogleUserData('todo', `todo-${number}`);
                 }, 390);
             });
             // set item class, data value to determine its relation to the object,
@@ -575,14 +576,14 @@ function addNewItem(type, value){
             // adds to JS object to be referenced easily
             obj.todo[`todo-${number}`] = text.innerHTML;
             // updates object within local storage
-            updateGoogleUser('todo', `todo-${number}`, text.innerHTML);
+            updateGoogleUserData('todo', `todo-${number}`, text.innerHTML);
             todoInput.value = '';
         }
         else if (type === 'doing'){
-            let number = 0;
+            let number = 1;
             // figures out id based on length of keys in object section plus 1
-            if (Object.keys(obj.todo).length != null || Object.keys(obj.todo).length != undefined){
-                number = Object.keys(obj.todo).length + 1;
+            if (Object.keys(obj.doing).length >= 1){
+                number = Object.keys(obj.doing).length + 1;
             }
             // creating new elements to populate with info from input field
             let item = document.createElement('div');
@@ -597,7 +598,7 @@ function addNewItem(type, value){
                 setTimeout(function() {
                     document.querySelector(`div[data="doing-${number}"]`).remove();
                     delete obj.doing[`doing-${number}`];
-                    updateGoogleUser('doing', `doing-${number}`, text.innerHTML);
+                    deleteGoogleUserData('doing', `doing-${number}`);
                 }, 390);
             });
             // set item class, data value to determine its relation to the object,
@@ -622,14 +623,14 @@ function addNewItem(type, value){
             // adds to JS object to be referenced easily
             obj.doing[`doing-${number}`] = text.innerHTML;
             // updates object within local storage
-            updateGoogleUser('doing', `doing-${number}`, text.innerHTML);
+            updateGoogleUserData('doing', `doing-${number}`, text.innerHTML);
             doingInput.value = '';
         }
         else if (type === 'done'){
-            let number = 0;
+            let number = 1;
             // figures out id based on length of keys in object section plus 1
-            if (Object.keys(obj.todo).length != null || Object.keys(obj.todo).length != undefined){
-                number = Object.keys(obj.todo).length + 1;
+            if (Object.keys(obj.done).length >= 1){
+                number = Object.keys(obj.done).length + 1;
             }
             // creating new elements to populate with info from input field
             let item = document.createElement('div');
@@ -644,7 +645,7 @@ function addNewItem(type, value){
                 setTimeout(function() {
                     document.querySelector(`div[data="done-${number}"]`).remove();
                     delete obj.done[`done-${number}`];
-                    updateGoogleUser('done', `done-${number}`, text.innerHTML);
+                    deleteGoogleUserData('done', `done-${number}`);
                 }, 390);
             });
             // set item class, data value to determine its relation to the object,
@@ -669,7 +670,7 @@ function addNewItem(type, value){
             // adds to JS object to be referenced easily
             obj.done[`done-${number}`] = text.innerHTML;
             // updates object within local storage
-            updateGoogleUser('done', `done-${number}`, text.innerHTML);
+            updateGoogleUserData('done', `done-${number}`, text.innerHTML);
             doneInput.value = '';
         }
     }

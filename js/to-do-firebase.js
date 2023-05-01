@@ -1,11 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
-import { getDatabase, set, get, ref, update, child, push} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
-import { obj } from "./to-do.js";
-import { updateObj } from "./to-do.js";
-import { recoverItems } from "./to-do.js";
-import { usingLocal } from "./to-do.js";
+import { getDatabase, set, get, ref, update, child, remove} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
+import { obj, updateObj, recoverItems, usingLocal } from "./to-do.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBMPSHMl12La6g8xmpkO2q0MrYp5u_ZIas",
@@ -142,13 +139,22 @@ function addNewUser() {
   console.log("new user setup");
 }
 
-export function updateGoogleUser(type, key, value) {
+export function updateGoogleUserData(type, key, value) {
   const dataRef = ref(getDatabase(), `users/${user.uid}`);
-  // set(dataRef, obj);
-  // console.log("user data updated");
-  // checkDatabase(user)
   const updates = {};
-  updates[type] = {};
-  updates[type][key] = value;
-  return update(dataRef, updates);
+  updates[type] = obj[type];
+  update(dataRef, updates)
+  .then(() => {
+    console.log("completed update");
+    console.log(obj);
+  })
+  .catch((error) => {
+    console.log('error - ' + error);
+  })
+}
+
+export function deleteGoogleUserData(type, key) {
+  const dataRef = ref(getDatabase(), `users/${user.uid}/${type}/${key}`);
+  remove(dataRef);
+  console.log("data entry deleted");
 }
