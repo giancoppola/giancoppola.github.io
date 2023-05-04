@@ -126,7 +126,7 @@ nav .nav-link {
   -o-transition: all 0.25s;
 }
 nav .nav-link:hover {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   border-bottom: 4px solid var(--white-col);
 }
 
@@ -181,6 +181,85 @@ nav .nav-link:hover {
 }
 .main-about-container p {
   color: var(--black-col);
+}
+.main-experience {
+  color: var(--white-col);
+  background-color: var(--black-col);
+}
+.main-experience-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.main-experience-container-title {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 2rem;
+  padding: 0 5rem;
+}
+.main-experience-container-title h2 {
+  color: var(--white-col);
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+}
+.main-experience-container-title .title-line {
+  background-color: var(--white-col);
+}
+.main-experience-container p {
+  color: var(--white-col);
+}
+.main-experience-container-center {
+  position: absolute;
+  height: 58%;
+  width: 4px;
+  top: 14rem;
+  left: 50%;
+  background-color: var(--white-col);
+}
+.main-experience-container-center .year {
+  position: absolute;
+  left: -1.75rem;
+  background-color: var(--black-col);
+}
+.main-experience-container-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.main-experience-container-roles-role {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-experience-container-roles-role .title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.main-experience-container-roles-role .left-text {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: right;
+}
+.main-experience-container-roles-role .left-img {
+  text-align: right;
+  margin-left: 15%;
+}
+.main-experience-container-roles-role .right-text {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+.main-experience-container-roles-role .right-img {
+  text-align: left;
+  margin-right: 15%;
 }
 .main-projects {
   color: var(--white-col);
@@ -382,7 +461,7 @@ nav .nav-link:hover {
 }
 .main-contact-container-links-link a::after {
   position: absolute;
-  top: 5%;
+  top: 0;
   content: url(/img/icons/right-chevron-black-s.svg);
   margin-left: 0.5rem;
   transition: all 0.4s;
