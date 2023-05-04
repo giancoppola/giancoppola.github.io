@@ -9,42 +9,68 @@
 </head>
 <body>
     <nav class="nav">
-        <a href="#main-intro" class="nav-link">About Me</a>
+        <a href="#main-about" class="nav-link">About Me</a>
         <a href="#main-experience" class="nav-link">My Experience</a>
         <a href="#main-projects" class="nav-link">My Projects</a>
+        <a href="#main-skillset" class="nav-link">My Skillset</a>
         <a href="#main-contact" class="nav-link">Get in Touch</a>
     </nav>
     <main class="main">
         <section class="main-intro" id="main-intro">
-            <h1>Welcome to my portfolio site</h1>
-            <p>
-                On this page you'll find out more about me,
-                my experience, projects I've worked on, and
-                how to get in touch with me.
-            </p>
-            <img src="/img/profile_pic_1.png" alt="" class="main-intro-img">
+            <div class="main-intro-container content-container">
+                <div class="main-intro-container-text">
+                    <h1>Welcome to my portfolio site</h1>
+                    <p>
+                        On this page you'll find out more about me,
+                        my experience, projects I've worked on, and
+                        how to get in touch with me.
+                    </p>
+                    <a href="#main-about" class="btn btn-pink" id="main-about">Let's begin</a>
+                </div>
+                <img src="/img/Profile_Pic_w_Halo.png" alt="Picture of me - Gian Coppola" class="main-intro-img">
+            </div>
+        </section>
+        <section class="main-about" id="main-about">
+            <div class="main-about-container content-container-narrow">
+                <h2>ABOUT ME</h2>
+                <p>
+                    Starting my career as a UX Designer, and moving
+                    into Digital Project Management, I have accumulated
+                    a wide range of digital skills that has helped me
+                    deliver best in class digital and design projects
+                    both in local and global markets.
+                </p>
+                <p>
+                    I’ve built and maintained strong client relationships,
+                    developing new business opportunities through existing
+                    clients. I’m eager to be involved in new projects from
+                    the creative and conceptual thinking stage, all the way
+                    through to delivery. Passionate about working in a team
+                    and developing junior members, I have strong experience
+                    in both line management and in-house recruitment.
+                </p>
+            </div>
+        </section>
+        <section class="main-projects" id="main-projects">
+            <div class="main-projects-container content-container-narrow">
+                <h2>MY PROJECTS</h2>
+                <p>
+                    Below are the projects that I’ve worked on in my spare
+                    time that (hopefully) demonstrate both my development
+                    and in some instances my design skills. All of these
+                    have been built 100% by me, bar the use of specific
+                    libraries, such as Slick, and third party APIs such
+                    as in the Tfl example.
+                </p>
+                <p>
+                    Each project focused on learning or mastering a specific
+                    concept or feature within web development, and as I have
+                    worked on these over a period of years, they do naturally
+                    vary in quality.
+                </p>
+            </div>
         </section>
     </main>
-    <section class="main" id="main">
-        <div class="main-container" id="main-container">
-            <div class="main-content" id="main-content">
-                <h1>GC TESTING SITE</h1>
-            </div>
-            <div class="right-handrail" id="right-handrail">
-                <a class="handrail-item" href="/tfl.html">TFL Bike Points</a>
-                <a class="handrail-item" href="/to-do.html">To Do List</a>
-                <a class="handrail-item" href="/hamburg.html">Barclays Hamburg</a>
-                <a class="handrail-item" href="/cotravel.html">Cotravel</a>
-                <a class="handrail-item" href="/radancy-test-page.html">Radancy Test Page</a>
-            </div>
-        </div>
-        <div class="footer-links" id="footer-links">
-            <a class="footer-item" href="mailto:giancoppola@hotmail.co.uk">Email</a>
-            <a class="footer-item" href="https://www.instagram.com/giancoppola/" target="_blank">Instagram</a>
-            <a class="footer-item" href="https://www.codewars.com/users/giancoppola/completed_solutions" target="_blank">Codewars</a>
-            <a class="footer-item" href="https://www.linkedin.com/in/giancoppola/" target="_blank">LinkedIn</a>
-        </div>
-    </section>
     <script type="text/javascript" src="../js/home.js"></script>
 </body>
 
