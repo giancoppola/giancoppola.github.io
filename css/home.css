@@ -119,15 +119,21 @@ nav .nav-link {
   font-weight: normal;
   text-decoration: none;
   border-bottom: 0px solid var(--white-col);
-  transition: all 0.25s;
-  -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
-  -ms-transition: all 0.25s;
-  -o-transition: all 0.25s;
 }
-nav .nav-link:hover {
-  font-size: 1.55rem;
-  border-bottom: 4px solid var(--white-col);
+nav .nav-link::after {
+  content: "";
+  display: block;
+  background-color: var(--white-col);
+  width: 0%;
+  height: 4px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+nav .nav-link:hover::after {
+  width: 100%;
 }
 
 .main-intro {
@@ -213,7 +219,7 @@ nav .nav-link:hover {
 }
 .main-experience-container-center {
   position: absolute;
-  height: 58%;
+  height: 94%;
   width: 4px;
   top: 14rem;
   left: 50%;
@@ -221,6 +227,7 @@ nav .nav-link:hover {
 }
 .main-experience-container-center .year {
   position: absolute;
+  top: 0;
   left: -1.75rem;
   background-color: var(--black-col);
 }
@@ -474,11 +481,53 @@ nav .nav-link:hover {
   margin-left: 1rem;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--black-col);
+}
+footer .footer-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+footer .footer-links a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+footer .footer-links a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 4px;
+  background-color: var(--white-col);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+footer .footer-links a:hover::after {
+  width: 100%;
+}
+
 @media all and (min-width: 1200px) {
   .content-container {
     max-width: 1120px;
   }
   .content-container-narrow {
     max-width: 1040px;
+  }
+}
+@media all and (max-width: 800px) {
+  .title-line {
+    display: none;
   }
 }/*# sourceMappingURL=home.css.map */
