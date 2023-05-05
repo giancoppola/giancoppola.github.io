@@ -230,6 +230,7 @@ nav .nav-link:hover::after {
   top: 0;
   left: -1.75rem;
   background-color: var(--black-col);
+  padding: 1rem 0;
 }
 .main-experience-container-roles {
   display: flex;
