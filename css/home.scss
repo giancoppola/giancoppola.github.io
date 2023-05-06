@@ -31,7 +31,7 @@ body{
 h1, h2, h3, h4, h5, h6, p{
     margin: 0 !important;
 }
-h1, h2{
+h1, h2, h3{
     font-weight: bold;
 }
 h2{
@@ -41,7 +41,6 @@ h2{
 h3{
     font-size: 1.5rem;
     line-height: 2.25rem;
-    font-weight: bold;
 }
 p{
     font-size: 1.5rem;
@@ -253,6 +252,9 @@ nav{
                         margin-right: 15%;
                     }
                 }
+            }
+            &-navigation{
+                display: none;
             }
         }
     }
@@ -524,8 +526,312 @@ footer{
     }
 }
 
+@media all and (max-width: 1030px) {
+    .main{
+        &-experience{
+            &-container{
+                &-center{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
 @media all and (max-width: 800px) {
+    h2{
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+    h3{
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
+    p{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+    }
+    .content-container{
+        max-width: 1200px;
+        margin: auto;
+        padding: 3rem 2rem;
+        &-narrow{
+            max-width: 1200px;
+            margin: auto;
+            padding: 3rem 2rem;
+        }
+    }
     .title-line{
         display: none;
+    }
+    .main{
+        &-intro{
+            &-container{
+                padding: 3rem 2rem;
+                &-text{
+                    & h1{
+                        font-size: 2rem;
+                        line-height: 3rem;
+                    }
+                    & p{
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+                    }
+                }
+                & img{
+                    display: none;
+                }
+            }
+        }
+        &-about{
+            &-container{
+                gap: 2rem;
+                &-title{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-end;
+                    gap: 2rem;
+                    & h2{
+                        color: var(--black-col);
+                        width: fit-content;
+                        white-space: nowrap;
+                    }
+                    & .title-line{
+                        background-color: var(--black-col);
+                    }
+                }
+                & p{
+                    color: var(--black-col);
+                }
+            }
+        }
+        &-experience{
+            &-container{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                &-title{
+                    padding: 0;
+                }
+                &-center{
+                    display: none;
+                }
+                &-roles{
+                    display: block;
+                    & .slick-list{
+                        & .slick-track{
+                            & .slick-slide{
+                                display: flex;
+                                align-items: center;
+                                align-content: center;
+                                margin: 0 1rem;
+                            }
+                        }
+                    }
+                    &-role{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.5rem;
+                        &.ud{
+                            display: flex;
+                            flex-direction: column-reverse;
+                            gap: 2.5rem;
+                        }
+                        & .title{
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            text-decoration: underline;
+                        }
+                        & .left-text{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            text-align: left;
+                        }
+                        & .left-img{
+                            margin-left: 0;
+                        }
+                        & .right-text{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            text-align: left;
+                        }
+                        & .right-img{
+                            margin-right: 0;
+                        }
+                    }
+                }
+                &-navigation{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    margin: 0 2rem;
+                    &-year{
+                        display: flex;
+                        width: 80%;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+                        line-height: 3rem;
+                        &::before{
+                            content: '';
+                            display: inline-block;
+                            background-color: white;
+                            width: 100%;
+                            height: 2px;
+                            margin-right: 1rem;
+                        }
+                        &::after{
+                            content: '';
+                            display: inline-block;
+                            background-color: white;
+                            width: 100%;
+                            height: 2px;
+                            margin-left: 1rem;
+                        }
+                    }
+                    & .slick-prev{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::before{
+                            content: url(/img/icons/left-chevron-white.svg);
+                        }
+                    }
+                    & .slick-next{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::after{
+                            content: url(/img/icons/right-chevron-white.svg);
+                        }
+                    }
+                }
+            }
+        }
+        &-projects{
+            background: linear-gradient(180deg, var(--green-col) 66%, var(--white-col) 66%);
+            &-container{
+                &-title{
+                    display: block;
+                }
+                &-grid{
+                    display: block;
+                    & .slick-list{
+                        & .slick-track{
+                            & .slick-slide{
+                                margin: 0 1rem;
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+                &-navigation{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin: 0 2rem;
+                    & .slick-prev{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::before{
+                            content: url(/img/icons/left-chevron-black.svg);
+                        }
+                    }
+                    & .slick-next{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::after{
+                            content: url(/img/icons/right-chevron-black.svg);
+                        }
+                    }
+                }
+            }
+        }
+        &-skillset{
+            &-container{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                &-grid{
+                    display: block;
+                    & .slick-list{
+                        & .slick-track{
+                            & .slick-slide{
+                                margin: 0 1rem;
+                            }
+                        }
+                    }
+                }
+                &-navigation{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin: 0 2rem;
+                    & .slick-prev{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::before{
+                            content: url(/img/icons/left-chevron-black.svg);
+                        }
+                    }
+                    & .slick-next{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::after{
+                            content: url(/img/icons/right-chevron-black.svg);
+                        }
+                    }
+                }
+            }
+        }
+        &-contact{
+            &-container{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                &-links{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    &-link{
+                        width: fit-content;
+                        & a{
+                            font-size: 1.5rem;
+                            line-height: 2.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        & .footer-links{
+            justify-content: space-between;
+            gap: 1rem;
+            & a{
+                font-size: 1rem;
+            }
+        }
     }
 }

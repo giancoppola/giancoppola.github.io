@@ -33,3 +33,139 @@ document.addEventListener("scroll", (event) => {
         console.log(distance);
     }
 });
+
+$(document).ready(function(){
+    $('.main-experience-container-roles').slick({
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        appendArrows: $('.main-experience-container-navigation'),
+        prevArrow: '<button type="button" class="slick-prev" onclick="yearUpdatePrev()">Previous</button>',
+        nextArrow: '<button type="button" class="slick-next" onclick="yearUpdateNext()">Next</button>',
+        adaptiveHeight: true,
+        mobileFirst: true,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: "unslick",
+            }
+        ]
+    });
+});
+
+const mobileYear = document.querySelector("#mobile-year");
+
+const pates = document.querySelector("#pates");
+const uob = document.querySelector("#uob");
+const heyhuman = document.querySelector("#heyhuman");
+const sapient = document.querySelector("#sapient");
+const hybrideye = document.querySelector("#hybrideye");
+const thingser = document.querySelector("#thingser");
+const bluebaboon = document.querySelector("#bluebaboon");
+const radancy = document.querySelector("#radancy");
+
+function yearUpdatePrev() {
+    if (pates.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2017";
+    }
+    if (uob.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2009";
+    }
+    if (heyhuman.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2011";
+    }
+    if (sapient.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2014";
+    }
+    if (hybrideye.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2014";
+    }
+    if (thingser.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2015";
+    }
+    if (bluebaboon.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2016";
+    }
+    if (radancy.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2016";
+    }
+}
+
+function yearUpdateNext() {
+    if (pates.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2011";
+    }
+    if (uob.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2014";
+    }
+    if (heyhuman.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2014";
+    }
+    if (sapient.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2015";
+    }
+    if (hybrideye.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2016";
+    }
+    if (thingser.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2016";
+    }
+    if (bluebaboon.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2017";
+    }
+    if (radancy.classList.contains("slick-active")) {
+        mobileYear.innerHTML = "2009";
+    }
+}
+
+
+$(document).ready(function(){
+    $('.main-projects-container-grid').slick({
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        appendArrows: $('.main-projects-container-navigation'),
+        mobileFirst: true,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: "unslick",
+            }
+        ]
+    });
+});
+
+$(document).ready(function(){
+    $('.main-skillset-container-grid').slick({
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        appendArrows: $('.main-skillset-container-navigation'),
+        mobileFirst: true,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: "unslick",
+            }
+        ]
+    });
+});
+
+const mobileMedia = window.matchMedia("(max-width: 800px)");
+mobileMedia.onchange = (query) => {
+    if (query.matches){
+        console.log('mobile viewport')
+        $('.main-experience-container-roles').slick('refresh');
+        $('.main-projects-container-grid').slick('refresh');
+        $('.main-skillset-container-grid').slick('refresh');
+    }
+    else{
+        // do nothing
+    }
+}
