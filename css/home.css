@@ -561,6 +561,9 @@ footer .footer-links a:hover::after {
   .title-line {
     display: none;
   }
+  nav {
+    display: none;
+  }
   .main-intro-container {
     padding: 3rem 2rem;
   }
