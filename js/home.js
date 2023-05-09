@@ -1,3 +1,27 @@
+// BURGER MENU START -
+const burgerMenu = document.querySelector("#burger");
+const nav = document.querySelector("#nav");
+/* when clicking the burger menu, add open class to it and nav,
+   and disable scrolling on the body */
+burgerMenu.addEventListener("click", () => {
+    document.querySelectorAll(".line").forEach(element => {
+        element.classList.toggle('open');
+    });
+    nav.classList.toggle("open");
+    document.body.classList.toggle("fixed");
+})
+// when user clicks on a menu link it closes the menu
+document.querySelectorAll(".nav-link").forEach(element => {
+    element.addEventListener("click", () => {
+        nav.classList.remove("open");
+        document.querySelectorAll(".line").forEach(element => {
+            element.classList.remove('open');
+        });
+    });
+})
+// - BURGER MENU END
+
+// changes the year as you scroll down the experience module, and also scrolls it down with view
 const experienceYear = document.querySelector("#year");
 const experienceSection = document.querySelector("#main-experience");
 const fullPage = document.body.parentElement;
@@ -34,6 +58,7 @@ document.addEventListener("scroll", (event) => {
     }
 });
 
+// experience slider
 $(document).ready(function(){
     $('.main-experience-container-roles').slick({
         speed: 800,
@@ -53,6 +78,7 @@ $(document).ready(function(){
     });
 });
 
+// on changing slide on the experience slider, update the year based on current slide
 const mobileYear = document.querySelector("#mobile-year");
 $('.main-experience-container-roles').on('afterChange', function(event, slick, currentSlide, nextSlide){
     switch(currentSlide){
@@ -83,7 +109,7 @@ $('.main-experience-container-roles').on('afterChange', function(event, slick, c
     }
 });
 
-
+// projects slider
 $(document).ready(function(){
     $('.main-projects-container-grid').slick({
         speed: 800,
@@ -102,6 +128,7 @@ $(document).ready(function(){
     });
 });
 
+// skillset slider
 $(document).ready(function(){
     $('.main-skillset-container-grid').slick({
         speed: 800,
@@ -120,6 +147,8 @@ $(document).ready(function(){
     });
 });
 
+// refreshes slick on crossing the mobile and tablet breakpoints to
+// ensure they enable for users changing window / screen size
 const mobileMedia = window.matchMedia("(max-width: 800px)");
 const tabletMedia = window.matchMedia("(max-width: 1030px)");
 mobileMedia.onchange = (query) => {
