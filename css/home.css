@@ -729,7 +729,10 @@ footer .footer-links a:hover::after {
     font-weight: bold;
   }
   .main-intro-container {
-    padding: 5rem;
+    align-items: flex-end;
+  }
+  .main-intro-container-text {
+    padding: 5rem 0;
   }
   .main-experience-container {
     position: relative;
@@ -852,7 +855,10 @@ footer .footer-links a:hover::after {
 }
 @media all and (max-width: 900px) {
   .main-intro-container {
-    padding-bottom: 4rem;
+    padding: 4rem;
+  }
+  .main-intro-container-text {
+    padding: 0;
   }
   .main-intro-container img {
     display: none;

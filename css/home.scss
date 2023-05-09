@@ -731,7 +731,10 @@ footer{
     .main{
         &-intro{
             &-container{
-                padding: 5rem;
+                align-items: flex-end;
+                &-text{
+                    padding: 5rem 0;
+                }
             }
         }
         &-experience{
@@ -875,7 +878,10 @@ footer{
     .main{
         &-intro{
             &-container{
-                padding-bottom: 4rem;
+                padding: 4rem;
+                &-text{
+                    padding: 0;
+                }
                 & img{
                     display: none;
                 }
