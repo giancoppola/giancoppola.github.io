@@ -295,7 +295,7 @@ nav{
                         display: flex;
                         flex-direction: column;
                         gap: 1.5rem;
-                        min-height: 180px;
+                        min-height: 312px;
                         padding: 2rem;
                         background-color: var(--black-col);
                         & p{
@@ -530,8 +530,259 @@ footer{
     .main{
         &-experience{
             &-container{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                &-title{
+                    padding: 0;
+                }
                 &-center{
                     display: none;
+                }
+                &-roles{
+                    display: block;
+                    & .slick-list{
+                        & .slick-track{
+                            & .slick-slide{
+                                display: flex;
+                                align-items: center;
+                                align-content: center;
+                                margin: 0 1rem;
+                            }
+                        }
+                    }
+                    &-role{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.5rem;
+                        &.ud{
+                            display: flex;
+                            flex-direction: column-reverse;
+                            gap: 2.5rem;
+                        }
+                        & .title{
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            text-decoration: underline;
+                        }
+                        & .left-text{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            text-align: left;
+                        }
+                        & .left-img{
+                            margin-left: 0;
+                        }
+                        & .right-text{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            text-align: left;
+                        }
+                        & .right-img{
+                            margin-right: 0;
+                        }
+                    }
+                }
+                &-navigation{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    margin: 0 2rem;
+                    &-year{
+                        display: flex;
+                        width: 80%;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+                        line-height: 3rem;
+                        &::before{
+                            content: '';
+                            display: inline-block;
+                            background-color: white;
+                            width: 100%;
+                            height: 2px;
+                            margin-right: 1rem;
+                        }
+                        &::after{
+                            content: '';
+                            display: inline-block;
+                            background-color: white;
+                            width: 100%;
+                            height: 2px;
+                            margin-left: 1rem;
+                        }
+                    }
+                    & .slick-prev{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::before{
+                            content: url(/img/icons/left-chevron-white.svg);
+                        }
+                    }
+                    & .slick-next{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::after{
+                            content: url(/img/icons/right-chevron-white.svg);
+                        }
+                    }
+                }
+            }
+        }
+        &-projects{
+            background: linear-gradient(180deg, var(--green-col) 40%, var(--white-col) 40%);
+            &-container{
+                &-grid{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+        &-skillset{
+            &-container{
+                &-grid{
+                    grid-template-columns: none;
+                }
+            }
+        }
+        &-contact{
+            &-container{
+                &-links{
+                    flex-direction: column;
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 900px) {
+    .main{
+        &-intro{
+            &-container{
+                padding-bottom: 4rem;
+                & img{
+                    display: none;
+                }
+            }
+        }
+        &-experience{
+            &-container{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                &-title{
+                    padding: 0;
+                }
+                &-center{
+                    display: none;
+                }
+                &-roles{
+                    display: block;
+                    & .slick-list{
+                        & .slick-track{
+                            & .slick-slide{
+                                display: flex;
+                                align-items: center;
+                                align-content: center;
+                                margin: 0 1rem;
+                            }
+                        }
+                    }
+                    &-role{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.5rem;
+                        &.ud{
+                            display: flex;
+                            flex-direction: column-reverse;
+                            gap: 2.5rem;
+                        }
+                        & .title{
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            text-decoration: underline;
+                        }
+                        & .left-text{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            text-align: left;
+                        }
+                        & .left-img{
+                            margin-left: 0;
+                        }
+                        & .right-text{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            text-align: left;
+                        }
+                        & .right-img{
+                            margin-right: 0;
+                        }
+                    }
+                }
+                &-navigation{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    margin: 0 2rem;
+                    &-year{
+                        display: flex;
+                        width: 80%;
+                        flex-direction: row;
+                        align-items: center;
+                        font-weight: bold;
+                        line-height: 3rem;
+                        &::before{
+                            content: '';
+                            display: inline-block;
+                            background-color: white;
+                            width: 100%;
+                            height: 2px;
+                            margin-right: 1rem;
+                        }
+                        &::after{
+                            content: '';
+                            display: inline-block;
+                            background-color: white;
+                            width: 100%;
+                            height: 2px;
+                            margin-left: 1rem;
+                        }
+                    }
+                    & .slick-prev{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::before{
+                            content: url(/img/icons/left-chevron-white.svg);
+                        }
+                    }
+                    & .slick-next{
+                        cursor: pointer;
+                        font-size: 0;
+                        background: none;
+                        border: none;
+                        &::after{
+                            content: url(/img/icons/right-chevron-white.svg);
+                        }
+                    }
                 }
             }
         }

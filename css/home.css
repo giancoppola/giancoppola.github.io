@@ -313,7 +313,7 @@ nav .nav-link:hover::after {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  min-height: 180px;
+  min-height: 312px;
   padding: 2rem;
   background-color: var(--black-col);
 }
@@ -530,8 +530,236 @@ footer .footer-links a:hover::after {
   }
 }
 @media all and (max-width: 1030px) {
+  .main-experience-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .main-experience-container-title {
+    padding: 0;
+  }
   .main-experience-container-center {
     display: none;
+  }
+  .main-experience-container-roles {
+    display: block;
+  }
+  .main-experience-container-roles .slick-list .slick-track .slick-slide {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 0 1rem;
+  }
+  .main-experience-container-roles-role {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .main-experience-container-roles-role.ud {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+  }
+  .main-experience-container-roles-role .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .main-experience-container-roles-role .left-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  .main-experience-container-roles-role .left-img {
+    margin-left: 0;
+  }
+  .main-experience-container-roles-role .right-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  .main-experience-container-roles-role .right-img {
+    margin-right: 0;
+  }
+  .main-experience-container-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 2rem;
+  }
+  .main-experience-container-navigation-year {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    line-height: 3rem;
+  }
+  .main-experience-container-navigation-year::before {
+    content: "";
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    margin-right: 1rem;
+  }
+  .main-experience-container-navigation-year::after {
+    content: "";
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    margin-left: 1rem;
+  }
+  .main-experience-container-navigation .slick-prev {
+    cursor: pointer;
+    font-size: 0;
+    background: none;
+    border: none;
+  }
+  .main-experience-container-navigation .slick-prev::before {
+    content: url(/img/icons/left-chevron-white.svg);
+  }
+  .main-experience-container-navigation .slick-next {
+    cursor: pointer;
+    font-size: 0;
+    background: none;
+    border: none;
+  }
+  .main-experience-container-navigation .slick-next::after {
+    content: url(/img/icons/right-chevron-white.svg);
+  }
+  .main-projects {
+    background: linear-gradient(180deg, var(--green-col) 40%, var(--white-col) 40%);
+  }
+  .main-projects-container-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main-skillset-container-grid {
+    grid-template-columns: none;
+  }
+  .main-contact-container-links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media all and (max-width: 900px) {
+  .main-intro-container {
+    padding-bottom: 4rem;
+  }
+  .main-intro-container img {
+    display: none;
+  }
+  .main-experience-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .main-experience-container-title {
+    padding: 0;
+  }
+  .main-experience-container-center {
+    display: none;
+  }
+  .main-experience-container-roles {
+    display: block;
+  }
+  .main-experience-container-roles .slick-list .slick-track .slick-slide {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 0 1rem;
+  }
+  .main-experience-container-roles-role {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .main-experience-container-roles-role.ud {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+  }
+  .main-experience-container-roles-role .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .main-experience-container-roles-role .left-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  .main-experience-container-roles-role .left-img {
+    margin-left: 0;
+  }
+  .main-experience-container-roles-role .right-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  .main-experience-container-roles-role .right-img {
+    margin-right: 0;
+  }
+  .main-experience-container-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 2rem;
+  }
+  .main-experience-container-navigation-year {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    line-height: 3rem;
+  }
+  .main-experience-container-navigation-year::before {
+    content: "";
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    margin-right: 1rem;
+  }
+  .main-experience-container-navigation-year::after {
+    content: "";
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    margin-left: 1rem;
+  }
+  .main-experience-container-navigation .slick-prev {
+    cursor: pointer;
+    font-size: 0;
+    background: none;
+    border: none;
+  }
+  .main-experience-container-navigation .slick-prev::before {
+    content: url(/img/icons/left-chevron-white.svg);
+  }
+  .main-experience-container-navigation .slick-next {
+    cursor: pointer;
+    font-size: 0;
+    background: none;
+    border: none;
+  }
+  .main-experience-container-navigation .slick-next::after {
+    content: url(/img/icons/right-chevron-white.svg);
   }
 }
 @media all and (max-width: 800px) {
