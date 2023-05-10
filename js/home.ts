@@ -1,5 +1,3 @@
-export{}
-
 // BURGER MENU START -
 const burgerMenu = document.querySelector("#burger") as HTMLButtonElement;
 const nav = document.querySelector("#nav") as HTMLElement;

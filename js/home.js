@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // BURGER MENU START -
 var burgerMenu = document.querySelector("#burger");
 var nav = document.querySelector("#nav");
