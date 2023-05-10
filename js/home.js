@@ -1,6 +1,6 @@
 "use strict";
 // BURGER MENU START -
-const burgerMenu = document.querySelector("#burger");
+const burgerMenu = document.querySelector("#burger"); 
 const nav = document.querySelector("#nav");
 /* when clicking the burger menu, add open class to it and nav,
    and disable scrolling on the body */
