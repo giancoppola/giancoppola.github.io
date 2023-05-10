@@ -1,34 +1,36 @@
+"use strict";
 // BURGER MENU START -
-var burgerMenu = document.querySelector("#burger"); 
-var nav = document.querySelector("#nav");
+const burgerMenu = document.querySelector("#burger");
+const nav = document.querySelector("#nav");
 /* when clicking the burger menu, add open class to it and nav,
    and disable scrolling on the body */
-burgerMenu.addEventListener("click", function () {
-    document.querySelectorAll(".line").forEach(function (element) {
+burgerMenu.addEventListener("click", () => {
+    document.querySelectorAll(".line").forEach(element => {
         element.classList.toggle('open');
     });
     nav.classList.toggle("open");
     document.body.classList.toggle("fixed");
 });
 // when user clicks on a menu link it closes the menu
-document.querySelectorAll(".nav-link").forEach(function (element) {
-    element.addEventListener("click", function () {
+document.querySelectorAll(".nav-link").forEach(element => {
+    element.addEventListener("click", () => {
         nav.classList.remove("open");
-        document.querySelectorAll(".line").forEach(function (element) {
+        document.body.classList.remove("fixed");
+        document.querySelectorAll(".line").forEach(element => {
             element.classList.remove('open');
         });
     });
 });
 // - BURGER MENU END
 // changes the year as you scroll down the experience module, and also scrolls it down with view
-var experienceYear = document.querySelector("#year");
-var experienceSection = document.querySelector("#main-experience");
-var fullPage = document.body.parentElement;
-var experienceDistance = function () { return experienceSection.offsetTop - fullPage.scrollTop; };
-document.addEventListener("scroll", function (event) {
-    var height = experienceDistance();
+const experienceYear = document.querySelector("#year");
+const experienceSection = document.querySelector("#main-experience");
+const fullPage = document.body.parentElement;
+const experienceDistance = () => { return experienceSection.offsetTop - fullPage.scrollTop; };
+document.addEventListener("scroll", (event) => {
+    let height = experienceDistance();
     if (height < 5 && height > -3790) {
-        var distance = Math.abs(height);
+        let distance = Math.abs(height);
         if (experienceYear != null) {
             if (distance < 5) {
                 experienceYear.style.top = 0 + "px";
@@ -36,7 +38,7 @@ document.addEventListener("scroll", function (event) {
             else {
                 experienceYear.style.top = distance + "px";
             }
-            var distances = [114, 264, 364, 464, 564, 1414, 1864, 2864, 3064, 3214, 3364, 3514, 3614, 3714, 3764];
+            const distances = [114, 264, 364, 464, 564, 1414, 1864, 2864, 3064, 3214, 3364, 3514, 3614, 3714, 3764];
             if (distance < distances[0]) {
                 experienceYear.innerHTML = "2009";
             }
@@ -109,7 +111,7 @@ $(document).ready(function () {
     });
 });
 // on changing slide on the experience slider, update the year based on current slide
-var mobileYear = document.querySelector("#mobile-year");
+const mobileYear = document.querySelector("#mobile-year");
 $('.main-experience-container-roles').on('afterChange', function (event, slick, currentSlide, nextSlide) {
     switch (currentSlide) {
         case 0:
@@ -176,9 +178,9 @@ $(document).ready(function () {
 });
 // refreshes slick on crossing the mobile and tablet breakpoints to
 // ensure they enable for users changing window / screen size
-var mobileMedia = window.matchMedia("(max-width: 800px)");
-var tabletMedia = window.matchMedia("(max-width: 1030px)");
-mobileMedia.onchange = function (query) {
+const mobileMedia = window.matchMedia("(max-width: 800px)");
+const tabletMedia = window.matchMedia("(max-width: 1030px)");
+mobileMedia.onchange = (query) => {
     if (query.matches) {
         console.log('mobile viewport');
         $('.main-experience-container-roles').slick('refresh');
@@ -189,7 +191,7 @@ mobileMedia.onchange = function (query) {
         // do nothing
     }
 };
-tabletMedia.onchange = function (query) {
+tabletMedia.onchange = (query) => {
     if (query.matches) {
         console.log('tablet viewport');
         $('.main-experience-container-roles').slick('refresh');

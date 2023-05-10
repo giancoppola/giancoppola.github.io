@@ -14,6 +14,7 @@ burgerMenu.addEventListener("click", () => {
 document.querySelectorAll(".nav-link").forEach(element => {
     element.addEventListener("click", () => {
         nav.classList.remove("open");
+        document.body.classList.remove("fixed");
         document.querySelectorAll(".line").forEach(element => {
             element.classList.remove('open');
         });
