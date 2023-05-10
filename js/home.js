@@ -1,5 +1,5 @@
 // BURGER MENU START -
-var burgerMenu = document.querySelector("#burger");
+var burgerMenu = document.querySelector("#burger"); 
 var nav = document.querySelector("#nav");
 /* when clicking the burger menu, add open class to it and nav,
    and disable scrolling on the body */
