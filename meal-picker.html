@@ -1,63 +1,29 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/meal_picker.css">
   <title>Meal Picker</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <section id="main_content">
-      <div id="bg-anim"></div>
-      <div id="modal" class="modal">
-        <button class="btn modal-close" onclick="modalClose()">x</button>
-        <p class="modal-img modal-margin" id="modal-img"></p>
-        <p class="modal-title modal-margin" id="modal-title"></p>
-        <p class="modal-time modal-margin" id="modal-time"></p>
-        <p class="modal-desc modal-margin" id="modal-desc"></p>
-        <div class="modal-buttons">
-          <a id="modal-recipe" href="" target="_blank"><button class="btn-modal">View recipe</button></a>
-          <a id="modal-video" href="" target="_blank"><button class="btn-modal">Watch video</button></a>
+  <section id="main_content">
+    <div id="bg-anim"></div>
+    <div class="container">
+      <div class="centre">
+        <div id="convo" onclick="recipe()">
+          <span id="meal-text">Title</span>
+          <img src="../img/icons/ui_icon_open_modal_window.svg" alt="" class="modal-icon hide" id="modal-icon">
         </div>
       </div>
-      <div class="container">
-          <div class="centre">
-            <div id="convo" onclick="recipe()">
-              <span id="meal-text">Let's pick a meal for you!</span>
-              <img src="../img/icons/ui_icon_open_modal_window.svg" alt="" class="modal-icon hide" id="modal-icon">
-            </div>
-            <div id="type_buttons" class="btn_row">
-              <button class="btn" id="veg" onclick="vegActive()">Veggie</button>
-              <button class="btn" id="meat" onclick="meatActive()">Meaty</button>
-              <button class="btn" id="any" onclick="anyActive()">Any</button>
-              <select name="type-dropdown" class="dropdown" id="type-dropdown">
-                <option value="" disabled selected>Type...</option>
-                <option value="veggie">Veggie</option>
-                <option value="meaty">Meaty</option>
-                <option value="any">Any</option>
-              </select>
-            </div>
-            <div id="length_buttons" class="btn_row">
-              <button class="btn" id="quick-length" onclick="quickMeals()">Quick</button>
-              <button class="btn" id="long-length" onclick="longMeals()">Long</button>
-              <button class="btn" id="any-length" onclick="anyMeals()">Any</button>
-              <select name="length-dropdown" class="dropdown" id="length-dropdown">
-                <option value="" disabled selected>Duration...</option>
-                <option value="quick-length">Quick</option>
-                <option value="long-length">Long</option>
-                <option value="any-length">Any</option>
-              </select>
-            </div>
-            <div class="btn_row" id="submit_div">
-              <button class="btn" id="submit" onclick="mobileMeals()">Submit</button>
-            </div>
-            <p id="alert"></p>
-          </div>
-        </div>
-    </section>
-    <script type="text/javascript" src="../js/meal_picker.js"></script>
+    </div>
+  </section>
+  <script type="text/javascript" src="../js/meal_picker.js"></script>
 </body>
 
-<footer> 
+<footer>
 
 </footer>
