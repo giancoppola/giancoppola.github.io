@@ -1,3 +1,4 @@
+"use strict";
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -5,24 +6,24 @@ function getRandomInt(min, max) {
 }
 // -------------------------------------------------------------------------------------------------------------------------------------
 // JS Animation setup for falling food emojis
-var emojiArr = ['🍝', '🍜', '🍛', '🍣', '🍱', '🍤', '🍥',
+const emojiArr = ['🍝', '🍜', '🍛', '🍣', '🍱', '🍤', '🍥',
     '🥮', '🥡', '🥟', '🥧', '🥣', '🥗', '🍲',
     '🥘', '🍳', '🧆', '🥙', '🍖', '🍗', '🥩',
     '🥓', '🍔', '🍟', '🍕', '🌭', '🥪', '🌮',
     '🌯'];
-var emoji = document.createElement('span');
+let emoji = document.createElement('span');
 emoji.setAttribute('id', 'emoji');
-var bgAnim = document.getElementById("bg-anim");
+const bgAnim = document.getElementById("bg-anim");
 bgAnim.appendChild(emoji);
-var height = 100;
-var rotate = 0;
+let height = 100;
+let rotate = 0;
 emojiFall();
 function emojiFall() {
     height = -20;
     emoji.innerHTML = getRandomEmoji();
     emoji.style.top = height + 'dvh';
     emoji.style.left = getRandomInt(1, 90) + 'dvw';
-    emoji.style.transform = "rotate(".concat(rotate, "deg)");
+    emoji.style.transform = `rotate(${rotate}deg)`;
     bgAnim.appendChild(emoji);
 }
 setInterval(fall, 10);
@@ -34,10 +35,10 @@ function fall() {
     height += 0.2;
     rotate += 0.4;
     emoji.style.top = height + 'dvh';
-    emoji.style.transform = "rotate(".concat(rotate, "deg)");
+    emoji.style.transform = `rotate(${rotate}deg)`;
 }
 function getRandomEmoji() {
-    var rand = getRandomInt(0, emojiArr.length);
+    let rand = getRandomInt(0, emojiArr.length);
     return emojiArr[rand];
 }
 // -------------------------------------------------------------------------------------------------------------------------------------
