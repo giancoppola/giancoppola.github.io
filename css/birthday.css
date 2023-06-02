@@ -60,17 +60,20 @@ h1 {
 h2 {
   font-size: 3rem;
   line-height: 3rem;
+  text-align: center;
 }
 
 h3 {
   font-size: 1.5rem;
   line-height: 2.25rem;
+  text-align: center;
 }
 
 p {
   font-size: 1.5rem;
   line-height: 2.25rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .full-container {
@@ -133,9 +136,6 @@ p {
   color: var(--white-col);
   text-shadow: 0px 4px 0px var(--pink-col);
 }
-.intro-container h2 {
-  text-shadow: 0px 4px 0px var(--blue-col);
-}
 .intro-container p {
   color: var(--white-col);
 }
@@ -146,9 +146,12 @@ p {
   justify-content: center;
   align-items: center;
 }
+.intro-container button {
+  border: 5px solid var(--pink-col);
+}
 
 .q1 {
-  background-color: var(--green-col);
+  background-color: var(--black-col);
 }
 .q1-container {
   display: flex;
@@ -159,11 +162,8 @@ p {
 }
 .q1-container h1 {
   color: var(--white-col);
-  text-shadow: 0px 4px 0px var(--black-col);
+  text-shadow: 0px 4px 0px var(--green-col);
   text-align: center;
-}
-.q1-container h2 {
-  text-shadow: 0px 4px 0px var(--blue-col);
 }
 .q1-container p {
   color: var(--white-col);
@@ -174,4 +174,152 @@ p {
   gap: 4rem;
   justify-content: center;
   align-items: center;
+}
+.q1-container button {
+  border: 5px solid var(--green-col);
+}
+
+.q2 {
+  background-color: var(--black-col);
+}
+.q2-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q2-container h1 {
+  color: var(--white-col);
+  text-shadow: 0px 4px 0px var(--blue-col);
+  text-align: center;
+}
+.q2-container p {
+  color: var(--white-col);
+}
+.q2-container .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q2-container button {
+  border: 5px solid var(--blue-col);
+}
+
+.q3 {
+  background-color: var(--black-col);
+}
+.q3-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q3-container h1 {
+  color: var(--white-col);
+  text-shadow: 0px 4px 0px var(--green-col);
+  text-align: center;
+}
+.q3-container p {
+  color: var(--white-col);
+}
+.q3-container .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q3-container button {
+  border: 5px solid var(--green-col);
+}
+
+.q4 {
+  background-color: var(--black-col);
+}
+.q4-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q4-container h1 {
+  color: var(--white-col);
+  text-shadow: 0px 4px 0px var(--blue-col);
+  text-align: center;
+}
+.q4-container p {
+  color: var(--white-col);
+}
+.q4-container .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q4-container button {
+  border: 5px solid var(--blue-col);
+}
+
+.q5 {
+  background-color: var(--black-col);
+}
+.q5-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q5-container h1 {
+  color: var(--white-col);
+  text-shadow: 0px 4px 0px var(--green-col);
+  text-align: center;
+}
+.q5-container p {
+  color: var(--white-col);
+}
+.q5-container .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q5-container button {
+  border: 5px solid var(--green-col);
+}
+
+.reco {
+  background-color: var(--black-col);
+}
+.reco-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.reco-container h1 {
+  color: var(--white-col);
+  text-shadow: 0px 4px 0px var(--green-col);
+  text-align: center;
+}
+.reco-container p {
+  color: var(--white-col);
+}
+.reco-container .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.reco-container button {
+  border: 5px solid var(--green-col);
 }/*# sourceMappingURL=birthday.css.map */

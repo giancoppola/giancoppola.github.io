@@ -1,6 +1,8 @@
+let weighting = {
+    "portugal": 0,
+    "italy": 0,
+    "england": 0,
+    "france": 0
+};
 let currentStep: string;
-const startBtn = document.querySelector("#start-btn") as HTMLButtonElement;
-startBtn.addEventListener("click", () => {
-    currentStep = "q1";
-    console.log(currentStep);
-})
+
