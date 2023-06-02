@@ -38,7 +38,7 @@ html{
 }
 body{
     scroll-behavior: smooth;
-    // overflow: hidden;
+    overflow: hidden;
 }
 h1, h2, h3, h4, h5, h6, p{
     margin: 0 !important;
@@ -293,7 +293,7 @@ a{
         align-items: center;
         & h1{
             color: var(--white-col);
-            text-shadow: 0px 4px 0px var(--green-col);
+            text-shadow: 0px 4px 0px var(--pink-col);
             text-align: center;
         }
         & p{
@@ -307,7 +307,7 @@ a{
             align-items: center;
         }
         & a{
-            border: 5px solid var(--green-col);
+            border: 5px solid var(--pink-col);
         }
     }
 }
