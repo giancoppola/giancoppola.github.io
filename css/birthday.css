@@ -76,6 +76,19 @@ p {
   text-align: center;
 }
 
+a {
+  cursor: pointer;
+  min-width: 200px;
+  padding: 1rem 2rem;
+  background-color: var(--black-col);
+  border: 5px solid var(--pink-col);
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
 .full-container {
   width: 100%;
   margin: auto;
@@ -102,24 +115,17 @@ p {
   flex-wrap: wrap;
   gap: 3rem;
 }
-.button-container button {
+.button-container a {
   cursor: pointer;
   min-width: 200px;
-  padding: 0 2rem;
-  height: 70px;
+  padding: 1rem 2rem;
   background-color: var(--black-col);
   border: 5px solid var(--pink-col);
   font-size: 1.5rem;
   line-height: 2.25rem;
   font-weight: bold;
-}
-.button-container button a {
   text-decoration: none;
-}
-.button-container button.start {
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0 2rem;
+  text-align: center;
 }
 
 .intro {
@@ -146,7 +152,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-.intro-container button {
+.intro-container a {
   border: 5px solid var(--pink-col);
 }
 
@@ -175,7 +181,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-.q1-container button {
+.q1-container a {
   border: 5px solid var(--green-col);
 }
 
@@ -204,7 +210,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-.q2-container button {
+.q2-container a {
   border: 5px solid var(--blue-col);
 }
 
@@ -233,7 +239,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-.q3-container button {
+.q3-container a {
   border: 5px solid var(--green-col);
 }
 
@@ -262,7 +268,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-.q4-container button {
+.q4-container a {
   border: 5px solid var(--blue-col);
 }
 
@@ -291,7 +297,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-.q5-container button {
+.q5-container a {
   border: 5px solid var(--green-col);
 }
 
@@ -320,6 +326,6 @@ p {
   justify-content: center;
   align-items: center;
 }
-.reco-container button {
+.reco-container a {
   border: 5px solid var(--green-col);
 }/*# sourceMappingURL=birthday.css.map */

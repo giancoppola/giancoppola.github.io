@@ -66,6 +66,18 @@ p{
     font-weight: bold;
     text-align: center;
 }
+a{
+    cursor: pointer;
+    min-width: 200px;
+    padding: 1rem 2rem;
+    background-color: var(--black-col);
+    border: 5px solid var(--pink-col);
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
 
 .full-container{
     width: 100%;
@@ -89,25 +101,20 @@ p{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3rem;
-    & button{
+    & a{
         cursor: pointer;
         min-width: 200px;
-        padding: 0 2rem;
-        height: 70px;
+        padding: 1rem 2rem;
         background-color: var(--black-col);
         border: 5px solid var(--pink-col);
         font-size: 1.5rem;
         line-height: 2.25rem;
         font-weight: bold;
-        & a{
-            text-decoration: none;
-        }
-        &.start{
-            width: fit-content;
-            padding: 0 2rem;
-        }
+        text-decoration: none;
+        text-align: center;
     }
 }
+
 
 .intro{
     background-color: var(--black-col);
@@ -131,7 +138,7 @@ p{
             justify-content: center;
             align-items: center;
         }
-        & button{
+        & a{
             border: 5px solid var(--pink-col);
         }
     }
@@ -159,7 +166,7 @@ p{
             justify-content: center;
             align-items: center;
         }
-        & button{
+        & a{
             border: 5px solid var(--green-col);
         }
     }
@@ -187,7 +194,7 @@ p{
             justify-content: center;
             align-items: center;
         }
-        & button{
+        & a{
             border: 5px solid var(--blue-col);
         }
     }
@@ -215,7 +222,7 @@ p{
             justify-content: center;
             align-items: center;
         }
-        & button{
+        & a{
             border: 5px solid var(--green-col);
         }
     }
@@ -243,7 +250,7 @@ p{
             justify-content: center;
             align-items: center;
         }
-        & button{
+        & a{
             border: 5px solid var(--blue-col);
         }
     }
@@ -271,7 +278,7 @@ p{
             justify-content: center;
             align-items: center;
         }
-        & button{
+        & a{
             border: 5px solid var(--green-col);
         }
     }
@@ -299,7 +306,7 @@ p{
             justify-content: center;
             align-items: center;
         }
-        & button{
+        & a{
             border: 5px solid var(--green-col);
         }
     }
