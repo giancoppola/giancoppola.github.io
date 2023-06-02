@@ -53,15 +53,30 @@ h1{
 h2{
     font-size: 3rem;
     line-height: 3rem;
+    text-align: center;
 }
 h3{
     font-size: 1.5rem;
     line-height: 2.25rem;
+    text-align: center;
 }
 p{
     font-size: 1.5rem;
     line-height: 2.25rem;
     font-weight: bold;
+    text-align: center;
+}
+a{
+    cursor: pointer;
+    min-width: 200px;
+    padding: 1rem 2rem;
+    background-color: var(--black-col);
+    border: 5px solid var(--pink-col);
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
 }
 
 .full-container{
@@ -86,25 +101,20 @@ p{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3rem;
-    & button{
+    & a{
         cursor: pointer;
         min-width: 200px;
-        padding: 0 2rem;
-        height: 70px;
+        padding: 1rem 2rem;
         background-color: var(--black-col);
         border: 5px solid var(--pink-col);
         font-size: 1.5rem;
         line-height: 2.25rem;
         font-weight: bold;
-        & a{
-            text-decoration: none;
-        }
-        &.start{
-            width: fit-content;
-            padding: 0 2rem;
-        }
+        text-decoration: none;
+        text-align: center;
     }
 }
+
 
 .intro{
     background-color: var(--black-col);
@@ -118,9 +128,6 @@ p{
             color: var(--white-col);
             text-shadow: 0px 4px 0px var(--pink-col);
         }
-        & h2{
-            text-shadow: 0px 4px 0px var(--blue-col);
-        }
         & p{
             color: var(--white-col);
         }
@@ -131,10 +138,13 @@ p{
             justify-content: center;
             align-items: center;
         }
+        & a{
+            border: 5px solid var(--pink-col);
+        }
     }
 }
 .q1{
-    background-color: var(--green-col);
+    background-color: var(--black-col);
     &-container{
         display: flex;
         flex-direction: column;
@@ -143,11 +153,8 @@ p{
         align-items: center;
         & h1{
             color: var(--white-col);
-            text-shadow: 0px 4px 0px var(--black-col);
+            text-shadow: 0px 4px 0px var(--green-col);
             text-align: center;
-        }
-        & h2{
-            text-shadow: 0px 4px 0px var(--blue-col);
         }
         & p{
             color: var(--white-col);
@@ -158,6 +165,149 @@ p{
             gap: 4rem;
             justify-content: center;
             align-items: center;
+        }
+        & a{
+            border: 5px solid var(--green-col);
+        }
+    }
+}
+.q2{
+    background-color: var(--black-col);
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: center;
+        & h1{
+            color: var(--white-col);
+            text-shadow: 0px 4px 0px var(--blue-col);
+            text-align: center;
+        }
+        & p{
+            color: var(--white-col);
+        }
+        & .text-container{
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+        }
+        & a{
+            border: 5px solid var(--blue-col);
+        }
+    }
+}
+.q3{
+    background-color: var(--black-col);
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: center;
+        & h1{
+            color: var(--white-col);
+            text-shadow: 0px 4px 0px var(--green-col);
+            text-align: center;
+        }
+        & p{
+            color: var(--white-col);
+        }
+        & .text-container{
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+        }
+        & a{
+            border: 5px solid var(--green-col);
+        }
+    }
+}
+.q4{
+    background-color: var(--black-col);
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: center;
+        & h1{
+            color: var(--white-col);
+            text-shadow: 0px 4px 0px var(--blue-col);
+            text-align: center;
+        }
+        & p{
+            color: var(--white-col);
+        }
+        & .text-container{
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+        }
+        & a{
+            border: 5px solid var(--blue-col);
+        }
+    }
+}
+.q5{
+    background-color: var(--black-col);
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: center;
+        & h1{
+            color: var(--white-col);
+            text-shadow: 0px 4px 0px var(--green-col);
+            text-align: center;
+        }
+        & p{
+            color: var(--white-col);
+        }
+        & .text-container{
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+        }
+        & a{
+            border: 5px solid var(--green-col);
+        }
+    }
+}
+.reco{
+    background-color: var(--black-col);
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: center;
+        align-items: center;
+        & h1{
+            color: var(--white-col);
+            text-shadow: 0px 4px 0px var(--green-col);
+            text-align: center;
+        }
+        & p{
+            color: var(--white-col);
+        }
+        & .text-container{
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+        }
+        & a{
+            border: 5px solid var(--green-col);
         }
     }
 }
