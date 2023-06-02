@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    padding-top: 4rem;
+  }
+  to {
+    opacity: 1;
+    padding-top: 0px;
+  }
+}
 :root {
   --black-col: #0D1321;
   --grey-col: #C5C5C5;
@@ -32,7 +42,6 @@ html {
 
 body {
   scroll-behavior: smooth;
-  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -72,10 +81,12 @@ p {
 }
 
 .content-container {
+  animation: fadeIn 1s forwards ease-in-out;
   max-width: 1200px;
   position: absolute;
   margin: auto;
   inset: 0;
+  -webkit-animation: fadeIn 1s forwards ease-in-out;
 }
 
 .text-container {
@@ -85,11 +96,13 @@ p {
 .button-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 .button-container button {
   cursor: pointer;
-  width: 150px;
+  min-width: 200px;
+  padding: 0 2rem;
   height: 70px;
   background-color: var(--black-col);
   border: 5px solid var(--pink-col);
@@ -100,10 +113,13 @@ p {
 .button-container button a {
   text-decoration: none;
 }
+.button-container button.start {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 2rem;
+}
 
 .intro {
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
   background-color: var(--black-col);
 }
 .intro-container {
@@ -124,6 +140,35 @@ p {
   color: var(--white-col);
 }
 .intro-container .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.q1 {
+  background-color: var(--green-col);
+}
+.q1-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.q1-container h1 {
+  color: var(--white-col);
+  text-shadow: 0px 4px 0px var(--black-col);
+  text-align: center;
+}
+.q1-container h2 {
+  text-shadow: 0px 4px 0px var(--blue-col);
+}
+.q1-container p {
+  color: var(--white-col);
+}
+.q1-container .text-container {
   display: flex;
   flex-direction: column;
   gap: 4rem;
