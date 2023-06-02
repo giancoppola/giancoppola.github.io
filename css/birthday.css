@@ -111,9 +111,9 @@ a {
 }
 
 .button-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 3rem;
 }
 .button-container a {
