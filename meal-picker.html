@@ -10,17 +10,26 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <section id="main_content">
-    <div id="bg-anim"></div>
-    <div class="container">
-      <div class="centre">
-        <div id="convo" onclick="recipe()">
-          <span id="meal-text">Title</span>
-          <img src="../img/icons/ui_icon_open_modal_window.svg" alt="" class="modal-icon hide" id="modal-icon">
+  <main>
+    <div class="bg-anim" id="bg-anim"></div>
+    <section class="content-container">
+      <h1>Let's pick a meal</h1>
+      <div class="button-container">
+        <div class="button-row button-row-type" id="type">
+          <button class="btn btn-veggie" id="veggie">Veggie</button>
+          <button class="btn btn-Tany" id="Tany">Any</button>
+          <button class="btn btn-meat" id="meat">Meat</button>
         </div>
+        <div class="button-row button-row-length" id="length">
+          <button class="btn btn-quick" id="quick">Quick</button>
+          <button class="btn btn-Lany" id="Lany">Any</button>
+          <button class="btn btn-long" id="long">Long</button>
+        </div>
+        <button class="btn btn-submit" id="submit">Submit</button>
       </div>
-    </div>
-  </section>
+    </section>
+    <dialog class="recipe-modal" id="recipe-modal"></dialog>
+  </main>
   <script type="text/javascript" src="../js/meal_picker.js"></script>
 </body>
 
