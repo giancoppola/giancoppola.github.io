@@ -42,3 +42,41 @@ function getRandomEmoji() {
     return emojiArr[rand];
 }
 // -------------------------------------------------------------------------------------------------------------------------------------
+const vegBtn = document.querySelector("#veggie");
+const typeAnyBtn = document.querySelector("#Tany");
+const meatBtn = document.querySelector("#meat");
+const quickBtn = document.querySelector("#quick");
+const lengthAnyBtn = document.querySelector("#Lany");
+const longBtn = document.querySelector("#long");
+const typeBtnArr = [vegBtn, typeAnyBtn, meatBtn];
+const lengthBtnArr = [quickBtn, lengthAnyBtn, longBtn];
+typeBtnArr.forEach((node) => {
+    node.addEventListener("click", () => {
+        activeNode(node, 'type');
+    });
+});
+lengthBtnArr.forEach((node) => {
+    node.addEventListener("click", () => {
+        activeNode(node, 'length');
+    });
+});
+function activeNode(node, type) {
+    if (type === "type") {
+        node.classList.toggle('active');
+        let newArr = [vegBtn, typeAnyBtn, meatBtn];
+        let index = newArr.indexOf(node);
+        newArr.splice(index, 1);
+        newArr.forEach((item) => {
+            item.classList.remove("active");
+        });
+    }
+    else if (type === "length") {
+        node.classList.toggle('active');
+        let newArr = [quickBtn, lengthAnyBtn, longBtn];
+        let index = newArr.indexOf(node);
+        newArr.splice(index, 1);
+        newArr.forEach((item) => {
+            item.classList.remove("active");
+        });
+    }
+}

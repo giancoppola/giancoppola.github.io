@@ -19,6 +19,42 @@ body {
   -webkit-background-size: cover;
 }
 
+h1 {
+  font-weight: bolder;
+  font-size: 4rem;
+  line-height: 4rem;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--white-col);
+  border: solid 5px var(--black-col);
+  width: 150px;
+  height: 70px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+button.active {
+  background-color: var(--black-col);
+  border: solid 5px var(--pink-col);
+  color: var(--white-col);
+}
+button.btn-submit {
+  cursor: default;
+  filter: opacity(0.5);
+  -webkit-filter: opacity(0.5);
+}
+button.btn-submit.active {
+  cursor: pointer;
+  filter: opacity(1);
+  -webkit-filter: opacity(1);
+  background-color: var(--white-col);
+  border: solid 5px var(--black-col);
+  color: var(--black-col);
+}
+
 .bg-anim {
   position: absolute;
   height: 100vh;
@@ -33,4 +69,40 @@ body {
   opacity: 25%;
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+main {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.content-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.content-container h1 {
+  width: 50%;
+  text-align: center;
+}
+
+.button-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.button-container .button-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }/*# sourceMappingURL=meal_picker.css.map */
