@@ -51,6 +51,8 @@ function getRandomEmoji(){
 
 // -------------------------------------------------------------------------------------------------------------------------------------
 
+// FORM VALIDATION //
+
 const vegBtn = document.querySelector("#veggie") as HTMLButtonElement;
 const typeAnyBtn = document.querySelector("#Tany") as HTMLButtonElement;
 const meatBtn = document.querySelector("#meat") as HTMLButtonElement;
@@ -64,11 +66,13 @@ const lengthBtnArr: HTMLButtonElement[] = [quickBtn, lengthAnyBtn, longBtn];
 typeBtnArr.forEach((node) => {
   node.addEventListener("click", () => {
     activeBtnSelection(node, 'type');
+    validationCheck();
   })
 })
 lengthBtnArr.forEach((node) => {
   node.addEventListener("click", () => {
     activeBtnSelection(node, 'length');
+    validationCheck();
   })
 })
 
@@ -92,3 +96,39 @@ function activeBtnSelection(node: HTMLButtonElement, type: string) {
     })
   }
 }
+
+const submitBtn = document.querySelector("#submit") as HTMLButtonElement;
+
+function validationCheck() {
+  let typeVal = false;
+  let lengthVal = false;
+  typeBtnArr.forEach((node) => {
+    if (node.classList.contains("active")) {
+      typeVal = true;
+    }
+  });
+  lengthBtnArr.forEach((node) => {
+    if (node.classList.contains("active")) {
+      lengthVal = true;
+    }
+  });
+  if (typeVal && lengthVal) {
+    submitBtn.classList.add("active");
+  }
+  else {
+    submitBtn.classList.remove("active");
+  }
+}
+
+const alertMsg = document.querySelector('#alert') as HTMLParagraphElement;
+submitBtn.addEventListener("click", () => {
+  if (submitBtn.classList.contains("active")) {
+    console.log("accepted");
+  }
+  else {
+    console.log("rejected");
+  }
+});
+
+// -------------------------------------------------------------------------------------------------------------------------------------
+

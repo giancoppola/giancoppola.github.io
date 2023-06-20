@@ -42,6 +42,7 @@ function getRandomEmoji() {
     return emojiArr[rand];
 }
 // -------------------------------------------------------------------------------------------------------------------------------------
+// FORM VALIDATION //
 const vegBtn = document.querySelector("#veggie");
 const typeAnyBtn = document.querySelector("#Tany");
 const meatBtn = document.querySelector("#meat");
@@ -52,15 +53,17 @@ const typeBtnArr = [vegBtn, typeAnyBtn, meatBtn];
 const lengthBtnArr = [quickBtn, lengthAnyBtn, longBtn];
 typeBtnArr.forEach((node) => {
     node.addEventListener("click", () => {
-        activeNode(node, 'type');
+        activeBtnSelection(node, 'type');
+        validationCheck();
     });
 });
 lengthBtnArr.forEach((node) => {
     node.addEventListener("click", () => {
-        activeNode(node, 'length');
+        activeBtnSelection(node, 'length');
+        validationCheck();
     });
 });
-function activeNode(node, type) {
+function activeBtnSelection(node, type) {
     if (type === "type") {
         node.classList.toggle('active');
         let newArr = [vegBtn, typeAnyBtn, meatBtn];
@@ -80,3 +83,35 @@ function activeNode(node, type) {
         });
     }
 }
+const submitBtn = document.querySelector("#submit");
+function validationCheck() {
+    let typeVal = false;
+    let lengthVal = false;
+    typeBtnArr.forEach((node) => {
+        if (node.classList.contains("active")) {
+            typeVal = true;
+        }
+    });
+    lengthBtnArr.forEach((node) => {
+        if (node.classList.contains("active")) {
+            lengthVal = true;
+        }
+    });
+    if (typeVal && lengthVal) {
+        submitBtn.classList.add("active");
+    }
+    else {
+        submitBtn.classList.remove("active");
+    }
+}
+const alertMsg = document.querySelector('#alert');
+submitBtn.addEventListener("click", () => {
+    if (submitBtn.classList.contains("active")) {
+        console.log("accepted");
+    }
+    else {
+        console.log("rejected");
+        alertMsg.innerText = "Please select both options to continues";
+    }
+});
+// -------------------------------------------------------------------------------------------------------------------------------------
